@@ -17,7 +17,7 @@
 
 		_vehicle addeventhandler ['HandleDamage', {
 			if(side(_this select 3) in [west, civilian]) then {
-				private ["_name, "_gunner"];
+				private ["_name", "_gunner"];
 				if (_this select 2 > wcdammagethreshold) then {
 					(_this select 0) removeAllEventHandlers "HandleDamage";
 					if((_this select 2) + (getdammage (_this select 0)) > 0.9) then {
