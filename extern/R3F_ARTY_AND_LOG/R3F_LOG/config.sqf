@@ -53,7 +53,7 @@ R3F_LOG_CFG_objets_remorquables =
 [
 	"StaticCannon",
 	"RubberBoat",
-	"Plane"
+	"Air"
 ];
 
 
@@ -217,7 +217,8 @@ R3F_LOG_CFG_objets_deplacables =
 	"BarrelBase",
 	"Fuel_can",
 	"BWMod_AM24",
-	"ACE_JerryCan_Dummy_15"
+	"ACE_JerryCan_Dummy_15",
+	"Ship"
 ];
 
 /*
