@@ -20,7 +20,7 @@
 	_position = _this select 0;
 	_autoload = _this select 1;
 
-	_crate = "TKVehicleBox_EP1" createVehiclelocal _position;
+	_crate = "USVehicleBox_EP1" createVehiclelocal _position;
 
 	clearweaponcargo 	_crate;
 	clearmagazinecargo 	_crate;
@@ -36,6 +36,9 @@
 
 	_refreshtime = 1800; 
 	_crate allowDamage false;
+
+	_crate addaction ["<t color='#0099FF'>Save Loadout</t>","warcontext\WC_fnc_saveloadout.sqf",[],1000,false];
+	_crate addaction ["<t color='#0099FF'>Load Loadout</t>","warcontext\WC_fnc_restoreloadout.sqf",[],1000,false];
 
 	while {true} do {
 		clearweaponcargo 	_crate;

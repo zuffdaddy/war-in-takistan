@@ -41,7 +41,8 @@ R3F_LOG_CFG_remorqueurs =
 	"BWMod_Fuchs_BAT_Desert",
 	"BWMod_Fuchs_BAT_ISAF",
 	"AMT_Dingo2A2_isaf",
-	"AMT_Dingo2a2_MG_Isaf"
+	"AMT_Dingo2a2_MG_Isaf",
+	"TowingTractor"
 ];
 
 /**
@@ -51,7 +52,8 @@ R3F_LOG_CFG_remorqueurs =
 R3F_LOG_CFG_objets_remorquables =
 [
 	"StaticCannon",
-	"RubberBoat"
+	"RubberBoat",
+	"Plane"
 ];
 
 
@@ -63,7 +65,7 @@ R3F_LOG_CFG_objets_remorquables =
  */
 R3F_LOG_CFG_heliporteurs =
 [
-	"CH_47F_EP1"
+	"Helicopter"
 ];
 
 /**
@@ -72,11 +74,7 @@ R3F_LOG_CFG_heliporteurs =
  */
 R3F_LOG_CFG_objets_heliportables =
 [
-	"HMMWV_M1151_M2_DES_EP1",
-	"HMMWV_M998A2_SOV_DES_EP1",
-	"HMMWV_M998_crows_MK19_DES_EP1",
-	"ATV_US_EP1",
-	"LandRover_Special_CZ_EP1"
+	"LandVehicle"
 ];
 
 

@@ -35,7 +35,7 @@ R3F_ARTY_CFG_autoriser_clic_carte = true;
  * Si la position GPS [0,0] est au coin nord-ouest, la valeur doit être la hauteur de l'île
  * en mètres (c'est-à-dire la largeur de l'île dans l'axe nord-sud).
  */
-R3F_ARTY_CFG_hauteur_ile = -1; // Takistan
+//R3F_ARTY_CFG_hauteur_ile = -1; // Takistan
 //R3F_ARTY_CFG_hauteur_ile = -1; // Zargabad
 //R3F_ARTY_CFG_hauteur_ile = -1; // Desert (from arrowhead)
 //R3F_ARTY_CFG_hauteur_ile = 15360; // Chernarus
@@ -56,7 +56,7 @@ R3F_ARTY_CFG_hauteur_ile = -1; // Takistan
 //R3F_ARTY_CFG_hauteur_ile = 20480; // Tropica
 //R3F_ARTY_CFG_hauteur_ile = 51200; // PMC Desert (wrp demo) (with and without cities)
 //R3F_ARTY_CFG_hauteur_ile = 10240; // Jade Groove
-//R3F_ARTY_CFG_hauteur_ile = 10240; // Lingor
+R3F_ARTY_CFG_hauteur_ile = 10240; // Lingor
 
 /**
  * List of class names of guns and mortars to manage. The classes which inherits from the ones listed will be also managed.

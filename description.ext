@@ -1,7 +1,8 @@
 showGps = 1;
+enableItemsDropping = 0;
 
 loadScreen = "pics\loading.jpg";
-OnLoadMission  = "War In Takistan";
+OnLoadMission  = "War In Lingor";
 
 class Header
 {
@@ -418,12 +419,12 @@ class CfgMusic {
 	tracks[]={intro, outro};
 	class intro
 	{
-		name = "";
+		name = "intro";
 		sound[] = {"\sound\intro.ogg", db+0, 1.0};
 	};
 	class outro
 	{
-		name = "";
+		name = "outro";
 		sound[] = {"\sound\outro.ogg", db+0, 1.0};
 	};
 };
@@ -625,7 +626,7 @@ class Params
 		title = "DYNAMIC TIME";
 		values[] = {0,1,2};
 		texts[] = {"NO FAST FORWARD", "FAST FORWARD", "INSTANT FAST FORWARD"};
-		default = 1;
+		default = 2;
 	};
 
 	class wcwithweather
@@ -649,7 +650,7 @@ class Params
 		title = "ENEMIES FORCE ON ZONE";
 		values[] = {1, 2, 3, 4, 5};
 		texts[] = {"WEAK", "NORMAL", "STRONG", "VERY STRONG", "AWESOME"};
-		default = 2;
+		default = 5;
 	};
 
 	class wclevelmaxoutofcity
@@ -657,7 +658,7 @@ class Params
 		title = "ENEMIES FORCE AROUND ZONE";
 		values[] = {1, 2, 4, 8, 10};
 		texts[] = {"WEAK", "NORMAL", "STRONG", "VERY STRONG", "AWESOME"};
-		default = 4;
+		default = 10;
 	};
 
 	class wcairopposingforce
@@ -674,7 +675,7 @@ class Params
 		title = "ENEMIES REINFORCMENT FORCE";
 		values[] = {0, 2, 4, 6};
 		texts[] = {"OFF", "WEAK: 2 GROUPS", "NORMAL: 4 GROUPS", "STRONG: 6 GROUPS"};
-		default = 2;
+		default = 6;
 	};
 
 	class wcconvoylevel
@@ -682,7 +683,7 @@ class Params
 		title = "ENEMIES VEHICLES PATROL ON MAP";
 		values[] = {0, 5, 10, 15};
 		texts[] = {"OFF", "WEAK: 5 VEHICLES", "NORMAL: 10 VEHICLES", "STRONG: 15 VEHICLES"};
-		default = 5;
+		default = 15;
 	};
 
 	class wcwithcomposition
@@ -706,7 +707,7 @@ class Params
 		title = "MAX VIEW DISTANCE";
 		values[]={2500,3000,3500,4000,5000,7500,10000};
 		texts[]={"2500","3000","3500","4000","5000","7500","10000"};
-		default=3000;
+		default=10000;
 	};
 
 	class wcwithcam
@@ -722,7 +723,7 @@ class Params
 		title = "MHQ IS AVALAIBLE";
 		values[] = {0, 1};
 		texts[] = {"NO", "YES"};
-		default = 1;
+		default = 0;
 	};
 
 	class wcrecruitberanked
@@ -730,7 +731,7 @@ class Params
 		title = "PLAYERS MUST BE RANKED TO RECRUIT SOME IA";
 		values[] = {0,1};
 		texts[] = {"NO", "YES"};
-		default = 1;
+		default = 0;
 	};
 
 	class wcwithhalojump
@@ -786,7 +787,7 @@ class Params
 		title = "PLAYERS CAN DETECT IED";
 		values[] = {0, 1};
 		texts[] = {"NO (ONLY ENGINEERS)", "YES (EVERYBODY)"};
-		default = 1;
+		default = 0;
 	};
 
 	class wcwithinjuredeffect
@@ -875,7 +876,7 @@ class Params
 		title = "MAX CIVILIANS PER TOWN";
 		values[] = {0, 3, 5, 10};
 		texts[] = {"OFF", "POOR: 3 CIVILIANS", "NORMAL: 5 CIVILIANS", "A LOT: 10 CIVILIANS"};
-		default = 5;
+		default = 3;
 	};
 
 	class wcwithcivilcar
@@ -883,7 +884,7 @@ class Params
 		title = "MAX CIVIL VEHICLES PER TOWN";
 		values[] = {0, 1, 3, 5};
 		texts[] = {"OFF", "POOR: 1 VEHICLE", "NORMAL: 3 VEHICLES", "A LOT: 5 VEHICLES"};
-		default = 1;
+		default = 3;
 	};
 
 	class wcwithied
@@ -891,7 +892,7 @@ class Params
 		title = "MAX IED PER TOWN";
 		values[] = {0, 1, 3};
 		texts[] = {"OFF", "NORMAL: 1 IED", "A LOT: 3 IED"};
-		default = 1;
+		default = 0;
 	};
 
 	class wcwithsheeps
@@ -899,7 +900,7 @@ class Params
 		title = "SHEEPS IN HILLS";
 		values[] = {0, 1};
 		texts[] = {"NO", "YES"};
-		default = 1;
+		default = 0;
 	};
 
 	class wcwithrussian
@@ -907,7 +908,7 @@ class Params
 		title = "ENEMIES USE RUSSIAN FORCES";
 		values[] = {0,1};
 		texts[] = {"NO", "YES"};
-		default = 0;
+		default = 1;
 	};
 
 	class wcwithtakistan
@@ -931,7 +932,7 @@ class Params
 		title = "ENEMIES USE ANTI AIR SITE";
 		values[] = {0, 1};
 		texts[] = {"NO", "YES"};
-		default = 1;
+		default = 0;
 	};
 
 	class wcwithnuclear
@@ -939,7 +940,7 @@ class Params
 		title = "ENEMIES USE NUCLEAR BOMB";
 		values[] = {0,1};
 		texts[] = {"NO", "YES"};
-		default = 1;
+		default = 0;
 	};
 
 	class wcwithseapatrol
@@ -947,7 +948,7 @@ class Params
 		title = "ENEMIES USE SEA PATROL";
 		values[] = {0, 1};
 		texts[] = {"NO", "YES"};
-		default = 0;
+		default = 1;
 	};
 
 	class wcautoloadweapons
@@ -955,7 +956,7 @@ class Params
 		title = "AUTOLOAD WEAPONS (REQUIRE SAME ADDONS ON CLIENT SIDE)";
 		values[] = {0,1};
 		texts[] = {"NO", "YES"};
-		default = 0;
+		default = 1;
 	};
 
 	class wcautoloadtroops

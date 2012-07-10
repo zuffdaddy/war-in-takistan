@@ -219,7 +219,7 @@
 	wccamgoalanimate = false;
 
 	// Ied false positive are...
-	wciedfalsepositive = true;
+	wciedfalsepositive = false;
 
 	// contain all nuclear zone
 	wcnuclearzone = [];

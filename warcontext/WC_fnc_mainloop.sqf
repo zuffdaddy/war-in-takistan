@@ -295,7 +295,7 @@
 		wcheavyfactory removeAllEventHandlers "HandleDamage";
 		wcbarrack removeAllEventHandlers "HandleDamage";
 
-		sleep 30;
+		sleep 5;
 
 		wcheavyfactory setdamage 1;
 		wcbarrack setdamage 1;
@@ -511,5 +511,5 @@
 		wcalert = 0;
 		["wcalert", "client"] call WC_fnc_publicvariable;
 		diag_log "WARCONTEXT: SANITING: MISSION IS FINISHED";
-		sleep 60 + (random 120);
+		sleep 5 + (random 1);
 	};

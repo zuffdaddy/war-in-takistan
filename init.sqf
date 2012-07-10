@@ -99,6 +99,7 @@
 	WC_fnc_garbagecollector		= compile preprocessFile "warcontext\functions\WC_fnc_garbagecollector.sqf";
 	WC_fnc_getobject		= compile preprocessFile "warcontext\functions\WC_fnc_getobject.sqf";
 	WC_fnc_getterraformvariance	= compile preprocessFile "warcontext\functions\WC_fnc_getterraformvariance.sqf";
+	WC_fnc_isInheritFrom		= compile preprocessFile "warcontext\functions\WC_fnc_isInheritFrom.sqf";
 	WC_fnc_markerhint		= compile preprocessFile "warcontext\functions\WC_fnc_markerhint.sqf";
 	WC_fnc_markerhintlocal		= compile preprocessFile "warcontext\functions\WC_fnc_markerhintlocal.sqf";
 	WC_fnc_missionname	 	= compile preprocessFile "warcontext\functions\WC_fnc_missionname.sqf";
@@ -228,3 +229,5 @@
 
 	// Init Server SIDE
 	wcgarbage = [] spawn WC_fnc_serverside;
+	
+	enableSaving [false, false];

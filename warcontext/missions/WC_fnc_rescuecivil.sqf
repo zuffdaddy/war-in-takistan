@@ -47,8 +47,8 @@
 	while {!_missioncomplete} do {
 		_count = 0;
 		{
-			if(_x distance getmarkerpos "mash" < 100) then {
-				_x domove getmarkerpos "mash";
+			if(_x distance getmarkerpos "hospital" < 100) then {
+				_x domove getmarkerpos "hospital";
 				_count = _count + 1;
 			};
 			if!(alive _x) then {
@@ -81,5 +81,5 @@
 			"SmokeShellRed" createVehicle position _unit;
 			_counter = 0;
 		};
-		sleep 5;
+		sleep 1;
 	};

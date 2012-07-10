@@ -62,7 +62,8 @@
 	wcrespawnmarker setmarkersize [0,0];
 
 	// arcade == 1
-	if(wckindofgame == 1) then {
+	//if(wckindofgame == 1) then {
+	if(false) then {
 		wcgarbage = ["Hospital", getmarkerpos "hospital"] spawn BIS_fnc_3dcredits;
 		wcgarbage = ["Weapons", getmarkerpos "crate1"] spawn BIS_fnc_3dcredits;
 		if(wcautoloadweapons == 1) then {
@@ -187,7 +188,7 @@
 		};
 	};
 	
-	removeBackpack player;
+	//removeBackpack player;
 
 	// load player team preset
 	[] execVM "warcontext\WC_fnc_loadweaponsplayer.sqf";
@@ -200,6 +201,9 @@
 	if(wcwithACE == 1) then {
 		player addweapon "ACE_Earplugs";
 	};
+
+	// save inital loadout
+	[] call WC_fnc_saveloadout;
 
 	wcgarbage = [(getmarkerpos "crate1"), "base"] spawn WC_fnc_createammobox;
 	if(wcautoloadweapons == 1) then {
