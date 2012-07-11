@@ -20,7 +20,7 @@ FNCT_R3F_DEBUG_SetTeleportation = {
 		VAR_R3F_DEBUG_Teleportation = _this select 0;
 	};
 	if (VAR_R3F_DEBUG_Teleportation) then {
-		onMapSingleClick "player setpos _pos; true;";
+		onMapSingleClick "vehicle player setposatl _pos; true;";
 	} else {
 		onMapSingleClick "";
 	};
