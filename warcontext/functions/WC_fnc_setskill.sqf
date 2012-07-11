@@ -27,11 +27,11 @@
 		"general"
 		];
 
-	_unit setskill _level;
-	
-	{
-		_unit setskill [_x, _level];
-		sleep 0.05;
-	}foreach _skill;
+	//_unit setskill _level;
+	//
+	//{
+	//	_unit setskill [_x, _level];
+	//	sleep 0.05;
+	//}foreach _skill;
 
 	true;
