@@ -581,6 +581,22 @@ class CfgSounds
 
 class Params
 { 
+	class wcCustomPlayerHandleDamage
+	{
+		title = "USE CUSTOM PLAYER DAMAGE HANDLER";
+		values[] = {0, 1};
+		texts[] = {"No", "Yes"};
+		default = 0;
+	};
+
+	class wcCustomVehicleHandleDamage
+	{
+		title = "USE CUSTOM VEHICLE DAMAGE HANDLER";
+		values[] = {0, 1};
+		texts[] = {"No", "Yes"};
+		default = 0;
+	};
+
 	class wcwithACE
 	{
 		title = "ACE ADDONS ARE ACTIVATED ON SERVER";
