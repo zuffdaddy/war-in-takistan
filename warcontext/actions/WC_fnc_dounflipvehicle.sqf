@@ -5,7 +5,7 @@
 	 private ["_position", "_object", "_typeof", "_list", "_dir", "_mydir", "_dammage"];
 
 	_mydir = getdir player;
-	_list = nearestObjects [position player, ["LandVehicle", "Air", "Tank", "Car"], 8];
+	_list = nearestObjects [player modelToWorld [0.0, 0.0, 0.0], ["LandVehicle", "Air", "Tank", "Car"], 8];
 
 	if(count _list == 0) exitwith {
 		[localize "STR_WC_MENUUNFLIPVEHICLE", localize "STR_WC_MESSAGENOVEHICLENEARYOU", localize "STR_WC_MESSAGEGOCLOSERUNFLIP", 3] spawn WC_fnc_playerhint;

@@ -15,7 +15,7 @@
 	];
 
 	_mydir = getdir player;
-	_list = nearestObjects [position player, ["LandVehicle", "Air", "Tank", "Car"], 8];
+	_list = nearestObjects [player modelToWorld [0.0, 0.0, 0.0], ["LandVehicle", "Air", "Tank", "Car"], 8];
 
 	if(count _list == 0) exitwith {hintsilent localize "STR_WC_MESSAGENOVEHICLENEARYOU";};
 
