@@ -218,7 +218,7 @@ R3F_LOG_CFG_objets_deplacables =
 	"Fuel_can",
 	"BWMod_AM24",
 	"ACE_JerryCan_Dummy_15",
-	"Ship"
+	"RubberBoat"
 ];
 
 /*
