@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Fait réapparaître un joueur en attente de réanimation à la base.
  * La position de réapparition est la même que celle qu'ArmA a
  * déterminé à l'aide du système de marqueurs "respawn_XXX".
@@ -130,6 +130,10 @@ R3F_REV_fil_exec_reapparaitre_camp = [_camp] spawn
 	};
 
 	player setCaptive false;
+
+	if(wcSavedLoadoutManually) then {
+		wcgarbage = [] spawn WC_fnc_restoreloadout;
+	};
 
 	wcgarbage = [] spawn WC_fnc_restoreactionmenu;
 

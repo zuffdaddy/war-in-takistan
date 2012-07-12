@@ -1,4 +1,4 @@
-﻿	// -----------------------------------------------
+	// -----------------------------------------------
 	// Author: team  code34 nicolas_boiteux@yahoo.fr
 	// warcontext - save loadout
 	// -----------------------------------------------
@@ -17,9 +17,19 @@
 		"_enemy", 
 		"_sacados_avant_mort", 
 		"_backpack", 
-		"_weapononback"
+		"_weapononback",
+		"_playerInvoked"
 	];
 	
+	if (count _this > 2) then {
+		_playerInvoked = _this select 3;
+		if !(isNil ("_playerInvoked")) then {
+			if (_playerInvoked) then {
+				wcSavedLoadoutManually = true;
+			};
+		};
+	};
+
 	wcmagazines = magazines player;
 	wcweapons = weapons player;
 

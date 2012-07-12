@@ -107,7 +107,7 @@
 		wclistofaddonweapons = [];
 	};
 
-	// have we died at least once?
-	wcdiedoncebefore = false;
+	// have we saved a loadout at least once?
+	wcSavedLoadoutManually = false;
 
 	true;
