@@ -56,7 +56,6 @@
 			_text = _text + format["this addMagazine '%1';", _x];
 		} forEach _magazines;
 		_text = _text + "this setVehicleAmmo 1;";
-		copytoclipboard _text;
 		_object setVehicleInit _text;
 		processInitCommands;
 	};
