@@ -357,14 +357,27 @@
 
 	if(wckindofgame == 1) then {
 		if(wcCustomPlayerHandleDamage == 1) then {
-			player addEventHandler ['HandleDamage', {
-				if(vehicle (_this select 0) == (_this select 0)) then {
-					(_this select 0) setdamage ( (getdammage(_this select 0)) + ((_this select 2)/10) );
-				} else {
-					(_this select 0) setdamage ( (getdammage(_this select 0)) + ((_this select 2)/2) );
-				};
-			}];
-		};
+			private[
+				"_unit",
+				"_selectionName",
+				"_damage",
+				"_source",
+				"_projectile",
+				"_applyDamage"
+			];
+		
+			_unit = _this select 0;
+			_selectionName = _this select 1;
+			_damage = _this select 2;
+			_source = _this select 3;
+			_projectile = _this select 4;
+		
+			if (vehicle _unit == _unit) then {
+				_applyDamage = (damage _unit) + (_damage / 10);
+			} else {
+				_applyDamage = (damage _unit) + (_damage / 30);
+			};
+			_unit setDamage _applyDamage;
 	};
 
 	(findDisplay 46) displayAddEventHandler ["KeyDown","_this call WC_fnc_keymapper;"];
