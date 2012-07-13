@@ -27,7 +27,8 @@ class Mission
 		"CAWheeled2_LAV25",
 		"cawheeled2_m1114_armored",
 		"CAAir2_F35B",
-		"CAAir"
+		"CAAir",
+		"CAA10"
 	};
 	addOnsAuto[]=
 	{
@@ -39,7 +40,7 @@ class Mission
 		"camisc_e",
 		"caweapons_e",
 		"warfarebuildings",
-		"CAAir",
+		"CAA10",
 		"CAWheeled2_TowingTractor",
 		"CAAir_E_UH60M",
 		"CAWheeled2_MTVR",
@@ -958,7 +959,7 @@ class Mission
 			azimut=-319.57901;
 			id=62;
 			side="EMPTY";
-			vehicle="AV8B2";
+			vehicle="A10";
 			leader=1;
 			skill=0.60000002;
 		};
