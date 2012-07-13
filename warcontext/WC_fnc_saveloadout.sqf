@@ -18,13 +18,13 @@
 		"_sacados_avant_mort", 
 		"_backpack", 
 		"_weapononback",
-		"_playerInvoked"
+		"_args"
 	];
 	
 	if (count _this > 2) then {
-		_playerInvoked = _this select 3;
-		if !(isNil ("_playerInvoked")) then {
-			if (_playerInvoked) then {
+		_args = _this select 3;
+		if !(isNil ("_args")) then {
+			if (_args select 0) then {
 				wcSavedLoadoutManually = true;
 			};
 		};
