@@ -379,7 +379,8 @@
 					_applyDamage = (damage _unit) + (_damage / 30);
 				};
 				_unit setDamage _applyDamage;
-		}];
+			}];
+		};
 	};
 
 	(findDisplay 46) displayAddEventHandler ["KeyDown","_this call WC_fnc_keymapper;"];

@@ -167,7 +167,7 @@
 	wcrescuecivils = ["TK_CIV_Takistani01_EP1", "TK_CIV_Takistani02_EP1", "TK_CIV_Takistani03_EP1", "TK_CIV_Takistani04_EP1", "TK_CIV_Takistani05_EP1", "TK_CIV_Takistani06_EP1", "TK_CIV_Worker01_EP1", "TK_CIV_Worker02_EP1"];
 
 	// kind of units crew of enemies vehicles
-	wccrewforces = ["TK_Soldier_Crew_EP1"];
+	wccrewforces = ["TK_Soldier_Crew_EP1", "RU_Soldier_Crew"];
 
 	// anti air vehicles
 	wcaavehicles = ["ZU23_TK_GUE_EP1", "Ural_ZU23_TK_GUE_EP1"];
