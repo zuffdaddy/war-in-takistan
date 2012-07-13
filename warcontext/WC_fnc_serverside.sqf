@@ -313,7 +313,7 @@
 				} foreach _crew;
 			};
 		} foreach vehicles;
-		sleep 1
+		sleep 1;
 	};
 
 	onPlayerConnected "[_id, _name] spawn WC_fnc_publishmission";
