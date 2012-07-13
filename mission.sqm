@@ -29,7 +29,8 @@ class Mission
 		"CAAir2_F35B",
 		"CAAir",
 		"CAA10",
-		"CAAir_BAF"
+		"CAAir_BAF",
+		"caair_e_ch_47f"
 	};
 	addOnsAuto[]=
 	{
@@ -46,12 +47,12 @@ class Mission
 		"CAAir_E_UH60M",
 		"CAWheeled2_MTVR",
 		"CAWater",
-		"CAAir_BAF",
 		"CAAir_E_AH6J",
 		"CAWheeled2_LAV25",
 		"CATracked",
 		"CAWheeled",
 		"cawheeled2_m1114_armored",
+		"caair_e_ch_47f",
 		"ibr_lingor"
 	};
 	randomSeed=13468083;
@@ -358,7 +359,7 @@ class Mission
 					special="CARGO";
 					id=56;
 					side="WEST";
-					vehicle="bink_usmc_scout_l";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Juliet""];";
@@ -407,7 +408,7 @@ class Mission
 					special="CARGO";
 					id=48;
 					side="WEST";
-					vehicle="bink_usmc_scout_l";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Charly""];";
@@ -468,7 +469,7 @@ class Mission
 					special="CARGO";
 					id=38;
 					side="WEST";
-					vehicle="bink_usmc_scout_l";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Bravo""];";
@@ -529,7 +530,7 @@ class Mission
 					special="CARGO";
 					id=23;
 					side="WEST";
-					vehicle="bink_usmc_scout_l";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Echo""];";
@@ -590,7 +591,7 @@ class Mission
 					special="CARGO";
 					id=18;
 					side="WEST";
-					vehicle="bink_usmc_scout_l";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Foxtrot""];";
@@ -651,7 +652,7 @@ class Mission
 					special="CARGO";
 					id=28;
 					side="WEST";
-					vehicle="bink_usmc_scout_l";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Hotel""];";
@@ -713,7 +714,7 @@ class Mission
 					special="CARGO";
 					id=33;
 					side="WEST";
-					vehicle="bink_usmc_scout_l";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Golf""];";
@@ -761,7 +762,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=50;
+		items=52;
 		class Item0
 		{
 			position[]={8312.0557,4.0640292,7498.5122};
@@ -1028,7 +1029,7 @@ class Mission
 		};
 		class Item24
 		{
-			position[]={8304.6543,3.5749102,7551.4653};
+			position[]={8294.6182,4.215395,7565.2344};
 			azimut=-182.33099;
 			id=69;
 			side="EMPTY";
@@ -1220,7 +1221,7 @@ class Mission
 			azimut=-443.87;
 			id=90;
 			side="EMPTY";
-			vehicle="AW159_Lynx_BAF";
+			vehicle="AH6J_EP1";
 			leader=1;
 			skill=0.60000002;
 		};
@@ -1283,10 +1284,29 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 		};
+		class Item50
+		{
+			position[]={8370.625,4.0685101,7499.2686};
+			azimut=-209.89601;
+			id=97;
+			side="EMPTY";
+			vehicle="HeliH";
+			skill=0.60000002;
+		};
+		class Item51
+		{
+			position[]={8370.4736,4.0685101,7499.6206};
+			azimut=-532.526;
+			id=98;
+			side="EMPTY";
+			vehicle="CH_47F_EP1";
+			leader=1;
+			skill=0.60000002;
+		};
 	};
 	class Markers
 	{
-		items=23;
+		items=24;
 		class Item0
 		{
 			position[]={8315.582,4.0660186,7499.2852};
@@ -1416,7 +1436,7 @@ class Mission
 		};
 		class Item15
 		{
-			position[]={8294.4102,4.3865261,7574.96};
+			position[]={8288.1045,4.433001,7568.6338};
 			name="bluefor";
 			text="bluefor";
 			markerType="ELLIPSE";
@@ -1469,7 +1489,7 @@ class Mission
 		};
 		class Item21
 		{
-			position[]={8304.6211,3.5690422,7551.3022};
+			position[]={8294.585,4.2128277,7565.0713};
 			name="ALSS";
 			text="A.L.S.S. RADIUS";
 			type="b_service";
@@ -1480,7 +1500,7 @@ class Mission
 		};
 		class Item22
 		{
-			position[]={8304.582,3.5680015,7551.2612};
+			position[]={8294.5459,4.2129436,7565.0303};
 			name="ALSS_RADIUS";
 			text="A.L.S.S. RADIUS";
 			markerType="ELLIPSE";
@@ -1490,10 +1510,19 @@ class Mission
 			a=50;
 			b=50;
 		};
+		class Item23
+		{
+			position[]={8370.5088,4.0685101,7499.6289};
+			name="repair4_1";
+			text="Repair";
+			type="b_maint";
+			colorName="ColorBlue";
+			angle=-230.71581;
+		};
 	};
 	class Sensors
 	{
-		items=5;
+		items=6;
 		class Item0
 		{
 			position[]={8309.5088,4.06287,7514.1704};
@@ -1512,7 +1541,7 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={8304.6084,3.5739167,7551.4233};
+			position[]={8294.5723,4.2156672,7565.1924};
 			a=5;
 			b=5;
 			angle=-203.15054;
@@ -1564,6 +1593,22 @@ class Mission
 			a=5;
 			b=5;
 			angle=-142.05989;
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond=" (""AllVehicles"" countType thislist  > 0) ";
+			expActiv="_xhandle= [thislist] execVM ""warcontext\WC_fnc_servicing.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item5
+		{
+			position[]={8370.6631,4.0685101,7499.167};
+			a=5;
+			b=5;
+			angle=-230.71553;
 			activationBy="ANY";
 			repeating=1;
 			interruptable=1;

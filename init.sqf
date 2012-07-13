@@ -230,4 +230,7 @@
 	// Init Server SIDE
 	wcgarbage = [] spawn WC_fnc_serverside;
 	
+	//TPW House Lights Script
+	wcgarbage = [] execVM "scripts\tpw_houselights108-mp-dedi.sqf";
+	
 	enableSaving [false, false];
