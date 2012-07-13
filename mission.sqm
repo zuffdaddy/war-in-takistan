@@ -28,7 +28,8 @@ class Mission
 		"cawheeled2_m1114_armored",
 		"CAAir2_F35B",
 		"CAAir",
-		"CAA10"
+		"CAA10",
+		"CAAir_BAF"
 	};
 	addOnsAuto[]=
 	{
@@ -45,6 +46,7 @@ class Mission
 		"CAAir_E_UH60M",
 		"CAWheeled2_MTVR",
 		"CAWater",
+		"CAAir_BAF",
 		"CAAir_E_AH6J",
 		"CAWheeled2_LAV25",
 		"CATracked",
@@ -1215,10 +1217,10 @@ class Mission
 		class Item43
 		{
 			position[]={8333.3457,3.5345802,7517.9092};
-			azimut=-443.87021;
+			azimut=-443.87;
 			id=90;
 			side="EMPTY";
-			vehicle="MH6J_EP1";
+			vehicle="AW159_Lynx_BAF";
 			leader=1;
 			skill=0.60000002;
 		};
