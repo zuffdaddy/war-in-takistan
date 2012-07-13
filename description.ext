@@ -586,7 +586,7 @@ class Params
 		title = "USE CUSTOM PLAYER DAMAGE HANDLER";
 		values[] = {0, 1};
 		texts[] = {"No", "Yes"};
-		default = 0;
+		default = 1;
 	};
 
 	class wcCustomVehicleHandleDamage
