@@ -26,7 +26,8 @@ class Mission
 		"CAWheeled",
 		"CAWheeled2_LAV25",
 		"cawheeled2_m1114_armored",
-		"CAAir2_F35B"
+		"CAAir2_F35B",
+		"CAAir"
 	};
 	addOnsAuto[]=
 	{
@@ -38,7 +39,7 @@ class Mission
 		"camisc_e",
 		"caweapons_e",
 		"warfarebuildings",
-		"CAAir2_F35B",
+		"CAAir",
 		"CAWheeled2_TowingTractor",
 		"CAAir_E_UH60M",
 		"CAWheeled2_MTVR",
@@ -953,11 +954,11 @@ class Mission
 		};
 		class Item17
 		{
-			position[]={8265.9443,4.1436062,7517.4165};
+			position[]={8273.7422,4.06287,7525.4565};
 			azimut=-319.57901;
 			id=62;
 			side="EMPTY";
-			vehicle="F35B";
+			vehicle="AV8B2";
 			leader=1;
 			skill=0.60000002;
 		};
@@ -1024,7 +1025,7 @@ class Mission
 		};
 		class Item24
 		{
-			position[]={8299.8867,3.8770885,7557.4727};
+			position[]={8304.6543,3.5749102,7551.4653};
 			azimut=-182.33099;
 			id=69;
 			side="EMPTY";
@@ -1282,7 +1283,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=22;
+		items=23;
 		class Item0
 		{
 			position[]={8315.582,4.0660186,7499.2852};
@@ -1425,15 +1426,6 @@ class Mission
 		};
 		class Item16
 		{
-			position[]={8299.9551,3.8898089,7557.8428};
-			name="repair2";
-			text="Repair and Rearm";
-			type="b_maint";
-			colorName="ColorBlue";
-			angle=-203.151;
-		};
-		class Item17
-		{
 			position[]={8367.2578,4.0685101,7474.3584};
 			name="repair5";
 			text="Repair";
@@ -1441,20 +1433,20 @@ class Mission
 			colorName="ColorBlue";
 			angle=-203.151;
 		};
-		class Item18
+		class Item17
 		{
 			position[]={0,0.66530126,0};
 			name="initpos";
 			type="Empty";
 		};
-		class Item19
+		class Item18
 		{
 			position[]={8239.7549,4.06287,7454.271};
 			name="jail";
 			type="Empty";
 			angle=0.82791501;
 		};
-		class Item20
+		class Item19
 		{
 			position[]={8333.3584,3.536669,7517.8711};
 			name="repair3";
@@ -1463,7 +1455,7 @@ class Mission
 			colorName="ColorBlue";
 			angle=-142.06015;
 		};
-		class Item21
+		class Item20
 		{
 			position[]={8345.1787,3.6927962,7522.894};
 			name="repair4";
@@ -1471,6 +1463,29 @@ class Mission
 			type="b_maint";
 			colorName="ColorBlue";
 			angle=-142.06015;
+		};
+		class Item21
+		{
+			position[]={8304.6211,3.5690422,7551.3022};
+			name="ALSS";
+			text="A.L.S.S. RADIUS";
+			type="b_service";
+			colorName="ColorOrange";
+			fillName="Cross";
+			a=1.5;
+			b=1.5;
+		};
+		class Item22
+		{
+			position[]={8304.582,3.5680015,7551.2612};
+			name="ALSS_RADIUS";
+			text="A.L.S.S. RADIUS";
+			markerType="ELLIPSE";
+			type="b_service";
+			colorName="ColorOrange";
+			fillName="Cross";
+			a=50;
+			b=50;
 		};
 	};
 	class Sensors
@@ -1494,7 +1509,7 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={8299.876,3.8729908,7557.3604};
+			position[]={8304.6084,3.5739167,7551.4233};
 			a=5;
 			b=5;
 			angle=-203.15054;
