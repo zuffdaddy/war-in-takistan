@@ -49,6 +49,9 @@
 	// init BON loadout script
 	[] spawn { presetDialogUpdate = compile preprocessFile "extern\bon_loadoutpresets\bon_func_presetdlgUpdate.sqf"; };
 
+	// init TPW House Lights Script
+	[] spawn { wcgarbage = [] execVM "scripts\tpw_houselights108-mp-dedi.sqf"; };
+
 	// external scripts
 	EXT_fnc_atot 			= compile preprocessFile "extern\EXT_fnc_atot.sqf";
 	EXT_fnc_createcomposition	= compile preprocessFile "extern\EXT_fnc_createcomposition.sqf";
