@@ -37,7 +37,7 @@ tpwcas_sleep = 1;
 tpwcas_debug = 0; 
 
 //TEXT BASED DEBUG RATE (Hz). 0 = NO TEXT DEBUGGING. 5 = 5 UPDATES PER SECOND. 
-tpwcas_textdebug = 10;
+tpwcas_textdebug = 0;
 
 ////////////////////
 // BULLET VARIABLES
