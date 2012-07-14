@@ -280,6 +280,10 @@ actn_AV8B_mm,
 actn_AV8B2_sm_1,
 actn_AV8B2_sm_2,
 actn_AV8B2_mm,
+// ---------- "F35B" F-35B Lightning II ----------
+actn_F35B_sm_1,
+actn_F35B_sm_2,
+actn_F35B_mm,
 // ---------- "A10_US_EP1_JDAM" (GLT Missile Box A-10) ----------
 actn_A10_US_EP1_JDAM_sm_1,
 actn_A10_US_EP1_JDAM_sm_2,

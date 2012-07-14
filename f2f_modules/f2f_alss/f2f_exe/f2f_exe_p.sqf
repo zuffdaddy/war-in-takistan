@@ -522,6 +522,46 @@ switch (_arg) do
 			ACTN_YL(actn_AV8B2_mm,_tgt,"F2F Air Loadout Selector System (AV-8B)","f2f_actn\f2f_actn_p.sqf","AV8B2_mm",50);
 		};
 	};
+	// ---------- "F35B" F-35B Harrier II ----------
+	case "F35B_exe_cas":
+	{
+		// ---------- Clear Current Loadout ----------
+		#include "f2f_inc_clrWeps.sqf"
+		// ----- Close Air Support Loadout -----
+		ADD_MAG(120Rnd_CMFlare_Chaff_Magazine);
+		ADD_MAG(300Rnd_25mm_GAU12);
+		ADD_MAG(2Rnd_GBU12);
+		ADD_MAG(2Rnd_GBU12);
+		ADD_MAG(2Rnd_Sidewinder_F35);
+		ADD_WEP(CMFlareLauncher);
+		ADD_WEP(GAU12);
+		ADD_WEP(BombLauncherF35);
+		ADD_WEP(SidewinderLaucher_F35);
+		// ----- Exit and Execute ALSS Menu -----
+		if(true)exitWith
+		{
+			ACTN_YL(actn_F35B_mm,_tgt,"F2F Air Loadout Selector System (F-35B)","f2f_actn\f2f_actn_p.sqf","F35B_mm",50);
+		};
+	};
+	case "F35B_exe_cap":
+	{
+		// ---------- Clear Current Loadout ----------
+		#include "f2f_inc_clrWeps.sqf"
+		// ----- Combat Air Patrol Loadout -----
+		ADD_MAG(120Rnd_CMFlare_Chaff_Magazine);
+		ADD_MAG(300Rnd_25mm_GAU12);
+		ADD_MAG(2Rnd_GBU12);
+		ADD_MAG(2Rnd_Maverick_A10);
+		ADD_WEP(CMFlareLauncher);
+		ADD_WEP(GAU12);
+		ADD_WEP(BombLauncherF35);
+		ADD_WEP(MaverickLauncher);
+		// ----- Exit and Execute ALSS Menu -----
+		if(true)exitWith
+		{
+			ACTN_YL(actn_F35B_mm,_tgt,"F2F Air Loadout Selector System (F-35B)","f2f_actn\f2f_actn_p.sqf","F35B_mm",50);
+		};
+	};
 // ------------------------------------------
 // --------------- Addon Planes -------------
 // ------------------------------------------

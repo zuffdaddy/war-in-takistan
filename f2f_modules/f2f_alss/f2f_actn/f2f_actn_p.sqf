@@ -105,6 +105,14 @@ switch (_arg) do
 		ACTN_YL(actn_clear,_tgt,"Clear Weapon Stations","f2f_exe\f2f_exe_clr.sqf","AV8B2_clr",38);
 		ACTN_YL(actn_back,_tgt,"Exit F2F ALSS","f2f_actn\f2f_actn_back.sqf","AV8B2_back",37);
 	};
+	// ---------- "F35B" F-35B Lightning II ----------
+	case "F35B_mm":
+	{
+		ACTN_RD(actn_F35B_sm_1,_tgt,"Close Air Support","f2f_exe\f2f_exe_p.sqf","F35B_exe_cas",40);
+		ACTN_RD(actn_F35B_sm_2,_tgt,"Combat Air Patrol","f2f_exe\f2f_exe_p.sqf","F35B_exe_cap",39);
+		ACTN_YL(actn_clear,_tgt,"Clear Weapon Stations","f2f_exe\f2f_exe_clr.sqf","F35B_clr",38);
+		ACTN_YL(actn_back,_tgt,"Exit F2F ALSS","f2f_actn\f2f_actn_back.sqf","F35B_back",37);
+	};
 // ------------------------------------------
 // --------------- Addon Planes -------------
 // ------------------------------------------

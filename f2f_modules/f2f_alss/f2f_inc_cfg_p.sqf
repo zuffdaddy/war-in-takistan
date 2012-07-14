@@ -121,6 +121,12 @@ switch (_acClass) do
 		ACTN_YL(actn_AV8B2_mm,_vec,"F2F Air Loadout Selector System (AV-8B)","f2f_actn\f2f_actn_p.sqf","AV8B2_mm",50);
 		CLOSER(actn_AV8B2_mm);
 	};
+	// ---------- "F35B" F-35B Lightning II ----------
+	case "F35B":
+	{
+		ACTN_YL(actn_F35B_mm,_vec,"F2F Air Loadout Selector System (F35B)","f2f_actn\f2f_actn_p.sqf","F35B_mm",50);
+		CLOSER(actn_F35B_mm);
+	};
 // ------------------------------------------
 // --------------- Addon Planes -------------
 // ------------------------------------------

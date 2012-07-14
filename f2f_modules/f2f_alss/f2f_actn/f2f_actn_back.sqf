@@ -218,6 +218,14 @@ switch (_arg) do
 			ACTN_YL(actn_AV8B2_mm,_tgt,"F2F Air Loadout Selector System (AV-8B)","f2f_actn\f2f_actn_p.sqf","AV8B2_mm",50);
 		};
 	};
+	// ---------- "F35B" F-35B Lightning II ----------
+	case "F35B_back":
+	{
+		if(true)exitWith
+		{
+			ACTN_YL(actn_F35B_mm,_tgt,"F2F Air Loadout Selector System (F-35B)","f2f_actn\f2f_actn_p.sqf","F35B_mm",50);
+		};
+	};
 // ------------------------------------------
 // ------------ Addon Helicopters -----------
 // ------------------------------------------
