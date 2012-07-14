@@ -50,7 +50,10 @@
 	[] spawn { presetDialogUpdate = compile preprocessFile "extern\bon_loadoutpresets\bon_func_presetdlgUpdate.sqf"; };
 
 	// init TPW House Lights Script
-	[] spawn { wcgarbage = [] execVM "scripts\tpw_houselights108-mp-dedi.sqf"; };
+	[] spawn { execVM "scripts\tpw_houselights108-mp-dedi.sqf"; };
+
+	// init TPWC AI Suppression
+	[] spawn { execVM "tpwcas\tpwcas.sqf"; };
 
 	// external scripts
 	EXT_fnc_atot 			= compile preprocessFile "extern\EXT_fnc_atot.sqf";
