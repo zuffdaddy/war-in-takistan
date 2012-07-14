@@ -28,13 +28,13 @@ Disclaimer: Feel free to use and modify this code, on the proviso that you post 
 /////////// /////////
 
 //STARTUP HINT (TPWCAS & BDETECT). 0 = NO HINT, 1 = HINT. 
-tpwcas_hint = 1; 
+tpwcas_hint = 0; 
 
 //DELAY BEFORE SUPPRESSION FUNCTIONS START. ALLOWS TIME FOR OTHER MODS TO INITIALISE ETC. 
 tpwcas_sleep = 1; 
 
 //DEBUGGING. WILL DISPLAY COLOURED BALLS OVER ANY SUPPRESSED UNITS. SET TO 1 FOR DEBUGGING. 
-tpwcas_debug = 1; 
+tpwcas_debug = 0; 
 
 //TEXT BASED DEBUG RATE (Hz). 0 = NO TEXT DEBUGGING. 5 = 5 UPDATES PER SECOND. 
 tpwcas_textdebug = 10;
@@ -109,7 +109,7 @@ tpwcas_mags =
 tpwcas_skillsup = 1; 
 
 //PLAYER SUPPRESSION SHAKE. 0 = NO SUPPRESSION, 1 = SUPPRESSION.    
-tpwcas_playershake = 1; 
+tpwcas_playershake = 0; 
 
 //PLAYER SUPPRESSION VISUALS. 0 = NO SUPPRESSION, 1 = SUPPRESSION.     
 tpwcas_playervis = 1; 
