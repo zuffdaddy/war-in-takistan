@@ -30,7 +30,7 @@
 	wcplayerready = [];
 
 	// Lobby Parameters
-	setDate [2011, 7, 1, 12, 0];
+	setDate [2012, 7, 13, 6, 0];
 	wcdate = date;
 
 	if (wcwithrussian == 0) then {

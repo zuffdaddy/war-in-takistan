@@ -519,7 +519,7 @@
 
 
 	// INITIALIZE PLAYER SCORE ON SERVER
-	sleep 30;
+	sleep 1;
 
 	wcplayeraddscore = [player, -1];
 	["wcplayeraddscore", "server"] call WC_fnc_publicvariable;

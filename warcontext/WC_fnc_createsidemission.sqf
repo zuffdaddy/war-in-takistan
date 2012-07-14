@@ -1072,7 +1072,7 @@
 	diag_log format ["WARCONTEXT: MISSION:%1 TYPE:%2 DESCRIPTION: %3", _missionnumber, _missiontype, _missiontext];
 
 	
-	sleep 30;
+	sleep 1;
 
 	// for debug purpose 
 	wctarget = _vehicle;

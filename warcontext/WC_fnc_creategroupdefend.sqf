@@ -56,7 +56,7 @@
 		wcgarbage = [_vehicle] spawn WC_fnc_vehiclehandler;
 	} else {
 		_group = createGroup east;
-		_sizeofgroup = ceil(random 6);
+		_sizeofgroup = [6,12] call WC_fnc_randomMinMax;
 		{
 			if(_typeofgroup == (_x select 0)) then {
 				_unitsoftype = 	_unitsoftype + [(_x select 1)];

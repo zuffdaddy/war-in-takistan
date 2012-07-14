@@ -114,7 +114,7 @@
 							};
 						};
 					} else {
-						if(wcwithenemyvehicle == 0) then {
+						if(wcwithenemyvehicle == 1) then {
 							if(getdammage _factory < 0.9) then {
 								_enemy = nearestObjects[_factory,["Man", "LandVehicle"], 150];
 								if(west countside _enemy == 0) then {

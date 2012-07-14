@@ -120,7 +120,7 @@
 				if(random 1 > 0.5) then {
 					_handle = [position _location, _markerdest, (wcfactions call BIS_fnc_selectRandom), false] spawn WC_fnc_creategroupdefend;
 				} else {
-					if(wcwithenemyvehicle == 0) then {
+					if(wcwithenemyvehicle == 1) then {
 						_handle = [position _location, _markerdest, (wcvehicleslistE call BIS_fnc_selectRandom), true] spawn WC_fnc_creategroupdefend;
 					};
 				};

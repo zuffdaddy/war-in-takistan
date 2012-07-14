@@ -68,8 +68,8 @@
 		_thisblacklist = [];
 
 		if(wckindofserver != 3) then {
-			_numberofgroup = ceil (random (wclevelmaxincity));
-			_numberofvehicle = ceil (random(wclevelmaxincity/2));
+			_numberofgroup = [wclevelmaxincity*0.5, wclevelmaxincity*1.5] call WC_fnc_randomMinMax;
+			_numberofvehicle = [wclevelmaxincity*0.25, wclevelmaxincity*0.5] call WC_fnc_randomMinMax;
 		} else {
 			_numberofgroup = 20;
 			_numberofvehicle = 10;
@@ -173,22 +173,33 @@
 			};
 		};
 
-		_month = (date select 1);
-		_day = (date select 2);
-		_hour = floor(random 23);
-		_minute = floor(random 59);
+		//_month = (date select 1);
+		//_day = (date select 2);
+		//_hour = floor(random 23);
+		//_minute = floor(random 59);
 
-		if(_hour < (date select 3)) then { 
-			if(_day < 31) then {
-				_day = (date select 2) + 1;
-			} else {
-				_day = 1;
-				_month = _month + 1;
-			};
-		} else {
-			_day = (date select 2);
-		};
-		_time = [2011, _month, _day, _hour, _minute];
+		//if(_hour < (date select 3)) then { 
+		//	if(_day < 31) then {
+		//		_day = (date select 2) + 1;
+		//	} else {
+		//		_day = 1;
+		//		_month = _month + 1;
+		//	};
+		//} else {
+		//	_day = (date select 2);
+		//};
+		//_time = [2011, _month, _day, _hour, _minute];
+
+		_year = date select 0;
+		_month = date select 1;
+		_day = date select 2;
+		_hour = date select 3;
+		_minute = date select 4;
+
+		_hour = _hour + (random 24);
+		_minute = _minute + (random 60);
+
+		_time = [_year, _month, _day, _hour, _minute];
 
 		_rain = random 0.65;
 		if((_hour > 3) and (_hour <5)) then {

@@ -18,7 +18,7 @@
 
 	_missioncomplete = false;
 	_position = getpos _unit;
-	_sizeofgroup = ceil (random 10);
+	_sizeofgroup = [6,12] call WC_fnc_randomMinMax;
 
 	_group = creategroup east;
 	for "_i" from 1 to _sizeofgroup do {

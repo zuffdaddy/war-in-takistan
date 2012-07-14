@@ -376,7 +376,13 @@
 				if (vehicle _unit == _unit) then {
 					_applyDamage = (damage _unit) + (_damage / 10);
 				} else {
-					_applyDamage = (damage _unit) + (_damage / 30);
+					_applyDamage = (damage _unit) + (_damage / 50);
+					if (damage vehicle _unit >= 1) then {
+						_applyDamage = _applyDamage + 0.4;
+						if (_applyDamage < 1) then {
+							_unit action ["eject", vehicle _unit];
+						};
+					};
 				};
 				_unit setDamage _applyDamage;
 			}];
