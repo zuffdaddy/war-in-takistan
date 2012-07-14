@@ -106,6 +106,7 @@
 	WC_fnc_playerhint		= compile preprocessFile "warcontext\functions\WC_fnc_playerhint.sqf";
 	WC_fnc_playersmarkers		= compile preprocessFile "warcontext\functions\WC_fnc_playersmarkers.sqf";
 	WC_fnc_sortlocationbydistance	= compile preprocessFile "warcontext\functions\WC_fnc_sortlocationbydistance.sqf";
+	WC_fnc_randomMinMax		= compile preprocessFile "warcontext\functions\WC_fnc_randomMinMax.sqf";
 	WC_fnc_relocatelocation		= compile preprocessFile "warcontext\functions\WC_fnc_relocatelocation.sqf";
 	WC_fnc_relocateposition		= compile preprocessFile "warcontext\functions\WC_fnc_relocateposition.sqf";
 	WC_fnc_restorebuilding 		= compile preprocessFile "warcontext\functions\WC_fnc_restorebuilding.sqf";
@@ -229,8 +230,5 @@
 
 	// Init Server SIDE
 	wcgarbage = [] spawn WC_fnc_serverside;
-	
-	//TPW House Lights Script
-	wcgarbage = [] execVM "scripts\tpw_houselights108-mp-dedi.sqf";
 	
 	enableSaving [false, false];
