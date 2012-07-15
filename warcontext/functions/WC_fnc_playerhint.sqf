@@ -27,4 +27,6 @@
 	BIS_AdvHints_Text = call BIS_AdvHints_formatText;
 	BIS_AdvHints_Duration = _duration;
 	BIS_AdvHints_HideCode = "hintSilent '';";
+	wcAdvHintsHideNow = false;
+	BIS_AdvHints_HideCond = "wcAdvHintsHideNow";
 	call BIS_AdvHints_showHint;
