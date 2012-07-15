@@ -552,10 +552,12 @@ switch (_arg) do
 		ADD_MAG(300Rnd_25mm_GAU12);
 		ADD_MAG(2Rnd_GBU12);
 		ADD_MAG(2Rnd_Maverick_A10);
+		ADD_MAG(2Rnd_Sidewinder_F35);
 		ADD_WEP(CMFlareLauncher);
 		ADD_WEP(GAU12);
 		ADD_WEP(BombLauncherF35);
 		ADD_WEP(MaverickLauncher);
+		ADD_WEP(SidewinderLaucher_F35);
 		// ----- Exit and Execute ALSS Menu -----
 		if(true)exitWith
 		{
