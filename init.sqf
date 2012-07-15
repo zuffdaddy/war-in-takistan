@@ -50,10 +50,14 @@
 	[] spawn { presetDialogUpdate = compile preprocessFile "extern\bon_loadoutpresets\bon_func_presetdlgUpdate.sqf"; };
 
 	// init TPW House Lights Script
-	[] spawn { execVM "scripts\tpw_houselights108-mp-dedi.sqf"; };
+	if (wcHouseLights == 1) then {
+		[] spawn { execVM "scripts\tpw_houselights108-mp-dedi.sqf"; };
+	};
 
 	// init TPWC AI Suppression
-	[] spawn { execVM "tpwcas\tpwcas.sqf"; };
+	if (wcAISuppressionSystem == 1) then {
+		[] spawn { execVM "tpwcas\tpwcas.sqf"; };
+	};
 
 	// external scripts
 	EXT_fnc_atot 			= compile preprocessFile "extern\EXT_fnc_atot.sqf";

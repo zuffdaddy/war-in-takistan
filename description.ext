@@ -581,6 +581,22 @@ class CfgSounds
 
 class Params
 { 
+	class wcAISuppressionSystem
+	{
+		title = "TPWC AI SUPPRESSION SYSTEM";
+		values[] = {0, 1};
+		texts[] = {"Off", "On"};
+		default = 1;
+	};
+
+	class wcHouseLights
+	{
+		title = "TPW HOUSE LIGHTS";
+		values[] = {0, 1};
+		texts[] = {"Off", "On"};
+		default = 1;
+	};
+
 	class wcCustomPlayerHandleDamage
 	{
 		title = "USE CUSTOM PLAYER DAMAGE HANDLER";
