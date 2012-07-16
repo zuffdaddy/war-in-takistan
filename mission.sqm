@@ -42,7 +42,7 @@ class Mission
 		"camisc_e",
 		"caweapons_e",
 		"warfarebuildings",
-		"CAA10",
+		"CAAir2_F35B",
 		"CAWheeled2_TowingTractor",
 		"CAAir_E_UH60M",
 		"CAWheeled2_MTVR",
@@ -962,7 +962,7 @@ class Mission
 			azimut=-319.57901;
 			id=62;
 			side="EMPTY";
-			vehicle="A10";
+			vehicle="F35B";
 			leader=1;
 			skill=0.60000002;
 		};
