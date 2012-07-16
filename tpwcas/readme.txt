@@ -1,6 +1,6 @@
 TPWC AI Suppress (TPWCAS)
 By TPW && -Coulum- && fabrizio_T && Ollem
-v3.00 20120714
+v3.01 20120716
 
 Introduction:
 -------------
@@ -51,7 +51,7 @@ TPWCAS enables stance and skill modification under fire.
 * Bullets from small calibre pistols and SMG are ignored.
 * Units react differently according to the side of the shooter.
 * Friendly shooter: > 0 bullets --> kneel/crouch.
-* Enemy shooter: 1 - 15 bullets --> kneel/crouch, > 15 bullets -->drop/crawl. 
+* Enemy shooter: 1 - 10 bullets --> kneel/crouch, > 10 bullets -->drop/crawl. 
 * Units regain previous stance after 10 or so seconds without nearby bullets.
 * Friendly shooter: no skill reduction.
 * Enemy shooter: skills reduced according to number of bullets.
@@ -63,7 +63,7 @@ TPWCAS enables stance and skill modification under fire.
 
 Debugging:
 ----------
-TPWCAS enables text and graphic debugging, and both are enabled by default for this beta release. If switched on, graphic debugging will show a coloured ball over any units. This may also come in handy for training. Markers are also shown on map.
+TPWCAS enables text and graphic debugging, and both are enabled by default for this beta release. If switched on, graphic debugging will show a coloured ball over any units. This may also come in handy for training. Markers are also shown on map. You may also switch on dDetect logging, but be warned this may lead to a lot of disk activity and a large RPT file.
 
 * No ball - unsuppressed.
 * Green ball - suppressed by friendly fire.
@@ -91,7 +91,7 @@ Please note: The format of tpwc_ai_sup.hpp introduced with v3.00 is different th
 General settings:
 * Startup hint. 0 = no hint, 1 = hint. Default 1.
 * Delay (sec) before suppression functions start. Default 1.
-* Debugging. Will display coloured balls over any suppressed units. Set to 1 for debugging, 0 for no debugging. Default 1.
+* Debugging. 0 = no debugging, 1 = display coloured balls over any suppressed units, 2 = balls + bDetect logging. 
 * Text debug rate (Hz). 0 = no text debugging. 10 = text is refeshed 10 times per second (default). 100 = text is refreshed 100 times/sec - this will look very smooth but will use significant CPU if many units are on a map. 
 
 Bullet settings:
@@ -209,7 +209,7 @@ Changelog:
 * 2.07beta 20120710
 	- Added floating text based debugging.
 	- bDetect start hint now correctly not displayed if TPWCAS hint is not displayed.
-	- Courage is only decreased if theere are nearby friendly casualties.
+	- Courage is only decreased if there are nearby friendly casualties.
 	- bDetect 0.67.	
 	
 ===
@@ -219,3 +219,13 @@ Changelog:
 	- Significant code overhaul (!) and cleanup.
 	- Text debugging scales with distance.
 	- bDetect 0.72 (SP/MP/Dedi).
+
+* 3.01beta 20120716
+	- Fixed colour error with debugging map markers.
+	- MP and dedicated server debug ball colour handling improved.
+	- Units with stances set to crouch/prone by other AI mods will not be forced to "auto"" position when unsuppressed.
+	- Fixed already prone units crouching under suppression, when using ACE (thanks Robalo).
+	- Reveal shooter is disabled if using ASR_AI.
+	- Highly skilled units will suffer lower courage reduction under fire.
+	- bDetect logging off by default, may be toggled on. 
+	- bDetect 0.72

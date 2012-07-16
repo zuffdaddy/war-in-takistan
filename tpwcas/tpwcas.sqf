@@ -4,9 +4,9 @@ SP / MP / DEDI COMPATIBLE
 
 Authors: TPW && -Coulum- && fabrizio_T && Ollem
 
-Version: 3.00beta  
+Version: 3.01beta  
 
-Last modified: 20120714 
+Last modified: 20120716 
 
 Requires: 		CBA
 				bdetect072.sqf
@@ -33,7 +33,7 @@ tpwcas_hint = 0;
 //DELAY BEFORE SUPPRESSION FUNCTIONS START. ALLOWS TIME FOR OTHER MODS TO INITIALISE ETC. 
 tpwcas_sleep = 1; 
 
-//DEBUGGING. WILL DISPLAY COLOURED BALLS OVER ANY SUPPRESSED UNITS. SET TO 1 FOR DEBUGGING. 
+//DEBUGGING. 0 = NO DEBUGGING, 1 = DISPLAY COLOURED BALLS OVER ANY SUPPRESSED UNITS, 2 = BALLS + BDETECT LOGGING. 
 tpwcas_debug = 0; 
 
 //TEXT BASED DEBUG RATE (Hz). 0 = NO TEXT DEBUGGING. 5 = 5 UPDATES PER SECOND. 
@@ -121,8 +121,14 @@ tpwcas_minskill = 0.05;
 tpwcas_reveal = 1.25; 
 
 //UNITS CAN FLEE IF COURAGE AND MORALE TOO LOW. 0 = UNITS WILL NOT FLEE. 1 = UNITS WILL FLEE. SET TO 0 IF TOO MANY UNITS ARE FLEEING OR UNSUPPRESSABLE. 
-tpwcas_canflee = 1;
+tpwcas_canflee = 0;
 
+////////////////////
+// BDETECT VARIABLES
+////////////////////
+
+//BDETECT DEBUG LOGGING (CAN RESULT IN A LOT OF DISK WRITING!). FALSE = NO LOGGING, TRUE = LOGGING  
+bdetect_debug_enable = false;
 
 //////////   
 //SET UP    
@@ -136,13 +142,24 @@ if (tpwcas_hint == 1) then
 	{    
 	0 = [] spawn 
 		{   
-		hintsilent "TPWCAS 3.00b Active";    
+		hintsilent "TPWCAS 3.01b Active";    
 		sleep 3;    
 		hintsilent "";
 		};    
 	}; 
 
-
+//CHECK IF ASR_AI 1.15.1 OR GREATER IS RUNNING       
+if (isclass (configfile >> "cfgPatches">>"asr_ai_sys_aiskill")) then    
+	{   
+	_asr_ai_va = getArray (configfile>>"cfgPatches">>"asr_ai_main">>"versionAr");  
+	if (_asr_ai_va select 0 >= 1 && _asr_ai_va select 1 >= 15 && _asr_ai_va select 2 >= 1) then   
+		{  
+		//DISABLE REVEAL
+		tpwcas_reveal = 0; 
+		};      
+	};		
+	
+	
 //////////////////////////
 //COMPILE TPWCAS FUNCTIONS
 //////////////////////////
@@ -160,14 +177,18 @@ call compile preprocessFileLineNumbers "tpwcas\tpwcas_visuals.sqf"; //player sup
 //CALL BDETECT
 ////////////// 
 
-call compile preprocessFileLineNumbers "tpwcas\bdetect072.sqf"; //bullet detection
+call compile preprocessFileLineNumbers "tpwcas\bdetect072.sqf"; //bullet detection framework
 bdetect_bullet_skip_mags = tpwcas_mags; 
 bdetect_bullet_min_distance =  tpwcas_ir;
 bdetect_bullet_max_distance = tpwcas_maxdist;
-bdetect_debug_enable = true;
 bdetect_bullet_max_lifespan = tpwcas_bulletlife;
 bdetect_debug_levels = [0,1,3,5,6,7,8,9,10];
 tpwcas_multi_player = false;
+
+if (tpwcas_debug > 1) then 
+	{
+	bdetect_debug_enable = true;
+	};
 
 if ( isDedicated ) then 
 	{
@@ -219,7 +240,7 @@ if ( isDedicated ) then
 	};
 
 // Trigger debug color changes on client
-if ( tpwcas_multi_player ) then 
+if ( tpwcas_multi_player && !(IsDedicated)) then 
 	{
 	suppressDebug_compiled = call compile format["%1", tpwcas_fnc_client_debug];
 	["suppressDebug", {[(_this select 0), (_this select 1) , (_this select 2)] call suppressDebug_compiled; }] call CBA_fnc_addEventHandler;

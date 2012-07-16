@@ -7,7 +7,7 @@ FLOATING TEXT BASED DEBUG
 
 tpwcas_fnc_textdebug =
 	{
-	private ["_unit","_rate","_display","_control","_pos2d","_sup","_disp","_text","_tsize"];
+	private ["_unit","_rate","_display","_control","_pos2d","_sup","_disp","_text","_tsize","_tcolour"];
 	_unit = _this select 0;
 	_rate = _this select 1;
 	disableserialization;
@@ -24,6 +24,7 @@ tpwcas_fnc_textdebug =
 			{
 			_sup = _unit getvariable "tpwcas_supstate";
 			_disp = _unit getvariable "tpwcas_enemybulletcount";
+			//_disp = (round ((_unit skill "courage") * 100))/100;
 			_tsize = 0.5 - ((player distance _unit) / 500) max 0.2;
 			_tcolour = "#ffffffff";
 			switch ( true ) do

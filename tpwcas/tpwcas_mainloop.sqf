@@ -21,6 +21,7 @@ tpwcas_fnc_main_loop =
 			{
 			if (local _x && (vehicle _x == _x) && (lifestate _x == "ALIVE") && (side _x != civilian)) then {
 			_unit  = _x;  
+			_stance = _unit getvariable ["tpwcas_stance", -1];
 			_stanceregain = _unit getvariable ["tpwcas_stanceregain", -1];
 			_skillregain = _unit getvariable ["tpwcas_skillregain", -1]; 
 			if (tpwcas_canflee == 0) then 
@@ -49,16 +50,22 @@ tpwcas_fnc_main_loop =
 				_unit setvariable ["tpwcas_general", _unit skill "general"];     
 				_unit setvariable ["tpwcas_stanceregain", time];      
 				_unit setvariable ["tpwcas_skillregain", time]; 
+				_unit setvariable ["tpwcas_stance", "auto"];
 				};    
 			 
 			//IF UNIT STANCE IS UNSUPPRESSED   
 			if ( time >= _stanceregain) then        
 				{ 
-				_unit setunitpos "auto";                     
+				                    
 				_unit setvariable ["tpwcas_supstate",0];  
 				_unit setvariable ["tpwcas_bulletcount",0];     
 				_unit setvariable ["tpwcas_enemybulletcount",0]; 
 				_unit setvariable ["tpwcas_stanceregain", time + 10]; 
+				if (_stance in ["middle","down"]) then 
+					{
+					_unit setunitpos "auto"; 
+					_unit setvariable ["tpwcas_stance", "auto"];
+					};
 				};   
 					 
 			//IF UNIT SKILLS ARE UNSUPPRESSED   
@@ -73,18 +80,20 @@ tpwcas_fnc_main_loop =
 				case 1: //IF ANY BULLETS NEAR UNIT  
 					{  
 					//CROUCH IF NOT PRONE 
-					if ((_unit call CBA_fnc_getunitanim) select 0 != "prone") then  
+					if ((_unit call CBA_fnc_getunitanim) select 0 != "prone" && animationState _unit != "ACE_AmovPpneMstpSrasWrflDnon_Supported") then  
 						{ 
-						_unit setunitpos "middle";     
+						_unit setunitpos "middle"; 
+						_unit setvariable ["tpwcas_stance", "middle"];		
 						}; 
 					};  
 				  
 				case 2: //IF ENEMY BULLETS NEAR UNIT  
 					{ 
 					//CROUCH IF NOT PRONE 
-					if ((_unit call CBA_fnc_getunitanim) select 0 != "prone") then  
+					if ((_unit call CBA_fnc_getunitanim) select 0 != "prone" && animationState _unit != "ACE_AmovPpneMstpSrasWrflDnon_Supported") then  
 						{ 
-						_unit setunitpos "middle";     
+						_unit setunitpos "middle"; 
+						_unit setvariable ["tpwcas_stance", "middle"];						
 						}; 
 					//SKILL MODIFICATION 
 					if (tpwcas_skillsup == 1) then 
@@ -101,7 +110,8 @@ tpwcas_fnc_main_loop =
 				case 3: //IF UNIT IS SUPPRESSED BY MULTIPLE ENEMY BULLETS   
 					{ 
 					//GO PRONE 
-					_unit setunitpos "down";     
+					_unit setunitpos "down"; 
+					_unit setvariable ["tpwcas_stance", "down"];					
 					_unit forcespeed -1;  
 					//SKILL MODIFICATION 
 					if (tpwcas_skillsup == 1) then 

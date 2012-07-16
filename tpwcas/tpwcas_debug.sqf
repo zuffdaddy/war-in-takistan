@@ -9,7 +9,7 @@ Every 1 sec:
 
 tpwcas_fnc_debug = 
 	{
-	private ["_ball", "_marker", "_level", "_x", "_ball_level"];
+	private ["_ball", "_marker", "_level", "_x", "_ball_level","_color"];
 	
 	while { true } do
 		{
@@ -23,9 +23,10 @@ tpwcas_fnc_debug =
 					{
 						_nul = ["suppressDebug", [_x, _ball, 0]] call CBA_fnc_globalEvent;
 					};
-										
+					_colur = "ColorWhite";					
 					if( (side _x) getFriend WEST < 0.6 ) then 
-						{ _color = "ColorRed"; 
+						{
+						_color = "ColorRed"; 
 						} 
 					else 
 						{

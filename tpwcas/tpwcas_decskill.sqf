@@ -11,8 +11,8 @@ tpwcas_fnc_decskill =
 	
 	_unit = _this select 0;
 	
-	//ANY FRIENDLY CASUALTIES WITHIN 20m OF UNIT
-	_nearunits = nearestobjects [_unit,["Man"],20];
+	//ANY FRIENDLY CASUALTIES WITHIN 50m OF UNIT
+	_nearunits = nearestobjects [_unit,["Man"],50];
 	_cas = 0;
 		{
 		if ((side _x == side _unit) && (lifestate _x != "ALIVE")) then 
@@ -23,11 +23,11 @@ tpwcas_fnc_decskill =
 		
 	if (_cas == 0) then 
 		{
-		_dec = 0.025; //2.5% decrease
+		_dec = 0.02; //2% decrease
 		}
 		else
 		{
-		_dec = 0.05; //5% decrease
+		_dec = 0.05; //10% decrease
 		};
 		
 	_originalaccuracy = _unit getvariable "tpwcas_originalaccuracy";        
@@ -37,12 +37,8 @@ tpwcas_fnc_decskill =
 
 	_newaccuracy = (_originalaccuracy - (( _originalaccuracy * _dec) * _shots )) max tpwcas_minskill; 
 	_newshake = (_originalshake - ((_originalshake * _dec) * _shots )) max tpwcas_minskill;
-	_newcourage = _originalcourage;
-	if (cas != 0) then 
-		{
-		_newcourage = (_originalcourage - ((_originalcourage * (_dec / 2) ) * _shots )) max tpwcas_minskill;
-	    };	
+	_newcourage = (_originalcourage - ((_originalcourage * _dec * (1 - _originalcourage)) * _shots )) max tpwcas_minskill;
 	_unit setskill ["aimingaccuracy",_newaccuracy];         
 	_unit setskill ["aimingshake",_newshake];        
-	_unit setskill ["courage",_newcourage];  
+	_unit setskill ["courage",_newcourage]; 
 	};  
