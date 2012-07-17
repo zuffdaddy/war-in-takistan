@@ -58,9 +58,6 @@
 	if (wcAISuppressionSystem == 1) then {
 		[] spawn { execVM "tpwcas\tpwcas.sqf"; };
 	};
-	
-	//BTC Fast Rope Script
-	[] spawn { _fast_roping = [] execVM "scripts\=BTC=_fast_roping_init.sqf"; };
 
 	// external scripts
 	EXT_fnc_atot 			= compile preprocessFile "extern\EXT_fnc_atot.sqf";
