@@ -1,6 +1,7 @@
 TPWC AI Suppress (TPWCAS)
+Singleplayer, Multiplayer and Dedicated Server Compatible AI Suppression System
 By TPW && -Coulum- && fabrizio_T && Ollem
-v3.01 20120716
+v3.01 20120717
 
 Introduction:
 -------------
@@ -8,20 +9,16 @@ One of the things sorely missing from Arma2 is reaction to passing bullets. An A
 
 This addon aims to address this problem by making AI units react to passing projectiles. If a bullet snaps by within 10m of an AI unit, it will crouch/kneel (depending on movement), and if more than 10 bullets pass by a unit in 5 seconds, the unit will drop/crawl. After 10 seconds without bullets, the unit will return to its previous stance. 
 
-Additionally, suppressive fire can alter the aiming shake, accuracy and courage of the suppressed unit. The more fire directed near a unit, the lower its skills will become. After 5 or so seconds without bullets, the skills will gradually return to normal. Player units will optionally experience some visual effects if suppressed (camera shake, vision blur and darkening).
+Additionally, suppressive fire can alter the aiming shake, accuracy and courage of the suppressed unit. The more fire directed near a unit, the lower its skills will become. Nearby casualties will further decrease a unit's courage. After 5 or so seconds without bullets, the skills will gradually return to normal. Player units will optionally experience some visual effects if suppressed (camera shake, vision blur and darkening).
 
 Currently there is no "suppressed" eventhandler in the game engine, so TPWCAS aims to mimic one by constantly monitoring whether any active bullet/shell projectile objects have units within a 10m radius. This allows TPWCAS to work for any opfor, blufor or independent on the map, whether editor-placed or spawned.
 
 TPWCAS significantly changes gameplay, allowing for longer engagements and more thought required to survive them.
 
-###############
 IMPORTANT NOTE:
-###############
 TPWCAS is not an all-in-one AI behaviour modification mode. Its primary purpose at this time is to cause units to duck/drop and lose some shooting competence under suppressive fire. It's designed to play well with mods which DO alter AI behaviours under combat stress, and you are encouraged to use these if you require additional realism such as moving to cover.
 
-####################
 VERY IMPORTANT NOTE:
-####################
 TPWCAS started life as an SP only mod, but a large amount of effort has gone into modifying the bullet detection, suppression and visual debugging framework to work for MP and dedicated server. While every effort has gone into testing in SP, MP and dedi, we simply cannot vouch for perfect operation under all circumstances. 
 
 
@@ -56,7 +53,7 @@ TPWCAS enables stance and skill modification under fire.
 * Friendly shooter: no skill reduction.
 * Enemy shooter: skills reduced according to number of bullets.
 * Units gradually regain skills after 5 or so seconds without bullets.
-* Shooter is "revealed" to the suppressed unit.
+* Shooter may be "revealed" to the suppressed unit.
 * Units are more easily suppressed if there are nearby friendly casualties.
 * Player experiences visual effects if suppressed.
 
@@ -91,13 +88,13 @@ Please note: The format of tpwc_ai_sup.hpp introduced with v3.00 is different th
 General settings:
 * Startup hint. 0 = no hint, 1 = hint. Default 1.
 * Delay (sec) before suppression functions start. Default 1.
-* Debugging. 0 = no debugging, 1 = display coloured balls over any suppressed units, 2 = balls + bDetect logging. 
-* Text debug rate (Hz). 0 = no text debugging. 10 = text is refeshed 10 times per second (default). 100 = text is refreshed 100 times/sec - this will look very smooth but will use significant CPU if many units are on a map. 
+* Debugging. 0 = no debugging (default), 1 = display coloured balls over any suppressed units, 2 = balls + bDetect logging. 
+* Text debug rate (Hz). 0 = no text debugging (default). 10 = text is refeshed 10 times per second. 100 = text is refreshed 100 times/sec - this will look very smooth but will use significant CPU if many units are on a map. 
 
 Bullet settings:
 * Bullet ignore radius (m). Bullets from a shooter closer than this will not suppress. Default 25.
-* Maximum bullet distance (m). A bullet further than this from its shooter will not suppress. Set larger if you plan on doing a lot of sniping - but may impact performance. Default 800
-* Bullet lifetime (sec). bullets still alive this long after being shot are ignored. Default 1
+* Maximum bullet distance (m). A bullet further than this from its shooter will not suppress. Set larger if you plan on doing a lot of sniping - but may impact performance. Default 800.
+* Bullet lifetime (sec). bullets still alive this long after being shot are ignored. Default 1.
 * Shot threshold. More shots than this will cause unit to drop/crawl. Default 10.
 * Pistol and SMG ammo to ignore. Add custom ammo (eg suppressed) or change to taste.    
 
@@ -106,7 +103,7 @@ Suppression and skill settings:
 * Player suppression shake. 0 = no suppression, 1 = suppression. Default 1. 
 * Player suppression visuals. 0 = no suppression, 1 = suppression. Default 1. 
 * Minimum skill value, none of a units skills will drop below this under suppression. Default 0.05.
-* Reveal value when suppressed. 0 = reveal disabled. 0.1 = suppressed unit knows nothing about shooter. 4 = unit knows the shooter's side, postion, shoe size etc. Default 1.25.
+* Reveal value when suppressed. 0 = reveal disabled. 0.1 = suppressed unit knows essentially nothing about shooter. 4 = unit knows the shooter's side, position, shoe size etc. Default 1.25.
 * Allow fleeing. 0 = units will not flee. 1 = units can flee. Set to 0 if you see too many units standing around unable to be suppressed.
 
 
@@ -115,7 +112,7 @@ Caveats:
 * The system uses setunitpos to change unit stance. The stance changes are subordinate to those issued by a player to a squad. A squad given "stand" orders will not duck when bullets start flying. Nor will a fleeing unit.  Nor will a unit ordered into cover. Nor may units taken over by various FSMs.
 * TPWCAS is not bulletproof (pun intended), and may not operate perfectly under conditions of very heavy fire by multiple units or, if the framerate is too low.
 * TPWCAS ignores rounds fired from pistols and low calibre SMGs, and subsonic ammunition. You won't be able to suppress the enemy by waving your pistol around. 
-* TPWCAS implements changes to accuracy, courage etc under fire. The system should play nicely with ASR_AI, COSLX and other AI behaviour mods, but please report any clashes. 
+* TPWCAS implements changes to accuracy, courage etc under fire. The system should play nicely with ACE, ASR_AI, COSLX and other AI behaviour mods, but please report any clashes. 
 * As far as the authors can tell, TPWCAS causes minimal drops to framerate even on low spec machines, with 50 or so AI taking pot shots at each other. Your mileage may vary depending on computer specs and number of AI. We take no responsibility if your computer explodes. 
 * Debug balls are registered by the game engine as civilians (!), and may cause some unwarranted effects. Use text debugging if this occurs.
 * TPWCAS is in its infancy and probably won't work the way everyone wants it to. We welcome any feedback and suggestions.
@@ -125,7 +122,7 @@ Thanks:
 -------
 * Variable, Jedra and 2nd Ranger for initial ideas and suggestions.
 * Orcinus, Kremator and CameronMcDonald for valuable input, suggestions and encouragement.
-* Froggluv for performance testing.
+* Froggluv and Pellejones for performance testing.
 * Robalo for helping to make his incredible ASR_AI skills addon and TPWCAS work nicely together, and for additional code ideas and help. 
 * Falcon_565 for demonstrating the power of cba_fnc_addPerFrameHandler.
 * Foxhound for ongoing support of mod makers.
@@ -221,6 +218,7 @@ Changelog:
 	- bDetect 0.72 (SP/MP/Dedi).
 
 * 3.01beta 20120716
+	- Additional pistol and subsonic magazines added
 	- Fixed colour error with debugging map markers.
 	- MP and dedicated server debug ball colour handling improved.
 	- Units with stances set to crouch/prone by other AI mods will not be forced to "auto"" position when unsuppressed.
@@ -229,3 +227,7 @@ Changelog:
 	- Highly skilled units will suffer lower courage reduction under fire.
 	- bDetect logging off by default, may be toggled on. 
 	- bDetect 0.72
+
+
+* 3.01 20120717
+	- Fixed debugging locality issue

@@ -4,9 +4,9 @@ SP / MP / DEDI COMPATIBLE
 
 Authors: TPW && -Coulum- && fabrizio_T && Ollem
 
-Version: 3.01beta  
+Version: 3.01
 
-Last modified: 20120716 
+Last modified: 20120717 
 
 Requires: 		CBA
 				bdetect072.sqf
@@ -142,7 +142,7 @@ if (tpwcas_hint == 1) then
 	{    
 	0 = [] spawn 
 		{   
-		hintsilent "TPWCAS 3.01b Active";    
+		hintsilent "TPWCAS 3.01 Active";    
 		sleep 3;    
 		hintsilent "";
 		};    
