@@ -44,7 +44,7 @@ else
 				]];
 				
 				player setDir 270;
-				player setPos (getPos player);
+				//player setPos (getPos player);
 				
 				//player playMove "AinvPknlMstpSlayWrflDnon_medic";
 				//sleep 2;

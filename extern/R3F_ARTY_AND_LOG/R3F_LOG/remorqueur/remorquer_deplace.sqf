@@ -43,7 +43,7 @@ else
 			]];
 			
 			player setDir 270;
-			player setPos (getPos player);
+			//player setPos (getPos player);
 			
 			// Faire relacher l'objet au joueur (si il l'a dans "les mains")
 			R3F_LOG_joueur_deplace_objet = objNull;
