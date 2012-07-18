@@ -40,7 +40,14 @@
 
 	waitUntil {!isNull player};
 	waituntil {format ["%1", typeof player] != 'any'}; 
-	player setpos getmarkerpos "respawn_west";
+
+	if (wcUseCarrier == 1) then {
+		_temp_lhd_pos = getMarkerPos "respawn_west";
+		player setPosASL [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height + 0.5];
+		//player setDir _lhd_direction + _objDir;
+	} else {
+		player setpos getmarkerpos "respawn_west";
+	};
 
 	if (format ["%1", wcselectedzone] == "any") then {wcselectedzone = [0,0,0];};
 
@@ -205,9 +212,21 @@
 	// save inital loadout
 	[] call WC_fnc_saveloadout;
 
-	wcgarbage = [(getmarkerpos "crate1"), "base"] spawn WC_fnc_createammobox;
-	if(wcautoloadweapons == 1) then {
-		wcgarbage = [(getmarkerpos "autoloadcrate"), "addons"] spawn WC_fnc_createammobox;
+	if (wcUseCarrier == 1) then {
+		_temp_lhd_pos = getMarkerPos "crate1";
+		_temp_lhd_pos = [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height - 0.5];
+
+		wcgarbage = [_temp_lhd_pos, "base"] spawn WC_fnc_createammobox;
+		if(wcautoloadweapons == 1) then {
+			_temp_lhd_pos = getMarkerPos "autoloadcrate";
+			_temp_lhd_pos = [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height - 0.5];
+			wcgarbage = [_temp_lhd_pos, "addons"] spawn WC_fnc_createammobox;
+		};
+	} else {
+		wcgarbage = [(getmarkerpos "crate1"), "base"] spawn WC_fnc_createammobox;
+		if(wcautoloadweapons == 1) then {
+			wcgarbage = [(getmarkerpos "autoloadcrate"), "addons"] spawn WC_fnc_createammobox;
+		};
 	};
 
 	if(wcwithmarkers == 1) then {

@@ -30,13 +30,15 @@ class Mission
 		"CAAir",
 		"CAA10",
 		"CAAir_BAF",
-		"caair_e_ch_47f"
+		"caair_e_ch_47f",
+		"cacharacters2"
 	};
 	addOnsAuto[]=
 	{
 		"ca_modules_functions",
 		"bink_usmc",
 		"cacharacters_e",
+		"cacharacters2",
 		"camisc3",
 		"caweapons_e_ammoboxes",
 		"camisc_e",
@@ -53,12 +55,13 @@ class Mission
 		"CAWheeled",
 		"cawheeled2_m1114_armored",
 		"caair_e_ch_47f",
+		"CAAir",
 		"ibr_lingor"
 	};
 	randomSeed=13468083;
 	class Intel
 	{
-		briefingName="Shack War in Lingor";
+		briefingName="Shack War in Lingor TESTING";
 		startWeather=0.0099999905;
 		forecastWeather=0;
 		year=2008;
@@ -69,7 +72,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=8;
+		items=9;
 		class Item0
 		{
 			side="LOGIC";
@@ -759,10 +762,28 @@ class Mission
 				};
 			};
 		};
+		class Item8
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={7494.5718,3.1659453,8280.5039};
+					azimut=-91.448273;
+					id=99;
+					side="WEST";
+					vehicle="USMC_Soldier";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
-		items=52;
+		items=65;
 		class Item0
 		{
 			position[]={8312.0557,4.0640292,7498.5122};
@@ -1303,10 +1324,127 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 		};
+		class Item52
+		{
+			position[]={4297.8242,23.660297,1892.6373};
+			azimut=180;
+			id=100;
+			side="EMPTY";
+			vehicle="F35B";
+			skill=0.60000002;
+		};
+		class Item53
+		{
+			position[]={4322.7046,23.660297,1893.6523};
+			azimut=180;
+			id=101;
+			side="EMPTY";
+			vehicle="MH60S";
+			skill=0.60000002;
+		};
+		class Item54
+		{
+			position[]={4323.1431,23.660297,1874.2737};
+			azimut=180;
+			id=102;
+			side="EMPTY";
+			vehicle="MH6J_EP1";
+			skill=0.60000002;
+		};
+		class Item55
+		{
+			position[]={4323.144,23.660297,1859.4904};
+			azimut=180;
+			id=103;
+			side="EMPTY";
+			vehicle="AH6J_EP1";
+			skill=0.60000002;
+		};
+		class Item56
+		{
+			position[]={4319.6641,23.660297,1819.9131};
+			azimut=270;
+			id=104;
+			side="EMPTY";
+			vehicle="TowingTractor";
+			skill=0.60000002;
+		};
+		class Item57
+		{
+			position[]={4319.4961,23.660297,1823.8735};
+			azimut=270;
+			id=105;
+			side="EMPTY";
+			vehicle="TowingTractor";
+			skill=0.60000002;
+		};
+		class Item58
+		{
+			position[]={4313.9033,23.660297,1801.8308};
+			azimut=270;
+			id=106;
+			side="EMPTY";
+			vehicle="TowingTractor";
+			skill=0.60000002;
+		};
+		class Item59
+		{
+			position[]={4319.7134,23.660297,1816.8936};
+			azimut=270;
+			id=107;
+			side="EMPTY";
+			vehicle="TowingTractor";
+			skill=0.60000002;
+		};
+		class Item60
+		{
+			position[]={4313.8516,23.660297,1812.916};
+			azimut=270;
+			id=108;
+			side="EMPTY";
+			vehicle="TowingTractor";
+			skill=0.60000002;
+		};
+		class Item61
+		{
+			position[]={4308.4023,23.660297,1789.6342};
+			azimut=270;
+			id=109;
+			side="EMPTY";
+			vehicle="TowingTractor";
+			skill=0.60000002;
+		};
+		class Item62
+		{
+			position[]={4308.3418,23.660297,1731.5568};
+			azimut=270;
+			id=110;
+			side="EMPTY";
+			vehicle="TowingTractor";
+			skill=0.60000002;
+		};
+		class Item63
+		{
+			position[]={4312.6265,23.660297,1729.127};
+			azimut=270;
+			id=111;
+			side="EMPTY";
+			vehicle="TowingTractor";
+			skill=0.60000002;
+		};
+		class Item64
+		{
+			position[]={4324.9243,23.660297,1821.6418};
+			azimut=180;
+			id=112;
+			side="EMPTY";
+			vehicle="PowGen_Big";
+			skill=0.60000002;
+		};
 	};
 	class Markers
 	{
-		items=24;
+		items=34;
 		class Item0
 		{
 			position[]={8315.582,4.0660186,7499.2852};
@@ -1375,7 +1513,7 @@ class Mission
 		};
 		class Item8
 		{
-			position[]={8309.5879,4.06287,7514.6528};
+			position[]={8309.5137,4.06287,7514.1885};
 			name="repair";
 			text="Repair";
 			type="b_maint";
@@ -1519,10 +1657,100 @@ class Mission
 			colorName="ColorBlue";
 			angle=-230.71581;
 		};
+		class Item24
+		{
+			position[]={6107.9355,0.6129415,8801.4014};
+			name="LHD_location";
+			text="LHD Location";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=130;
+			angle=206.29114;
+		};
+		class Item25
+		{
+			position[]={4309.9067,23.660297,1773.1129};
+			name="LHD_spawnGuide";
+			text="LHD Spawn Guide";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=130;
+		};
+		class Item26
+		{
+			position[]={4352.2593,23.660297,1772.8206};
+			name="LHD_spawnGuide_1";
+			text="LHD Spawn Guide";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=7;
+			b=43;
+		};
+		class Item27
+		{
+			position[]={4110.1436,22.280338,1777.9932};
+			name="circle 200 units";
+			text="circle 200 units";
+			markerType="ELLIPSE";
+			type="Empty";
+			a=130;
+			b=130;
+		};
+		class Item28
+		{
+			position[]={4349.8062,23.660297,1764.8677};
+			name="LHD_spawnGuide_1_1";
+			text="LHD Spawn Guide";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=9.5;
+			b=35;
+		};
+		class Item29
+		{
+			position[]={4321.874,23.660297,1830.1147};
+			name="LHD_respawn_west";
+			text="LHD_respawn_west";
+			type="Empty";
+		};
+		class Item30
+		{
+			position[]={4320.5132,23.660297,1826.9342};
+			name="LHD_crate1";
+			text="LHD_crate1";
+			type="Empty";
+		};
+		class Item31
+		{
+			position[]={4324.019,23.660297,1826.9598};
+			name="LHD_autoloadcrate";
+			text="LHD_autoloadcrate";
+			type="Empty";
+		};
+		class Item32
+		{
+			position[]={4323.3101,23.660297,1833.8483};
+			name="LHD_hospital";
+			text="LHD_hospital";
+			type="Empty";
+		};
+		class Item33
+		{
+			position[]={4324.9907,23.660297,1821.0284};
+			name="LHD_alss";
+			text="LHD_alss";
+			type="Empty";
+		};
 	};
 	class Sensors
 	{
-		items=6;
+		items=9;
 		class Item0
 		{
 			position[]={8309.5088,4.06287,7514.1704};
@@ -1615,6 +1843,45 @@ class Mission
 			age="UNKNOWN";
 			expCond=" (""AllVehicles"" countType thislist  > 0) ";
 			expActiv="_xhandle= [thislist] execVM ""warcontext\WC_fnc_servicing.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item6
+		{
+			position[]={4309.7974,23.660297,1773.0762};
+			a=20;
+			b=130;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="LHD_area_total";
+			class Effects
+			{
+			};
+		};
+		class Item7
+		{
+			position[]={4320.4702,23.660297,1764.9182};
+			a=9.5;
+			b=35;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="LHD_area_unusable";
+			class Effects
+			{
+			};
+		};
+		class Item8
+		{
+			position[]={4322.9902,23.660297,1772.9156};
+			a=7;
+			b=43;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="LHD_area_unusable_1";
 			class Effects
 			{
 			};

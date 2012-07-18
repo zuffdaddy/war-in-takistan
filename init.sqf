@@ -59,6 +59,105 @@
 		[] spawn { execVM "tpwcas\tpwcas.sqf"; };
 	};
 
+	// LHD
+	// do lhd stuff if wcUseCarrier
+
+	_lhd_marker_name = "LHD_location";
+	_lhd_position = getMarkerPos _lhd_marker_name;
+	_lhd_direction = markerDir _lhd_marker_name;
+	LHD_deck_height = 16;	// 17.5 for vehicle spawns
+
+if (isServer) then {
+
+	_lhd_parts =
+	[
+		"Land_LHD_house_1",
+		"Land_LHD_house_2",
+		"Land_LHD_elev_R",
+		"Land_LHD_1",
+		"Land_LHD_2",
+		"Land_LHD_3",
+		"Land_LHD_4",
+		"Land_LHD_5",
+		"Land_LHD_6"
+	];
+
+	{
+		_dummy = _x createvehicle _lhd_position;
+		_dummy setdir _lhd_direction;
+		_dummy setpos _lhd_position;
+	} forEach _lhd_parts;
+
+	// ---------------------------------------------------------------------------------
+	// ok here we go. try to grab a base layout from land and place it on the carrier
+	// ---------------------------------------------------------------------------------
+
+	// get positonal and direction info for our placeholder
+	_LHD_spawnGuide_pos = getMarkerPos "LHD_spawnGuide";
+	_LHD_spawnGuide_dir = markerDir "LHD_spawnGuide";
+
+	// get everything in a radius around our land carrier placeholder
+	_objs = nearestObjects [_LHD_spawnGuide_pos, ["All"], 250];
+
+	// get everything in our carrier placeholder rectangle
+	_validObjects = [];
+	{
+		_isInArea = [LHD_area_total, getPos _x] call BIS_fnc_inTrigger;
+		if (_isInArea) then {
+			_validObjects = _validObjects + [_x];
+		};
+	} foreach _objs;
+
+	// get a relPos pair for each object we want on the carrier
+	{
+		_obj = _x;
+		_objPos = getPos _x;
+		_objDir = getDir _x;
+
+		_zOffset = 0;
+		if (_obj isKindOf "Static") then {
+			_zOffset = 0.1;
+		} else {
+			_zOffset = 1.5;
+		};
+
+		_dist = [_LHD_spawnGuide_pos, _objPos] call BIS_fnc_distance2D;
+		_dir = [_LHD_spawnGuide_pos, _objPos] call BIS_fnc_dirTo;
+
+		_temp_lhd_pos = [_lhd_position, _dist, _dir + _lhd_direction] call BIS_fnc_relpos;
+		_obj setPosASL [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height + _zOffset];
+		_obj setDir _lhd_direction + _objDir;
+	} foreach _validObjects;
+
+	_markers = [
+		"respawn_west",
+		"crate1",
+		"autoloadcrate",
+		"hospital"//,
+		//"alss"
+	];
+
+	{
+		_mark = _x;
+		//_markPos = getMarkerPos _mark;
+		//_markDir = markerDir _mark;
+
+		_lhdMark = format ["LHD_%1", _mark];
+		_lhdMarkPos = getMarkerPos _lhdMark;
+		_lhdMarkDir = markerDir _lhdMark;
+
+		_dist = [_LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_distance2D;
+		_dir = [_LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_dirTo;
+
+		_temp_lhd_pos = [_lhd_position, _dist, _dir + _lhd_direction] call BIS_fnc_relpos;
+		_mark setMarkerPos [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height + 0.5];
+		_mark setMarkerDir _lhd_direction + _lhdMarkDir;
+
+	} foreach _markers;
+
+	flagusa setPosASL [getMarkerPos "respawn_west" select 0, getMarkerPos "respawn_west" select 1, LHD_deck_height];
+};
+
 	// external scripts
 	EXT_fnc_atot 			= compile preprocessFile "extern\EXT_fnc_atot.sqf";
 	EXT_fnc_createcomposition	= compile preprocessFile "extern\EXT_fnc_createcomposition.sqf";

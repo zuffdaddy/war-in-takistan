@@ -302,7 +302,13 @@ R3F_REV_fil_exec_attente_reanimation = [] spawn {
 
 		// Retour du corps au marqueur de réapparition
 		player setVelocity [0, 0, 0];
-		player setPos getmarkerpos "respawn_west";
+		if (wcUseCarrier == 1) then {
+			_temp_lhd_pos = getMarkerPos "respawn_west";
+			player setPosASL [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height + 0.5];
+			//player setDir _lhd_direction + _objDir;
+		} else {
+			player setpos getmarkerpos "respawn_west";
+		};
 
 		player setVehicleInit "this allowdammage true;";
 		processInitCommands;
