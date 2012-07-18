@@ -67,8 +67,11 @@ if (wcUseCarrier == 1) then {
 	_lhd_direction = markerDir _lhd_marker_name;
 	LHD_deck_height = 16;	// 17.5 for vehicle spawns
 
+	// get positonal and direction info for our placeholder
+	_LHD_spawnGuide_pos = getMarkerPos "LHD_spawnGuide";
+	_LHD_spawnGuide_dir = markerDir "LHD_spawnGuide";
+	
 if (isServer) then {
-
 	_lhd_parts =
 	[
 		"Land_LHD_house_1",
@@ -92,9 +95,6 @@ if (isServer) then {
 	// ok here we go. try to grab a base layout from land and place it on the carrier
 	// ---------------------------------------------------------------------------------
 
-	// get positonal and direction info for our placeholder
-	_LHD_spawnGuide_pos = getMarkerPos "LHD_spawnGuide";
-	_LHD_spawnGuide_dir = markerDir "LHD_spawnGuide";
 
 	// get everything in a radius around our land carrier placeholder
 	_objs = nearestObjects [_LHD_spawnGuide_pos, ["All"], 250];
@@ -128,6 +128,7 @@ if (isServer) then {
 		_obj setPosASL [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height + _zOffset];
 		_obj setDir _lhd_direction + _objDir;
 	} foreach _validObjects;
+};
 
 	_markers = [
 		"respawn_west",
@@ -155,8 +156,10 @@ if (isServer) then {
 
 	} foreach _markers;
 
+if (isServer) then {
 	flagusa setPosASL [getMarkerPos "respawn_west" select 0, getMarkerPos "respawn_west" select 1, LHD_deck_height];
 };
+
 };
 	// external scripts
 	EXT_fnc_atot 			= compile preprocessFile "extern\EXT_fnc_atot.sqf";
