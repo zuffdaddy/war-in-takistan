@@ -61,7 +61,7 @@
 
 	// LHD
 	// do lhd stuff if wcUseCarrier
-
+if (wcUseCarrier == 1) then {
 	_lhd_marker_name = "LHD_location";
 	_lhd_position = getMarkerPos _lhd_marker_name;
 	_lhd_direction = markerDir _lhd_marker_name;
@@ -157,7 +157,7 @@ if (isServer) then {
 
 	flagusa setPosASL [getMarkerPos "respawn_west" select 0, getMarkerPos "respawn_west" select 1, LHD_deck_height];
 };
-
+};
 	// external scripts
 	EXT_fnc_atot 			= compile preprocessFile "extern\EXT_fnc_atot.sqf";
 	EXT_fnc_createcomposition	= compile preprocessFile "extern\EXT_fnc_createcomposition.sqf";
