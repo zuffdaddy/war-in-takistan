@@ -61,6 +61,7 @@
 
 	// LHD
 	// do lhd stuff if wcUseCarrier
+	_removeBlueFor = getMarkerPos "LHD_bluefor";
 if (wcUseCarrier == 1) then {
 	_lhd_marker_name = "LHD_location";
 	_lhd_position = getMarkerPos _lhd_marker_name;
@@ -70,6 +71,9 @@ if (wcUseCarrier == 1) then {
 	// get positonal and direction info for our placeholder
 	_LHD_spawnGuide_pos = getMarkerPos "LHD_spawnGuide";
 	_LHD_spawnGuide_dir = markerDir "LHD_spawnGuide";
+
+	// get the old base position so we can delete whatever is there later
+	_removeBlueFor = getMarkerPos "bluefor";
 	
 if (isServer) then {
 	_lhd_parts =
@@ -134,7 +138,9 @@ if (isServer) then {
 		"respawn_west",
 		"crate1",
 		"autoloadcrate",
-		"hospital"//,
+		"hospital",
+		"convoystart",
+		"bluefor"//,
 		//"alss"
 	];
 
@@ -156,10 +162,69 @@ if (isServer) then {
 
 	} foreach _markers;
 
+	// move mission board and officer to carrier
+if (isServer) then {
+	_lhdMarkPos = getMarkerPos "LHD_board";
+	_lhdMarkDir = markerDir "LHD_board";
+	
+	_dist = [_LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_distance2D;
+	_dir = [_LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_dirTo;
+	
+	_temp_lhd_pos = [_lhd_position, _dist, _dir + _lhd_direction] call BIS_fnc_relpos;
+	board setPosASL [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height + 0.1];
+	// move officer with waypoints to the board
+	anim setPosASL (getPosASL board);
+};
+	_officerWPS = waypoints anim;
+	{
+		_x setWPPos (getPosASL anim);
+	} foreach _officerWPS;
+	// end move mission board and officer
+
+	// move alss and it's repair service trigger
+	_alssMarkers = ["alss_text", "alss_circle"];
+	_alssVehicles = ["alss_service", "alss_pad"];
+
+	{
+		_mark = _x;
+		//_markPos = getMarkerPos _mark;
+		//_markDir = markerDir _mark;
+
+		//_lhdMark = format ["LHD_%1", _mark];
+		_lhdMark = "LHD_alss";
+		_lhdMarkPos = getMarkerPos _lhdMark;
+		_lhdMarkDir = markerDir _lhdMark;
+
+		_dist = [_LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_distance2D;
+		_dir = [_LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_dirTo;
+
+		_temp_lhd_pos = [_lhd_position, _dist, _dir + _lhd_direction] call BIS_fnc_relpos;
+		_mark setMarkerPos [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height + 0.5];
+		_mark setMarkerDir _lhd_direction + _lhdMarkDir;
+
+	} foreach _alssMarkers;
+
+	_alssPos = getMarkerPos "alss_circle";
+	_alssPos = [_alssPos select 0, _alssPos select 1, LHD_deck_height + 1];
+	alss_service setPosASL _alssPos;
+	alss_pad setPosASL _alssPos;
+
 if (isServer) then {
 	flagusa setPosASL [getMarkerPos "respawn_west" select 0, getMarkerPos "respawn_west" select 1, LHD_deck_height];
+
+	_objs = nearestObjects [_removeBlueFor, ["All"], 200];
+	{
+		deleteVehicle _x;
+	} foreach _objs;
 };
 
+} else {
+	if (isServer) then {
+		_objs = nearestObjects [_removeBlueFor, ["All"], 200];
+		{
+			deleteVehicle _x;
+		} foreach _objs;
+	};
 };
 	// external scripts
 	EXT_fnc_atot 			= compile preprocessFile "extern\EXT_fnc_atot.sqf";

@@ -21,9 +21,9 @@
 
 	{
 		if((_x iskindof "Landvehicle") or (_x iskindof "Air")) then {
-			if((getposatl _x) select 2 < 2.5) then {
+			//if((getposatl _x) select 2 < 2.5) then {
 				_object = _x;
-			};
+			//};
 		};
 	}foreach _list;
 
@@ -31,9 +31,9 @@
 
 	if (!alive _object) exitWith {};
 	_type = typeof _object;
-	_object setVehicleInit "this setfuel 0;this vehicleChat ""Servicing... Please stand by..."";";
+	_object setVehicleInit "this vehicleChat ""Servicing... Please stand by..."";";
 	processInitCommands;
-	sleep ceil(random(5));
+	//sleep ceil(random(5));
 
 	_type = typeOf _object;
 	_magazines = getArray(configFile >> "CfgVehicles" >> _type >> "magazines");
@@ -41,7 +41,7 @@
 	if (!alive _object) exitWith {};
 	_object setVehicleInit "this vehicleChat ""Reloading weapons ..."";";
 	processInitCommands;
-	sleep ceil(random(5));
+	//sleep ceil(random(5));
 
 	if (count _magazines > 0) then {
 		_text = "";
@@ -84,14 +84,14 @@
 
 
 	if (!alive _object) exitWith {};
-	sleep ceil(random(5));
+	//sleep ceil(random(5));
 	if (!alive _object) exitWith {};
 	_object setVehicleInit "this vehicleChat ""Repairing...""; this setDamage 0;";
 	processInitCommands;
-	sleep ceil(random(5));
+	//sleep ceil(random(5));
 	_object setVehicleInit "this vehicleChat ""Refueling..."";";
 	processInitCommands;
-	sleep ceil(random(5));
+	//sleep ceil(random(5));
 	_object setVehicleInit "this vehicleChat ""Vehicle is ready"";this setfuel 1;";
 	processInitCommands;
 	

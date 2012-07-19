@@ -1033,7 +1033,11 @@
 
 		case 73: {
 			_missiontext = [_missionname,"Bring","an ammo truck"];
-			_vehicle = createVehicle ["MtvrReammo_DES_EP1", getmarkerpos "convoystart", [], 0, "NONE"];
+			_pos = getmarkerpos "convoystart";
+if (wcUseCarrier == 1) then {
+	_pos = [_pos select 0, _pos select 1, LHD_deck_height+1.5];
+};
+			_vehicle = createVehicle ["MtvrReammo_DES_EP1", _pos, [], 0, "NONE"];
 			_varname = "ammotruck";
 			_vehicle setvehicleinit format["this setvehiclevarname %1;", _varname];
 			processinitcommands;

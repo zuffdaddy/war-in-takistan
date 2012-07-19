@@ -25,7 +25,11 @@
 	if(format["%1", _vehicle] == "any") exitWith{};
 	_delay = _this select 1;
 
-	_startpos = getposatl _vehicle;
+if (wcUseCarrier == 1) then {
+	_startpos = getposasl _vehicle;	// at sea level
+} else {
+	_startpos = getposatl _vehicle;	// at terrain level
+};
 	_startdir = getdir _vehicle;
 	_type = typeof _vehicle;
 	_vehiclename = vehicleVarName _vehicle;
@@ -85,7 +89,11 @@
 				deletevehicle _vehicle;
 				sleep 0.5;
 				_vehicle = _type createvehicle _startpos;
-				_vehicle setposatl _startpos;
+if (wcUseCarrier == 1) then {
+				_vehicle setposasl _startpos;	// at sea level
+} else {
+				_vehicle setposatl _startpos;	// at terrain level
+};
 				_vehicle setdir _startdir;
 				_vehicle setvehiclevarname _vehiclename;
 				_vehicle setvehicleinit format["this setvehiclevarname '%1';", _vehiclename];

@@ -2,8 +2,8 @@
 #define QUOTE(qtext) #qtext
 
 // Actions
-#define ACTN_YL(varname,tgt,title,path,pass,lvl) varname = tgt addaction ["<t color='#ffff00'>"+title+"</t>","f2f_modules\f2f_alss\"+path,pass,lvl,false,false,"","vehicle player == _target && speed vehicle player < 0.1 && speed vehicle player > -0.1 && getPosATL vehicle player select 2 < 0.1 && getPosATL vehicle player select 2 > -0.1 && ((assignedVehicleRole player) select 0) == ""Driver"""];
-#define ACTN_RD(varname,tgt,title,path,pass,lvl) varname = tgt addaction ["<t color='#ff0000'>"+title+"</t>","f2f_modules\f2f_alss\"+path,pass,lvl,false,false,"","vehicle player == _target && speed vehicle player < 0.1 && speed vehicle player > -0.1 && getPosATL vehicle player select 2 < 0.1 && getPosATL vehicle player select 2 > -0.1 && ((assignedVehicleRole player) select 0) == ""Driver"""];
+#define ACTN_YL(varname,tgt,title,path,pass,lvl) varname = tgt addaction ["<t color='#ffff00'>"+title+"</t>","f2f_modules\f2f_alss\"+path,pass,lvl,false,false,"","vehicle player == _target && speed vehicle player < 0.1 && speed vehicle player > -0.1 && ((assignedVehicleRole player) select 0) == ""Driver"""];
+#define ACTN_RD(varname,tgt,title,path,pass,lvl) varname = tgt addaction ["<t color='#ff0000'>"+title+"</t>","f2f_modules\f2f_alss\"+path,pass,lvl,false,false,"","vehicle player == _target && speed vehicle player < 0.1 && speed vehicle player > -0.1 && ((assignedVehicleRole player) select 0) == ""Driver"""];
 
 // Reset Case & Clear Menus
 #define CLOSER(id) waitUntil {sleep 0.1; _vec distance _loader > _radi || typeOf vehicle player != _acClass || speed _vec >= 0.1 || speed _vec <= -0.1 || ((assignedVehicleRole player) select 0) != "Driver"}; hint ""; _vec removeAction id; _vec = nil; _acClass = nil; if (true) exitWith {null = [_loader, _radi] execVM "f2f_modules\f2f_alss\f2f_alss_init.sqf"};
