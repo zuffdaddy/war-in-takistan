@@ -10,7 +10,9 @@
 	// warcontext\WC_fnc_serverside : contains all the server side script call
 	// warcontext\WC_fnc_createsidemission : build the mission
 
+	private ["_objs"];
 	titleText [localize "STR_WC_MESSAGEINITIALIZING", "BLACK FADED"];
+
 
 	// initialize lobby parameters
 	for "_i" from 0 to (count paramsArray - 1) do {
@@ -61,22 +63,27 @@
 
 	// LHD
 	// do lhd stuff if wcUseCarrier
-	_removeBlueFor = getMarkerPos "LHD_bluefor";
+	diag_log "LHD Markers";
+	basePosLHD =+ getMarkerPos "LHD_bluefor";
+	diag_log str (basePosLHD);
+	basePosLand =+ getMarkerPos "hq";
+	diag_log str (basePosLand);
+
 if (wcUseCarrier == 1) then {
-	_lhd_marker_name = "LHD_location";
-	_lhd_position = getMarkerPos _lhd_marker_name;
-	_lhd_direction = markerDir _lhd_marker_name;
+	LHD_marker_name = "LHD_location";
+	LHD_position = getMarkerPos LHD_marker_name;
+	LHD_direction = markerDir LHD_marker_name;
 	LHD_deck_height = 16;	// 17.5 for vehicle spawns
 
 	// get positonal and direction info for our placeholder
-	_LHD_spawnGuide_pos = getMarkerPos "LHD_spawnGuide";
-	_LHD_spawnGuide_dir = markerDir "LHD_spawnGuide";
+	LHD_spawnGuide_pos = getMarkerPos "LHD_spawnGuide";
+	LHD_spawnGuide_dir = markerDir "LHD_spawnGuide";
 
 	// get the old base position so we can delete whatever is there later
-	_removeBlueFor = getMarkerPos "bluefor";
+	//basePosLand = getMarkerPos "bluefor";
 	
 if (isServer) then {
-	_lhd_parts =
+	LHD_parts =
 	[
 		"Land_LHD_house_1",
 		"Land_LHD_house_2",
@@ -90,10 +97,10 @@ if (isServer) then {
 	];
 
 	{
-		_dummy = _x createvehicle _lhd_position;
-		_dummy setdir _lhd_direction;
-		_dummy setpos _lhd_position;
-	} forEach _lhd_parts;
+		_dummy = _x createvehicle LHD_position;
+		_dummy setdir LHD_direction;
+		_dummy setpos LHD_position;
+	} forEach LHD_parts;
 
 	// ---------------------------------------------------------------------------------
 	// ok here we go. try to grab a base layout from land and place it on the carrier
@@ -101,7 +108,7 @@ if (isServer) then {
 
 
 	// get everything in a radius around our land carrier placeholder
-	_objs = nearestObjects [_LHD_spawnGuide_pos, ["All"], 250];
+	_objs = nearestObjects [LHD_spawnGuide_pos, ["All"], 250];
 
 	// get everything in our carrier placeholder rectangle
 	_validObjects = [];
@@ -111,6 +118,7 @@ if (isServer) then {
 			_validObjects = _validObjects + [_x];
 		};
 	} foreach _objs;
+	_objs = [];
 
 	// get a relPos pair for each object we want on the carrier
 	{
@@ -122,15 +130,15 @@ if (isServer) then {
 		if (_obj isKindOf "Static") then {
 			_zOffset = 0.1;
 		} else {
-			_zOffset = 1.5;
+			_zOffset = 0.5;
 		};
 
-		_dist = [_LHD_spawnGuide_pos, _objPos] call BIS_fnc_distance2D;
-		_dir = [_LHD_spawnGuide_pos, _objPos] call BIS_fnc_dirTo;
+		_dist = [LHD_spawnGuide_pos, _objPos] call BIS_fnc_distance2D;
+		_dir = [LHD_spawnGuide_pos, _objPos] call BIS_fnc_dirTo;
 
-		_temp_lhd_pos = [_lhd_position, _dist, _dir + _lhd_direction] call BIS_fnc_relpos;
+		_temp_lhd_pos = [LHD_position, _dist, _dir + LHD_direction] call BIS_fnc_relpos;
 		_obj setPosASL [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height + _zOffset];
-		_obj setDir _lhd_direction + _objDir;
+		_obj setDir LHD_direction + _objDir;
 	} foreach _validObjects;
 };
 
@@ -153,12 +161,12 @@ if (isServer) then {
 		_lhdMarkPos = getMarkerPos _lhdMark;
 		_lhdMarkDir = markerDir _lhdMark;
 
-		_dist = [_LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_distance2D;
-		_dir = [_LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_dirTo;
+		_dist = [LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_distance2D;
+		_dir = [LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_dirTo;
 
-		_temp_lhd_pos = [_lhd_position, _dist, _dir + _lhd_direction] call BIS_fnc_relpos;
+		_temp_lhd_pos = [LHD_position, _dist, _dir + LHD_direction] call BIS_fnc_relpos;
 		_mark setMarkerPos [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height + 0.5];
-		_mark setMarkerDir _lhd_direction + _lhdMarkDir;
+		_mark setMarkerDir LHD_direction + _lhdMarkDir;
 
 	} foreach _markers;
 
@@ -167,10 +175,10 @@ if (isServer) then {
 	_lhdMarkPos = getMarkerPos "LHD_board";
 	_lhdMarkDir = markerDir "LHD_board";
 	
-	_dist = [_LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_distance2D;
-	_dir = [_LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_dirTo;
+	_dist = [LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_distance2D;
+	_dir = [LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_dirTo;
 	
-	_temp_lhd_pos = [_lhd_position, _dist, _dir + _lhd_direction] call BIS_fnc_relpos;
+	_temp_lhd_pos = [LHD_position, _dist, _dir + LHD_direction] call BIS_fnc_relpos;
 	board setPosASL [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height + 0.1];
 	// move officer with waypoints to the board
 	anim setPosASL (getPosASL board);
@@ -195,12 +203,12 @@ if (isServer) then {
 		_lhdMarkPos = getMarkerPos _lhdMark;
 		_lhdMarkDir = markerDir _lhdMark;
 
-		_dist = [_LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_distance2D;
-		_dir = [_LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_dirTo;
+		_dist = [LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_distance2D;
+		_dir = [LHD_spawnGuide_pos, _lhdMarkPos] call BIS_fnc_dirTo;
 
-		_temp_lhd_pos = [_lhd_position, _dist, _dir + _lhd_direction] call BIS_fnc_relpos;
+		_temp_lhd_pos = [LHD_position, _dist, _dir + LHD_direction] call BIS_fnc_relpos;
 		_mark setMarkerPos [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height + 0.5];
-		_mark setMarkerDir _lhd_direction + _lhdMarkDir;
+		_mark setMarkerDir LHD_direction + _lhdMarkDir;
 
 	} foreach _alssMarkers;
 
@@ -211,21 +219,34 @@ if (isServer) then {
 
 if (isServer) then {
 	flagusa setPosASL [getMarkerPos "respawn_west" select 0, getMarkerPos "respawn_west" select 1, LHD_deck_height];
-
-	_objs = nearestObjects [_removeBlueFor, ["All"], 200];
-	{
-		deleteVehicle _x;
-	} foreach _objs;
 };
 
-} else {
+};
+	// remove the ghost base
 	if (isServer) then {
-		_objs = nearestObjects [_removeBlueFor, ["All"], 200];
-		{
-			deleteVehicle _x;
-		} foreach _objs;
+		removeBaseAtPos1 = [];
+		removeBaseAtPos2 = [];
+		if (wcUseCarrier == 1) then {
+			removeBaseAtPos1 = basePosLand;
+			diag_log str (removeBaseAtPos1);
+			objs1 = nearestObjects [removeBaseAtPos1, ["All"], 200];
+			{
+				diag_log format["objs1 delete: %1",_x];
+				deleteVehicle _x;
+			} foreach objs1;
+			diag_log str (objs1);
+		} else {
+			removeBaseAtPos2 = basePosLHD;
+			diag_log str (removeBaseAtPos2);
+			objs2 = nearestObjects [removeBaseAtPos2, ["All"], 200];
+			{
+				diag_log format["objs2 delete: %1",_x];
+				deleteVehicle _x;
+			} foreach objs2;
+			diag_log str (objs2);
+		};
 	};
-};
+
 	// external scripts
 	EXT_fnc_atot 			= compile preprocessFile "extern\EXT_fnc_atot.sqf";
 	EXT_fnc_createcomposition	= compile preprocessFile "extern\EXT_fnc_createcomposition.sqf";

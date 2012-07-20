@@ -214,12 +214,12 @@
 
 	if (wcUseCarrier == 1) then {
 		_temp_lhd_pos = getMarkerPos "crate1";
-		_temp_lhd_pos = [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height - 0.6];
+		_temp_lhd_pos = [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height - 0.1];
 
 		wcgarbage = [_temp_lhd_pos, "base"] spawn WC_fnc_createammobox;
 		if(wcautoloadweapons == 1) then {
 			_temp_lhd_pos = getMarkerPos "autoloadcrate";
-			_temp_lhd_pos = [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height - 0.6];
+			_temp_lhd_pos = [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height - 0.1];
 			wcgarbage = [_temp_lhd_pos, "addons"] spawn WC_fnc_createammobox;
 		};
 	} else {
@@ -492,7 +492,6 @@
 			sleep 5;
 		};
 	};
-
 
 	// if player die, end of game for one life mission
 	if(wcwithonelife == 1) then {

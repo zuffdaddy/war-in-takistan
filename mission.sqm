@@ -4,33 +4,40 @@ class Mission
 	addOns[]=
 	{
 		"ca_modules_functions",
-		"rangers",
-		"cacharacters2",
 		"cacharacters_e",
 		"camisc3",
 		"caweapons_e_ammoboxes",
 		"camisc_e",
+		"caweapons_pmc",
 		"caweapons_e",
 		"warfarebuildings",
-		"CAAir2_F35B",
+		"ibr_lingor",
+		"CACharacters_BAF",
 		"CAWheeled2_TowingTractor",
 		"CAAir_E_UH60M",
+		"CAWheeled_W_BAF",
+		"CATracked_W_BAF",
 		"CAWheeled2_MTVR",
+		"bink_usmc",
 		"CAWater",
 		"CAAir_E_AH6J",
-		"CAWheeled2_LAV25",
+		"CATracked_E_M2A2_Bradley",
 		"CATracked",
 		"CAWheeled",
+		"CAWheeled2_LAV25",
 		"cawheeled2_m1114_armored",
-		"caair_e_ch_47f",
+		"CAAir2_F35B",
 		"CAAir",
-		"ibr_lingor"
+		"CAA10",
+		"CAAir_BAF",
+		"caair_e_ch_47f",
+		"cacharacters2",
+		"CATracked2_AAV"
 	};
 	addOnsAuto[]=
 	{
 		"ca_modules_functions",
-		"rangers",
-		"cacharacters2",
+		"bink_usmc",
 		"cacharacters_e",
 		"camisc3",
 		"caweapons_e_ammoboxes",
@@ -49,6 +56,7 @@ class Mission
 		"cawheeled2_m1114_armored",
 		"caair_e_ch_47f",
 		"CAAir",
+		"CATracked2_AAV",
 		"ibr_lingor"
 	};
 	randomSeed=13468083;
@@ -115,7 +123,7 @@ class Mission
 					azimut=103.936;
 					id=10;
 					side="WEST";
-					vehicle="rb_teamleader";
+					vehicle="bink_usmc_tl";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
@@ -135,7 +143,7 @@ class Mission
 					azimut=-367.577;
 					id=11;
 					side="WEST";
-					vehicle="USMC_Soldier_Officer";
+					vehicle="bink_usmc_off";
 					leader=1;
 					rank="CAPTAIN";
 					skill=0.60000002;
@@ -265,12 +273,12 @@ class Mission
 					special="CARGO";
 					id=43;
 					side="WEST";
-					vehicle="rb_teamleader";
+					vehicle="bink_usmc_tl";
 					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
 					init="this setGroupid [""Alpha""];";
-					description="Team Leader";
+					description="Fireteam Leader";
 				};
 				class Item1
 				{
@@ -279,7 +287,7 @@ class Mission
 					special="CARGO";
 					id=45;
 					side="WEST";
-					vehicle="rb_engineer";
+					vehicle="bink_usmc_eng";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Alpha""];";
@@ -292,11 +300,11 @@ class Mission
 					special="CARGO";
 					id=47;
 					side="WEST";
-					vehicle="rb_ranger1";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Alpha""];";
-					description="Ranger (Scoped)";
+					description="Rifleman";
 				};
 				class Item3
 				{
@@ -305,11 +313,11 @@ class Mission
 					special="CARGO";
 					id=46;
 					side="WEST";
-					vehicle="rb_at";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Alpha""];";
-					description="Ranger (AT)";
+					description="Rifelman";
 				};
 				class Item4
 				{
@@ -318,11 +326,11 @@ class Mission
 					special="CARGO";
 					id=44;
 					side="WEST";
-					vehicle="rb_medic";
+					vehicle="bink_usmc_corpsman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Alpha""];";
-					description="Medic";
+					description="Corpsman";
 				};
 				class Item5
 				{
@@ -331,7 +339,7 @@ class Mission
 					special="CARGO";
 					id=57;
 					side="WEST";
-					vehicle="rb_medic";
+					vehicle="bink_usmc_corpsman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Juliet""];";
@@ -339,15 +347,14 @@ class Mission
 				class Item6
 				{
 					position[]={8316.7637,4.0666847,7494.52};
-					azimut=-453.33899;
+					azimut=-453.33853;
 					special="CARGO";
 					id=60;
 					side="WEST";
-					vehicle="rb_ar";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Juliet""];";
-					description="SAW Gunner";
 				};
 				class Item7
 				{
@@ -356,11 +363,10 @@ class Mission
 					special="CARGO";
 					id=56;
 					side="WEST";
-					vehicle="rb_at";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Juliet""];";
-					description="Ranger (AT)";
 				};
 				class Item8
 				{
@@ -369,7 +375,7 @@ class Mission
 					special="CARGO";
 					id=58;
 					side="WEST";
-					vehicle="rb_engineer";
+					vehicle="bink_usmc_eng";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Juliet""];";
@@ -378,15 +384,14 @@ class Mission
 				class Item9
 				{
 					position[]={8316.8779,4.0667491,7495.2261};
-					azimut=-447.259;
+					azimut=-447.25949;
 					special="CARGO";
 					id=59;
 					side="WEST";
-					vehicle="rb_ranger1";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Juliet""];";
-					description="Ranger (scoped)";
 				};
 				class Item10
 				{
@@ -395,7 +400,7 @@ class Mission
 					special="CARGO";
 					id=49;
 					side="WEST";
-					vehicle="rb_medic";
+					vehicle="bink_usmc_corpsman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Charly""];";
@@ -407,33 +412,31 @@ class Mission
 					special="CARGO";
 					id=48;
 					side="WEST";
-					vehicle="rb_ranger1";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Charly""];";
-					description="Ranger (scoped)";
 				};
 				class Item12
 				{
 					position[]={8319.2354,4.0680785,7496.3525};
-					azimut=-453.33899;
+					azimut=-453.33853;
 					special="CARGO";
 					id=52;
 					side="WEST";
-					vehicle="rb_ar";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Charly""];";
-					description="SAW Gunner";
 				};
 				class Item13
 				{
 					position[]={8318.7881,4.0678267,7496.8198};
-					azimut=-442.59399;
+					azimut=-442.59351;
 					special="CARGO";
 					id=50;
 					side="WEST";
-					vehicle="rb_engineer";
+					vehicle="bink_usmc_eng";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Charly""];";
@@ -442,15 +445,14 @@ class Mission
 				class Item14
 				{
 					position[]={8319.3945,4.0681686,7496.8848};
-					azimut=-447.259;
+					azimut=-447.25949;
 					special="CARGO";
 					id=51;
 					side="WEST";
-					vehicle="rb_at";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Charly""];";
-					description="Ranger (AT)";
 				};
 				class Item15
 				{
@@ -459,7 +461,7 @@ class Mission
 					special="CARGO";
 					id=39;
 					side="WEST";
-					vehicle="rb_medic";
+					vehicle="bink_usmc_corpsman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Bravo""];";
@@ -471,37 +473,34 @@ class Mission
 					special="CARGO";
 					id=38;
 					side="WEST";
-					vehicle="rb_at";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Bravo""];";
-					description="Ranger (AT)";
 				};
 				class Item17
 				{
 					position[]={8317.1279,4.0668902,7496.6973};
-					azimut=-453.33899;
+					azimut=-453.33853;
 					special="CARGO";
 					id=42;
 					side="WEST";
-					vehicle="rb_ranger1";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Bravo""];";
-					description="Ranger (scoped)";
 				};
 				class Item18
 				{
 					position[]={8317.2715,4.0669713,7497.2173};
-					azimut=-447.259;
+					azimut=-447.25949;
 					special="CARGO";
 					id=41;
 					side="WEST";
-					vehicle="rb_ar";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Bravo""];";
-					description="SAW Gunner";
 				};
 				class Item19
 				{
@@ -510,7 +509,7 @@ class Mission
 					special="CARGO";
 					id=40;
 					side="WEST";
-					vehicle="rb_engineer";
+					vehicle="bink_usmc_eng";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Bravo""];";
@@ -523,7 +522,7 @@ class Mission
 					special="CARGO";
 					id=24;
 					side="WEST";
-					vehicle="rb_medic";
+					vehicle="bink_usmc_corpsman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Echo""];";
@@ -535,24 +534,22 @@ class Mission
 					special="CARGO";
 					id=23;
 					side="WEST";
-					vehicle="rb_at";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Echo""];";
-					description="Ranger (AT)";
 				};
 				class Item22
 				{
 					position[]={8317.5234,4.0671134,7498.9194};
-					azimut=-453.33899;
+					azimut=-453.33853;
 					special="CARGO";
 					id=27;
 					side="WEST";
-					vehicle="rb_ar";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Echo""];";
-					description="SAW Gunner";
 				};
 				class Item23
 				{
@@ -561,7 +558,7 @@ class Mission
 					special="CARGO";
 					id=25;
 					side="WEST";
-					vehicle="rb_engineer";
+					vehicle="bink_usmc_eng";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Echo""];";
@@ -570,15 +567,14 @@ class Mission
 				class Item24
 				{
 					position[]={8317.6543,4.0671873,7499.4473};
-					azimut=-447.259;
+					azimut=-447.25949;
 					special="CARGO";
 					id=26;
 					side="WEST";
-					vehicle="rb_ranger1";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Echo""];";
-					description="Ranger (scoped)";
 				};
 				class Item25
 				{
@@ -587,7 +583,7 @@ class Mission
 					special="CARGO";
 					id=19;
 					side="WEST";
-					vehicle="rb_medic";
+					vehicle="bink_usmc_corpsman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Foxtrot""];";
@@ -599,33 +595,31 @@ class Mission
 					special="CARGO";
 					id=18;
 					side="WEST";
-					vehicle="rb_at";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Foxtrot""];";
-					description="Ranger (AT)";
 				};
 				class Item27
 				{
 					position[]={8319.4668,4.0682096,7498.8906};
-					azimut=-453.33899;
+					azimut=-453.33853;
 					special="CARGO";
 					id=22;
 					side="WEST";
-					vehicle="rb_ar";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Foxtrot""];";
-					description="SAW Gunner";
 				};
 				class Item28
 				{
 					position[]={8318.9961,4.0679436,7499.3599};
-					azimut=-442.59399;
+					azimut=-442.59351;
 					special="CARGO";
 					id=20;
 					side="WEST";
-					vehicle="rb_engineer";
+					vehicle="bink_usmc_eng";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Foxtrot""];";
@@ -634,15 +628,14 @@ class Mission
 				class Item29
 				{
 					position[]={8319.6016,4.0682855,7499.4155};
-					azimut=-447.259;
+					azimut=-447.25949;
 					special="CARGO";
 					id=21;
 					side="WEST";
-					vehicle="rb_ranger1";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Foxtrot""];";
-					description="Ranger (scoped)";
 				};
 				class Item30
 				{
@@ -651,7 +644,7 @@ class Mission
 					special="CARGO";
 					id=29;
 					side="WEST";
-					vehicle="rb_medic";
+					vehicle="bink_usmc_corpsman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Hotel""];";
@@ -663,11 +656,10 @@ class Mission
 					special="CARGO";
 					id=28;
 					side="WEST";
-					vehicle="rb_at";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Hotel""];";
-					description="Ranger (AT)";
 				};
 				class Item32
 				{
@@ -676,11 +668,11 @@ class Mission
 					special="CARGO";
 					id=32;
 					side="WEST";
-					vehicle="rb_marksman";
+					vehicle="bink_usmc_dmr";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Hotel""];";
-					description="Designated Marksman";
+					description="Sniper";
 				};
 				class Item33
 				{
@@ -689,7 +681,7 @@ class Mission
 					special="CARGO";
 					id=30;
 					side="WEST";
-					vehicle="rb_engineer";
+					vehicle="bink_usmc_eng";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Hotel""];";
@@ -698,28 +690,26 @@ class Mission
 				class Item34
 				{
 					position[]={8317.9424,4.0673494,7502.0713};
-					azimut=-447.259;
+					azimut=-447.25949;
 					special="CARGO";
 					id=31;
 					side="WEST";
-					vehicle="rb_ar";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Hotel""];";
-					description="SAW Gunner";
 				};
 				class Item35
 				{
 					position[]={8319.0908,4.0679975,7500.9253};
-					azimut=-441.59;
+					azimut=-441.59045;
 					special="CARGO";
 					id=34;
 					side="WEST";
-					vehicle="rb_medic";
+					vehicle="bink_usmc_corpsman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Golf""];";
-					description="Medic";
 				};
 				class Item36
 				{
@@ -728,11 +718,10 @@ class Mission
 					special="CARGO";
 					id=33;
 					side="WEST";
-					vehicle="rb_at";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Golf""];";
-					description="Ranger (AT)";
 				};
 				class Item37
 				{
@@ -741,20 +730,20 @@ class Mission
 					special="CARGO";
 					id=37;
 					side="WEST";
-					vehicle="rb_marksman";
+					vehicle="bink_usmc_dmr";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Golf""];";
-					description="Designated Marksman";
+					description="Sniper";
 				};
 				class Item38
 				{
 					position[]={8319.3359,4.0681357,7501.9927};
-					azimut=-442.59399;
+					azimut=-442.59351;
 					special="CARGO";
 					id=35;
 					side="WEST";
-					vehicle="rb_engineer";
+					vehicle="bink_usmc_eng";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Golf""];";
@@ -763,22 +752,21 @@ class Mission
 				class Item39
 				{
 					position[]={8319.9365,4.0684743,7502.0532};
-					azimut=-447.259;
+					azimut=-447.25949;
 					special="CARGO";
 					id=36;
 					side="WEST";
-					vehicle="rb_ranger1";
+					vehicle="bink_usmc_rifleman";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Golf""];";
-					description="Ranger (scoped)";
 				};
 			};
 		};
 	};
 	class Vehicles
 	{
-		items=62;
+		items=68;
 		class Item0
 		{
 			position[]={8312.0557,4.0640292,7498.5122};
@@ -1330,8 +1318,8 @@ class Mission
 		};
 		class Item53
 		{
-			position[]={4322.7046,23.660297,1893.6523};
-			azimut=180;
+			position[]={4322.3682,23.660297,1874.6008};
+			azimut=225;
 			id=100;
 			side="EMPTY";
 			vehicle="MH60S";
@@ -1339,8 +1327,8 @@ class Mission
 		};
 		class Item54
 		{
-			position[]={4323.1431,23.660297,1874.2737};
-			azimut=180;
+			position[]={4324.1519,23.660297,1856.792};
+			azimut=225;
 			id=101;
 			side="EMPTY";
 			vehicle="MH6J_EP1";
@@ -1348,8 +1336,8 @@ class Mission
 		};
 		class Item55
 		{
-			position[]={4323.144,23.660297,1859.4904};
-			azimut=180;
+			position[]={4324.2651,23.660297,1845.4822};
+			azimut=225;
 			id=102;
 			side="EMPTY";
 			vehicle="AH6J_EP1";
@@ -1375,7 +1363,7 @@ class Mission
 		};
 		class Item58
 		{
-			position[]={4308.4023,23.660297,1789.6342};
+			position[]={4317.9204,23.660297,1729.0891};
 			azimut=270;
 			id=105;
 			side="EMPTY";
@@ -1384,7 +1372,7 @@ class Mission
 		};
 		class Item59
 		{
-			position[]={4308.3418,23.660297,1731.5568};
+			position[]={4312.6265,23.660297,1729.127};
 			azimut=270;
 			id=106;
 			side="EMPTY";
@@ -1393,20 +1381,74 @@ class Mission
 		};
 		class Item60
 		{
-			position[]={4312.6265,23.660297,1729.127};
-			azimut=270;
+			position[]={4324.9243,23.660297,1821.6418};
+			azimut=180;
 			id=107;
 			side="EMPTY";
-			vehicle="TowingTractor";
+			vehicle="PowGen_Big";
 			skill=0.60000002;
 		};
 		class Item61
 		{
-			position[]={4324.9243,23.660297,1821.6418};
-			azimut=180;
+			position[]={4320.9839,23.660297,1893.7079};
+			azimut=225;
 			id=108;
 			side="EMPTY";
-			vehicle="PowGen_Big";
+			vehicle="CH_47F_EP1";
+			skill=0.60000002;
+		};
+		class Item62
+		{
+			position[]={4324.0967,23.660297,1701.77};
+			azimut=225;
+			id=109;
+			side="EMPTY";
+			vehicle="LAV25";
+			skill=0.60000002;
+		};
+		class Item63
+		{
+			position[]={4322.9497,23.660297,1694.4525};
+			azimut=225;
+			id=110;
+			side="EMPTY";
+			vehicle="AAV";
+			skill=0.60000002;
+		};
+		class Item64
+		{
+			position[]={4322.8511,23.660297,1685.8044};
+			azimut=225;
+			id=111;
+			side="EMPTY";
+			vehicle="M1A2_TUSK_MG";
+			skill=0.60000002;
+		};
+		class Item65
+		{
+			position[]={4323.7407,23.660297,1677.6819};
+			azimut=225;
+			id=112;
+			side="EMPTY";
+			vehicle="MtvrReammo";
+			skill=0.60000002;
+		};
+		class Item66
+		{
+			position[]={4323.5117,23.660297,1671.6846};
+			azimut=225;
+			id=113;
+			side="EMPTY";
+			vehicle="MtvrRefuel";
+			skill=0.60000002;
+		};
+		class Item67
+		{
+			position[]={4323.7725,23.660297,1665.9308};
+			azimut=225;
+			id=114;
+			side="EMPTY";
+			vehicle="MtvrRepair";
 			skill=0.60000002;
 		};
 	};
@@ -1629,7 +1671,7 @@ class Mission
 		};
 		class Item24
 		{
-			position[]={6107.9355,0.6129415,8801.4014};
+			position[]={5994.8462,0.53816372,8496.9619};
 			name="LHD_location";
 			text="LHD Location";
 			markerType="RECTANGLE";
@@ -1638,7 +1680,7 @@ class Mission
 			fillName="Border";
 			a=20;
 			b=130;
-			angle=206.291;
+			angle=275;
 			drawBorder=1;
 		};
 		class Item25
@@ -1758,15 +1800,15 @@ class Mission
 		class Item1
 		{
 			position[]={8294.5723,4.2156672,7565.1924};
-			a=5;
-			b=5;
+			a=50;
+			b=50;
 			angle=-203.151;
 			activationBy="ANY";
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
 			name="alss_service";
-			expCond=" (""AllVehicles"" countType thislist  > 0) ";
+			expCond=" ((""Air"" countType thislist > 0) or (""Land"" countType thislist > 0)) ";
 			expActiv="_xhandle= [thislist] execVM ""warcontext\WC_fnc_servicing.sqf"";";
 			class Effects
 			{
