@@ -143,10 +143,10 @@
 	wcplayermarkerdist = 2000;
 	
 	// Kind of engineer
-	wcengineerclass = ["AFR_Soldier_Engineer", "ACE_USMC_SoldierS_Engineer_D", "HEXA_Soldier_ISAf", "US_Soldier_Engineer_EP1", "BWMod_EngineerG", "BWMod_EngineerG_Desert", "BWMod_EngineerG_ISAF", "US_Soldier_Engineer_EP1_retex_ger_des", "US_Soldier_Engineer_EP1_retex_ger_wdl", "FR_Sykes", "US_Delta_Force_Night_EP1", "bink_usmc_eng"];
+	wcengineerclass = ["AFR_Soldier_Engineer", "ACE_USMC_SoldierS_Engineer_D", "HEXA_Soldier_ISAf", "US_Soldier_Engineer_EP1", "BWMod_EngineerG", "BWMod_EngineerG_Desert", "BWMod_EngineerG_ISAF", "US_Soldier_Engineer_EP1_retex_ger_des", "US_Soldier_Engineer_EP1_retex_ger_wdl", "FR_Sykes", "US_Delta_Force_Night_EP1", "rb_engineer"];
 
 	// Kind of medics
-	wcmedicclass = ["AFR_Soldier_Medic", "ACE_USMC_Soldier_Medic_D", "HEXA_Soldier_ISAF_Medic", "FR_OHara", "USMC_Soldier_Medic", "GER_Soldier_Medic_EP1", "US_Delta_Force_Medic_EP1", "US_Soldier_Medic_EP1", "BWMod_MedicG", "BWMod_MedicG_Desert", "BWMod_MedicG_ISAF", "US_Delta_Force_Medic_EP1_retex_ger_des", "US_Soldier_Medic_EP1_retex_ger_des", "US_Delta_Force_Medic_EP1_retex_ger_wdl", "US_Soldier_Medic_EP1_retex_ger_wdl", "GER_Soldier_Medic_EP1_des", "GER_Soldier_Medic_EP1_wdl", "RU_Soldier_Medic", "Dr_Hladik_EP1", "bink_usmc_corpsman"];
+	wcmedicclass = ["AFR_Soldier_Medic", "ACE_USMC_Soldier_Medic_D", "HEXA_Soldier_ISAF_Medic", "FR_OHara", "USMC_Soldier_Medic", "GER_Soldier_Medic_EP1", "US_Delta_Force_Medic_EP1", "US_Soldier_Medic_EP1", "BWMod_MedicG", "BWMod_MedicG_Desert", "BWMod_MedicG_ISAF", "US_Delta_Force_Medic_EP1_retex_ger_des", "US_Soldier_Medic_EP1_retex_ger_des", "US_Delta_Force_Medic_EP1_retex_ger_wdl", "US_Soldier_Medic_EP1_retex_ger_wdl", "GER_Soldier_Medic_EP1_des", "GER_Soldier_Medic_EP1_wdl", "RU_Soldier_Medic", "Dr_Hladik_EP1", "rb_medic"];
 
 	// Kind of civils
 	wccivilclass = ["TK_CIV_Takistani01_EP1","TK_CIV_Takistani02_EP1","TK_CIV_Takistani03_EP1","TK_CIV_Takistani04_EP1","TK_CIV_Takistani05_EP1","TK_CIV_Takistani06_EP1","TK_CIV_Worker01_EP1","TK_CIV_Worker02_EP1","TK_CIV_Woman01_EP1","TK_CIV_Woman02_EP1","TK_CIV_Woman03_EP1"];
@@ -529,24 +529,15 @@
 				["BIS_BAF","BAF_Soldier_Medic_W"],
 				["BIS_BAF","BAF_Soldier_FAC_W"],
 				["BIS_BAF","BAF_Soldier_EN_W"],
-				["USMC","bink_usmc_aa"],
-				["USMC","bink_usmc_hat"],
-				["USMC","bink_usmc_rifleman"],
-				["USMC","bink_usmc_light"],
-				["USMC","bink_usmc_ar"],
-				["USMC","bink_usmc_tl"],
-				["USMC","bink_usmc_mg"],
-				["USMC","bink_usmc_corpsman"],
-				["USMC","bink_usmc_sl"],
-				["USMC","bink_usmc_dmr"],
-				["USMC","bink_usmc_gl"],
-				["USMC","bink_usmc_scout"],
-				["USMC","bink_usmc_scout_l"],
-				["USMC","bink_usmc_at"],
-				["USMC","bink_usmc_rto"],
-				["USMC","bink_usmc_off"],
-				["USMC","bink_usmc_lat"],
-				["USMC","bink_usmc_crew"]
+				["US","rb_squadleader"],
+				["US","rb_engineer"],
+				["US","rb_teamleader"],
+				["US","rb_ranger1"]
+				["US","rb_at"],
+				["US","rb_medic"],
+				["US","rb_ar"],
+				["US","rb_marksman"]
+
 			]
 		];
 	};
