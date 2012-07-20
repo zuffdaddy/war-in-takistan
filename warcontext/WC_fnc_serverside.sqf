@@ -317,6 +317,88 @@
 			sleep 1;
 		};
 	};
+	
+	// CARRIER SERVICE - repair, rearm and refuel area on the carrier
+	[] spawn {
+		private ["_objs","_object"];
+		while { true } do {
+			_objs = nearestObjects [alss_service, ["Air","LandVehicle"], 50];
+			{
+				_object = _x;
+				if (((count (crew _object)) > 0) && (speed _object < 0.1)) then {
+	// ---from WC_fnc_servicing ---------------------------------------------------------------------------
+	if (!alive _object) exitWith {};
+	_type = typeof _object;
+	_object setVehicleInit "this vehicleChat ""Servicing... Please stand by..."";";
+	processInitCommands;
+	//sleep ceil(random(5));
+
+	_type = typeOf _object;
+	_magazines = getArray(configFile >> "CfgVehicles" >> _type >> "magazines");
+
+	if (!alive _object) exitWith {};
+	_object setVehicleInit "this vehicleChat ""Reloading weapons ..."";";
+	processInitCommands;
+	//sleep ceil(random(5));
+
+	if (count _magazines > 0) then {
+		_text = "";
+		_removed = [];
+		{
+			if (!(_x in _removed)) then {
+				_text = _text + format["this removeMagazines '%1';", _x];
+				_removed = _removed + [_x];
+			};
+		} forEach _magazines;
+		{
+			_text = _text + format["this addMagazine '%1';", _x];
+		} forEach _magazines;
+		_text = _text + "this setVehicleAmmo 1;";
+		_object setVehicleInit _text;
+		processInitCommands;
+	};
+
+	_count = count (configFile >> "CfgVehicles" >> _type >> "Turrets");
+	if (_count > 0) then {
+		_text = "";
+		for "_i" from 0 to (_count - 1) do {
+			_config = (configFile >> "CfgVehicles" >> _type >> "Turrets") select _i;
+			_magazines = getArray(_config >> "magazines");
+			_removed = [];
+			{
+				if (!(_x in _removed)) then {
+					_text = _text + (format["this removeMagazinesTurret ['%1',[%2]];", _x, _i]);
+					_removed = _removed + [_x];
+				};
+			} forEach _magazines;
+			{
+				_text = _text + (format["this addMagazineTurret ['%1',[%2]];", _x, _i]);
+			} forEach _magazines;
+
+		};
+		_object setVehicleInit _text;
+		processInitCommands;
+	};
+
+
+	if (!alive _object) exitWith {};
+	//sleep ceil(random(5));
+	if (!alive _object) exitWith {};
+	_object setVehicleInit "this vehicleChat ""Repairing...""; this setDamage 0;";
+	processInitCommands;
+	//sleep ceil(random(5));
+	_object setVehicleInit "this vehicleChat ""Refueling..."";";
+	processInitCommands;
+	//sleep ceil(random(5));
+	_object setVehicleInit "this vehicleChat ""Vehicle is ready"";this setfuel 1;";
+	processInitCommands;
+	// --- end from WC_fnc_servicing ---------------------------------------------------------------------------
+						sleep 4;
+					};
+			} foreach _objs;
+			sleep 1;
+		};
+	};
 
 	onPlayerConnected "[_id, _name] spawn WC_fnc_publishmission";
 	onPlayerDisconnected "wcplayerready = wcplayerready - [_name];";
