@@ -24,7 +24,11 @@
 
 	clearweaponcargo 	_crate;
 	clearmagazinecargo 	_crate;
-	_crate setpos _position;
+	if (wcUseCarrier == 1) then {
+		_crate setPosASL _position;
+	} else {
+		_crate setpos _position;
+	};
 	wcammoboxindex = wcammoboxindex  + 1;
 	wcgarbage = [format['wcammobox%1', wcammoboxindex], 0.5, _position, 'ColorYellow', 'ICON', 'FDIAGONAL', 'Select', 0, 'Ammobox', true] call WC_fnc_createmarkerlocal;
 

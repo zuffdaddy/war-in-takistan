@@ -86,6 +86,15 @@
 		wcgarbage = ["Ied training", getpos iedtraining] spawn BIS_fnc_3dcredits;
 	};
 
+	// create a light for the LHD
+	if(wcUseCarrier == 1) then {
+		LHD_mainLight = "#lightpoint" createVehiclelocal (position flagusa);//([LHD_position select 0, LHD_position select 1, LHD_deck_height * 3]); 
+		LHD_mainLight setLightBrightness 0.077; 
+		LHD_mainLight setLightAmbient[1.0, 1.0, 1.0]; 
+		LHD_mainLight setLightColor[1.0, 1.0, 1.0]; 
+		LHD_mainLight lightAttachObject [flagusa, [0,0,6]];
+	};
+
 	// create a light in takistan base
 	if!(isnull tower1) then {
 		_light = "#lightpoint" createVehiclelocal (position tower1); 
@@ -214,12 +223,12 @@
 
 	if (wcUseCarrier == 1) then {
 		_temp_lhd_pos = getMarkerPos "crate1";
-		_temp_lhd_pos = [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height - 0.1];
+		_temp_lhd_pos = [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height];
 
 		wcgarbage = [_temp_lhd_pos, "base"] spawn WC_fnc_createammobox;
 		if(wcautoloadweapons == 1) then {
 			_temp_lhd_pos = getMarkerPos "autoloadcrate";
-			_temp_lhd_pos = [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height - 0.1];
+			_temp_lhd_pos = [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height];
 			wcgarbage = [_temp_lhd_pos, "addons"] spawn WC_fnc_createammobox;
 		};
 	} else {

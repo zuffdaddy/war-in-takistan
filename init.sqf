@@ -70,9 +70,12 @@
 	diag_log str (basePosLand);
 
 if (wcUseCarrier == 1) then {
+	LHD_mainLight = nil;
 	LHD_marker_name = "LHD_location";
 	LHD_position = getMarkerPos LHD_marker_name;
+	//LHD_position = [0,0,0];
 	LHD_direction = markerDir LHD_marker_name;
+	//LHD_direction = 0;
 	LHD_deck_height = 16;	// 17.5 for vehicle spawns
 
 	// get positonal and direction info for our placeholder

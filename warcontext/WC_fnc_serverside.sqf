@@ -393,10 +393,10 @@
 	_object setVehicleInit "this vehicleChat ""Vehicle is ready"";this setfuel 1;";
 	processInitCommands;
 	// --- end from WC_fnc_servicing ---------------------------------------------------------------------------
-						sleep 4;
+						sleep 1;
 					};
 			} foreach _objs;
-			sleep 1;
+			sleep 15;
 		};
 	};
 

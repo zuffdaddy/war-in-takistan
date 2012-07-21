@@ -31,7 +31,8 @@ class Mission
 		"CAAir_BAF",
 		"caair_e_ch_47f",
 		"cacharacters2",
-		"CATracked2_AAV"
+		"CATracked2_AAV",
+		"castructures_e_misc_misc_interier"
 	};
 	addOnsAuto[]=
 	{
@@ -55,12 +56,13 @@ class Mission
 		"caair_e_ch_47f",
 		"CAAir",
 		"CATracked2_AAV",
+		"castructures_e_misc_misc_interier",
 		"ibr_lingor"
 	};
 	randomSeed=13468083;
 	class Intel
 	{
-		briefingName="Shack War in Lingor DF41";
+		briefingName="Shack War in Lingor";
 		startWeather=0.0099999905;
 		forecastWeather=0;
 		year=2008;
@@ -1316,7 +1318,7 @@ class Mission
 		};
 		class Item53
 		{
-			position[]={4322.3682,23.660297,1874.6008};
+			position[]={4318.4849,23.660297,1873.9838};
 			azimut=225;
 			id=100;
 			side="EMPTY";
@@ -1325,7 +1327,7 @@ class Mission
 		};
 		class Item54
 		{
-			position[]={4324.1519,23.660297,1856.792};
+			position[]={4321.0679,23.660297,1856.1749};
 			azimut=225;
 			id=101;
 			side="EMPTY";
@@ -1334,7 +1336,7 @@ class Mission
 		};
 		class Item55
 		{
-			position[]={4324.2651,23.660297,1845.4822};
+			position[]={4321.1812,23.660297,1844.8651};
 			azimut=225;
 			id=102;
 			side="EMPTY";
@@ -1379,74 +1381,78 @@ class Mission
 		};
 		class Item60
 		{
-			position[]={4324.9243,23.660297,1821.6418};
-			azimut=180;
-			id=107;
-			side="EMPTY";
-			vehicle="PowGen_Big";
-			skill=0.60000002;
-		};
-		class Item61
-		{
-			position[]={4320.9839,23.660297,1893.7079};
+			position[]={4317.8999,23.660297,1893.0908};
 			azimut=225;
-			id=108;
+			id=107;
 			side="EMPTY";
 			vehicle="CH_47F_EP1";
 			skill=0.60000002;
 		};
-		class Item62
+		class Item61
 		{
-			position[]={4324.0967,23.660297,1701.77};
+			position[]={4321.1621,23.660297,1702.2662};
 			azimut=225;
-			id=109;
+			id=108;
 			side="EMPTY";
 			vehicle="LAV25";
 			skill=0.60000002;
 		};
-		class Item63
+		class Item62
 		{
-			position[]={4322.9497,23.660297,1694.4525};
+			position[]={4320.1079,23.660297,1693.1836};
 			azimut=225;
-			id=110;
+			id=109;
 			side="EMPTY";
 			vehicle="AAV";
 			skill=0.60000002;
 		};
-		class Item64
+		class Item63
 		{
-			position[]={4322.8511,23.660297,1685.8044};
-			azimut=225;
-			id=111;
-			side="EMPTY";
-			vehicle="M1A2_TUSK_MG";
-			skill=0.60000002;
-		};
-		class Item65
-		{
-			position[]={4323.7407,23.660297,1677.6819};
-			azimut=225;
-			id=112;
+			position[]={4320.4497,23.660297,1826.7303};
+			azimut=270;
+			id=110;
 			side="EMPTY";
 			vehicle="MtvrReammo";
 			skill=0.60000002;
 		};
-		class Item66
+		class Item64
 		{
-			position[]={4323.5117,23.660297,1671.6846};
-			azimut=225;
-			id=113;
+			position[]={4320.4048,23.660297,1822.7706};
+			azimut=270;
+			id=111;
 			side="EMPTY";
 			vehicle="MtvrRefuel";
 			skill=0.60000002;
 		};
-		class Item67
+		class Item65
 		{
-			position[]={4323.7725,23.660297,1665.9308};
-			azimut=225;
-			id=114;
+			position[]={4320.3857,23.660297,1818.9333};
+			azimut=270;
+			id=112;
 			side="EMPTY";
 			vehicle="MtvrRepair";
+			skill=0.60000002;
+		};
+		class Item66
+		{
+			position[]={4312.8354,23.660297,1751.3723};
+			special="NONE";
+			id=113;
+			side="EMPTY";
+			vehicle="Misc_Backpackheap_EP1";
+			leader=1;
+			skill=0.60000002;
+			text="preset_1";
+			init="this allowDamage false; this addAction [""<t color='#FFFFFF'>Get Equipment Preset</t>"",""extern\bon_loadoutpresets\bon_loadout_presets.sqf""]; handle = this execVM ""scripts\bagHeap.sqf"";";
+		};
+		class Item67
+		{
+			position[]={4318.3257,23.660297,1763.8672};
+			special="NONE";
+			id=114;
+			side="EMPTY";
+			vehicle="Land_Blankets_EP1";
+			leader=1;
 			skill=0.60000002;
 		};
 	};
@@ -1716,28 +1722,28 @@ class Mission
 		};
 		class Item28
 		{
-			position[]={4321.874,23.660297,1830.1147};
+			position[]={4315.9863,23.660297,1758.6694};
 			name="LHD_respawn_west";
 			text="LHD_respawn_west";
 			type="Empty";
 		};
 		class Item29
 		{
-			position[]={4320.5132,23.660297,1826.9342};
+			position[]={4320.2275,23.660297,1750.448};
 			name="LHD_crate1";
 			text="LHD_crate1";
 			type="Empty";
 		};
 		class Item30
 		{
-			position[]={4324.019,23.660297,1826.9598};
+			position[]={4320.2539,23.660297,1753.7653};
 			name="LHD_autoloadcrate";
 			text="LHD_autoloadcrate";
 			type="Empty";
 		};
 		class Item31
 		{
-			position[]={4323.3101,23.660297,1833.8483};
+			position[]={4318.3237,23.660297,1763.866};
 			name="LHD_hospital";
 			text="LHD_hospital";
 			type="Empty";
@@ -1770,7 +1776,7 @@ class Mission
 		};
 		class Item35
 		{
-			position[]={4319.522,23.660297,1819.2358};
+			position[]={4315.8149,23.660297,1749.4586};
 			name="LHD_board";
 			text="LHD_board";
 			type="Empty";
@@ -1778,7 +1784,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=9;
+		items=11;
 		class Item0
 		{
 			position[]={8309.5088,4.06287,7514.1704};
@@ -1909,6 +1915,30 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="LHD_area_unusable_1";
+			class Effects
+			{
+			};
+		};
+		class Item9
+		{
+			position[]={4315.7134,23.660297,1757.0764};
+			a=4.5;
+			b=9;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			class Effects
+			{
+			};
+		};
+		class Item10
+		{
+			position[]={4331.2158,23.660297,1769.5526};
+			a=20;
+			b=3.5;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
 			class Effects
 			{
 			};
