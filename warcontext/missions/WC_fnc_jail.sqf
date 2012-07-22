@@ -77,7 +77,7 @@
 				_unit allowfleeing 0;
 				_unit playMoveNow "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon";
 			};
-			if((getmarkerpos "jail") distance _unit < 100) then {
+			if((getmarkerpos "respawn_west") distance _unit < 100) then {
 				wcmessageW = [localize "STR_WC_MESSAGEMISSIONCOMPLETED", localize "STR_WC_MESSAGELEAVEZONE"];
 				if!(isDedicated) then { wcmessageW spawn EXT_fnc_infotext; } else { ["wcmessageW", "client"] call WC_fnc_publicvariable;};
 				wcmissionsuccess = true;

@@ -112,7 +112,7 @@ tpwcas_skillsup = 1;
 tpwcas_playershake = 0; 
 
 //PLAYER SUPPRESSION VISUALS. 0 = NO SUPPRESSION, 1 = SUPPRESSION.     
-tpwcas_playervis = 1; 
+tpwcas_playervis = 0; 
 
 //MINIMUM SKILL VALUE, NONE OF A UNIT'S SKILLS WILL DROP BELOW THIS UNDER SUPPRESSION. 
 tpwcas_minskill = 0.05; 

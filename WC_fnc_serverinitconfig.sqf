@@ -57,15 +57,19 @@
 	wcsupportfaction = "BIS_TK";
 
 	// if arcade game we exclude some kind of mission (sabotage, steal, rob)  
-	if(wckindofgame == 1) then {
-		wcmissiondone = [32,33,34,35,36,37,38,53];
-	} else {
+	//if(wckindofgame == 1) then {
+	//	wcmissiondone = [32,33,34,35,36,37,38,53];
+	//} else {
 		wcmissiondone = [];
-	};
+	//};
 
-	if(tolower(worldname) != "takistan") then {
-		wcmissiondone = wcmissiondone + [56,58,59,60,61,62,71,63,72,65];
-	};
+	wcMissionDoneLast = [];
+	wcMissionPreviouslyAtNight = false;
+	wcAllowNightMission = false;
+
+	//if(tolower(worldname) != "takistan") then {
+	//	wcmissiondone = wcmissiondone + [56,58,59,60,61,62,71,63,72,65];
+	//};
 
 	// exclude mission that contains building not present on map
 	if(count(nearestObjects [getmarkerpos "respawn_west", ["Land_Mil_Barracks_i_EP1"], 20000]) == 0) then {

@@ -96,6 +96,14 @@
 			_thisblacklist = [1,2,6,8,9,10,11,14,16,17,18,19,20,23,28,30,31,35,39,40,41,42,47,50,54,64,66,67,69,70];
 		};
 
+		_thisblacklist = [[1,22] call WC_fnc_range, _thisblacklist] call BIS_fnc_arrayPushStack;
+		_thisblacklist = [[24,27] call WC_fnc_range, _thisblacklist] call BIS_fnc_arrayPushStack;
+		_thisblacklist = [_thisblacklist,29] call BIS_fnc_arrayPush;
+		_thisblacklist = [[47,48] call WC_fnc_range, _thisblacklist] call BIS_fnc_arrayPushStack;
+		_thisblacklist = [[50,51] call WC_fnc_range, _thisblacklist] call BIS_fnc_arrayPushStack;
+		_thisblacklist = [[61,62] call WC_fnc_range, _thisblacklist] call BIS_fnc_arrayPushStack;
+		_thisblacklist = [_thisblacklist,65] call BIS_fnc_arrayPush;
+
 		if(wclevel < (wclevelmax - 1)) then {
 			_missionnumber = floor(random _maxnumberofmission);
 			while { ((_missionnumber in wcmissiondone) or (_missionnumber in _thislist) or (_missionnumber in _thisblacklist)) } do {
@@ -196,8 +204,8 @@
 		_hour = date select 3;
 		_minute = date select 4;
 
-		_hour = _hour + (random 24);
-		_minute = _minute + (random 60);
+		_hour = _hour + floor(random 23);
+		_minute = _minute + floor(random 59);
 
 		_time = [_year, _month, _day, _hour, _minute];
 

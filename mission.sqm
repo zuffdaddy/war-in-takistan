@@ -248,7 +248,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="prisoner";
-					init="this setVariable [""asr_ai_sys_aiskill_exclude"", true]; this allowfleeing 0; removeAllWeapons this; this setUnitPos ""Up""; dostop this; this allowDamage false; this setcaptive true;";
+					init="this setVariable [""asr_ai_sys_aiskill_exclude"", true]; this allowfleeing 0; removeAllWeapons this; this setUnitPos ""Up""; dostop this; this allowDamage false; this setcaptive true; this disableAI ""MOVE""; this disableAI ""ANIM"";";
 				};
 			};
 		};

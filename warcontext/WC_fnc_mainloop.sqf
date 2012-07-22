@@ -124,6 +124,30 @@
 		if((_time select 3) < (date select 3)) then { wcday = wcday + 1; wcfame = wcfame - 0.15;};
 		if((_time select 3) == (date select 3)) then { if((_time select 4) < (date select 4)) then { wcday = wcday + 1; wcfame = wcfame - 0.15; };};
 
+		// night mission logic
+		if (count wcMissionDoneLast <= 0) then {
+			wcMissionDoneLast =+ wcmissiondone;
+			wcAllowNightMission = false;
+		};
+
+		_year = _time select 0;
+		_month = _time select 1;
+		_day = _time select 2;
+		_hour = _time select 3;
+		_minute = _time select 4;
+
+		// will this mission be a night mission?
+		if (((_hour < 6) or (_hour > 17)) and (!wcAllowNightMission)) then {
+			_hour = [6,17] call WC_fnc_randomMinMax;
+		};
+
+		if ((count wcmissiondone) - (count wcMissionDoneLast) >= 3) then {
+			wcMissionDoneLast =+ wcmissiondone;
+			wcAllowNightMission = true;
+		};
+
+		_time = [_year, _month, _day, _hour, _minute];
+
 		// Delete zones for next mission near this zone
 		wclastmissionposition = _position;
 
@@ -167,8 +191,11 @@
 		["wcselectedzone", "client"] call WC_fnc_publicvariable;
 
 		// build bombing mortar
-		if (random 1 > 0.80) then {
-			wcgarbage = [_marker] spawn WC_fnc_mortar;
+		for "_x" from 1 to floor (random (5)) step 1 do {
+			if (random 1 > 0.30) then {
+				wcgarbage = [_marker] spawn WC_fnc_mortar;
+				sleep 0.05;
+			};
 		};
 
 		// build an antiair
@@ -182,19 +209,19 @@
 		// CREATE ENEMIES ON TARGET
 		for "_x" from 1 to _numberofgroup step 1 do {
 			_handle = [_marker, wcfactions call BIS_fnc_selectRandom, false] spawn WC_fnc_creategroup;
-			sleep 2;
+			sleep 1;
 		};
 
 		// CREATE ENEMIES VEHICLES ON TARGET
 		for "_x" from 1 to _numberofvehicle step 1 do {
 			_handle = [_marker, (wcvehicleslistE call BIS_fnc_selectRandom), true] spawn WC_fnc_creategroup;
-			sleep 2;
+			sleep 1;
 		};
 
 		// CREATE x CONVOY ON MAP
 		for "_x" from 1 to wcconvoylevel step 1 do {
 			_handle = [] spawn WC_fnc_createconvoy;
-			sleep 2;
+			sleep 1;
 		};
 
 		// SEND MISSION TEXT TO PLAYER
@@ -207,7 +234,7 @@
 		if!(isDedicated) then { wcmessageW spawn EXT_fnc_infotext; } else { ["wcmessageW","client"] call WC_fnc_publicvariable;};
 
 		//wait for all initialisation
-		sleep 10;
+		sleep 5;
 
 		// CREATE SIDE MISSION
 		wcgarbage = [_missionnumber, _name] spawn WC_fnc_createsidemission;
@@ -295,7 +322,7 @@
 		wcheavyfactory removeAllEventHandlers "HandleDamage";
 		wcbarrack removeAllEventHandlers "HandleDamage";
 
-		sleep 5;
+		sleep 2;
 
 		wcheavyfactory setdamage 1;
 		wcbarrack setdamage 1;

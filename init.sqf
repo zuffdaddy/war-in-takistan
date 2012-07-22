@@ -308,9 +308,10 @@ if (isServer) then {
 	WC_fnc_playersmarkers		= compile preprocessFile "warcontext\functions\WC_fnc_playersmarkers.sqf";
 	WC_fnc_sortlocationbydistance	= compile preprocessFile "warcontext\functions\WC_fnc_sortlocationbydistance.sqf";
 	WC_fnc_randomMinMax		= compile preprocessFile "warcontext\functions\WC_fnc_randomMinMax.sqf";
+	WC_fnc_range			= compile preprocessFile "warcontext\functions\WC_fnc_range.sqf";
 	WC_fnc_relocatelocation		= compile preprocessFile "warcontext\functions\WC_fnc_relocatelocation.sqf";
 	WC_fnc_relocateposition		= compile preprocessFile "warcontext\functions\WC_fnc_relocateposition.sqf";
-	WC_fnc_restorebuilding 		= compile preprocessFile "warcontext\functions\WC_fnc_restorebuilding.sqf";
+	WC_fnc_restorebuilding		= compile preprocessFile "warcontext\functions\WC_fnc_restorebuilding.sqf";
 	WC_fnc_seed	 		= compile preprocessFile "warcontext\functions\WC_fnc_seed.sqf";
 	WC_fnc_setskill 		= compile preprocessFile "warcontext\functions\WC_fnc_setskill.sqf";
 	WC_fnc_vehiclesmarkers		= compile preprocessFile "warcontext\functions\WC_fnc_vehiclesmarkers.sqf";
