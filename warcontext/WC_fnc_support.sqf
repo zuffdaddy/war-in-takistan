@@ -92,7 +92,7 @@
 	_barrack = wcbarrack;
 
 	while { ((getdammage _factory < 0.9) or (getdammage _barrack < 0.9)) } do {
-		if(wcalert > 99 and wcradioalive) then {
+		if((wcalert > 99) and wcradioalive) then {
 				_support = false;
 
 				// if less than 2 members lefts (base on uaz members number), we consider we should send new reinforcment

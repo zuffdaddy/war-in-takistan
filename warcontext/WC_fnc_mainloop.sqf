@@ -136,12 +136,15 @@
 		_hour = _time select 3;
 		_minute = _time select 4;
 
-		// will this mission be a night mission?
 		if (((_hour < 6) or (_hour > 17)) and (!wcAllowNightMission)) then {
 			_hour = [6,17] call WC_fnc_randomMinMax;
 		};
 
-		if ((count wcmissiondone) - (count wcMissionDoneLast) >= 3) then {
+		if (((_hour < 6) or (_hour > 17)) and (wcAllowNightMission)) then {
+			wcAllowNightMission = false;
+		};
+
+		if (((count wcmissiondone) - (count wcMissionDoneLast)) >= 3) then {
 			wcMissionDoneLast =+ wcmissiondone;
 			wcAllowNightMission = true;
 		};

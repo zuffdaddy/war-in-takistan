@@ -21,10 +21,10 @@
 
 	_flag = _this select 0;
 
-	_locations = nearestLocations [position _flag, ["NameCityCapital", "NameCity","NameVillage", "Name", "Hill", "Mount"], 1500];
+	_locations = nearestLocations [position _flag, ["NameCityCapital", "NameCity","NameVillage", "Name", "Hill", "Mount"], 800];
 	
 	{
-		if((position _x) distance (position _flag) < 700) then {
+		if((position _x) distance (position _flag) < 300) then {
 			_locations = _locations - [_x];
 		};
 	}foreach _locations;
@@ -54,13 +54,13 @@
 	wcbegindefend = false;
 	waituntil {wcbegindefend};
 
-	for "_x" from 1 to ceil(random 10) step 1 do {
+	for "_x" from 1 to ([wclevelmaxincity*0.5, wclevelmaxincity*1.5] call WC_fnc_randomMinMax) step 1 do {
 		_location = _locations call BIS_fnc_selectRandom;
 		_handle = [position _location, _markerdest, (wcfactions call BIS_fnc_selectRandom), false] spawn WC_fnc_creategroupdefend;
 		sleep 1;
 	};
 
-	for "_x" from 1 to ceil(random 6) step 1 do {
+	for "_x" from 1 to ([wclevelmaxincity*0.5, wclevelmaxincity*0.75] call WC_fnc_randomMinMax) step 1 do {
 		_location = _locations call BIS_fnc_selectRandom;
 		_handle = [position _location, _markerdest, (wcvehicleslistE call BIS_fnc_selectRandom), true] spawn WC_fnc_creategroupdefend;
 		sleep 1;

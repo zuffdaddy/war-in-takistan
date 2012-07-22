@@ -69,7 +69,7 @@
 
 		if(wckindofserver != 3) then {
 			_numberofgroup = [wclevelmaxincity*0.5, wclevelmaxincity*1.5] call WC_fnc_randomMinMax;
-			_numberofvehicle = [wclevelmaxincity*0.25, wclevelmaxincity*0.5] call WC_fnc_randomMinMax;
+			_numberofvehicle = [wclevelmaxincity*0.5, wclevelmaxincity*0.75] call WC_fnc_randomMinMax;
 		} else {
 			_numberofgroup = 20;
 			_numberofvehicle = 10;
