@@ -88,11 +88,11 @@
 
 	// create a light for the LHD
 	if(wcUseCarrier == 1) then {
-		LHD_mainLight = "#lightpoint" createVehiclelocal (position flagusa);//([LHD_position select 0, LHD_position select 1, LHD_deck_height * 3]); 
+		LHD_mainLight = "#lightpoint" createVehiclelocal (position LHD_flagusa);//([LHD_position select 0, LHD_position select 1, LHD_deck_height * 3]); 
 		LHD_mainLight setLightBrightness 0.077; 
 		LHD_mainLight setLightAmbient[0.0, 0.0, 0.0]; 
 		LHD_mainLight setLightColor[1.0, 1.0, 1.0]; 
-		LHD_mainLight lightAttachObject [flagusa, [0,0,-0.86]];
+		LHD_mainLight lightAttachObject [LHD_flagusa, [0,0,-0.86]];
 	};
 
 	// create a light in takistan base

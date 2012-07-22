@@ -128,7 +128,7 @@
 	if(wcwithACE == 1) then {
 		wcdammagethreshold = 0.3;
 	} else {
-		wcdammagethreshold = 0.5;
+		wcdammagethreshold = 1.0;
 	};
 
 	// initialise the index composition

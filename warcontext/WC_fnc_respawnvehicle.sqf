@@ -78,7 +78,7 @@ if (wcUseCarrier == 1) then {
 	while {true} do {
 		if ((count (crew _vehicle) == 0) and !(locked _vehicle)) then {
 			_move = _move + 1;
-			_disabled = (if (damage _vehicle > 0.9) then {true} else {false});
+			_disabled = (if (damage _vehicle >= 1.0) then {true} else {false});
 			if (_disabled || !(alive _vehicle) || ((_move > 1800) and (getpos _vehicle distance _startpos > 10))) then {
 				//sleep wctimetogarbagedeadbody;
 				sleep 30; // respawn timer

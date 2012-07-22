@@ -13,9 +13,17 @@
 	};
 	wcgarbage = [] spawn WC_fnc_serverhandler;
 
+	_flagObj = nil;
+	
+	if (wcUseCarrier == 1) then {
+		_flagObj = LHD_flagusa;
+	} else {
+		_flagObj = flagusa;
+	};
+
 	// add halo jump option at flag
 	if(wcwithhalojump == 1) then {
-		flagusa setvehicleinit 'this addAction ["Halo Jump", "warcontext\actions\WC_fnc_dohalojump.sqf",[],-1,false]';
+		_flagObj setvehicleinit 'this addAction ["Halo Jump", "warcontext\actions\WC_fnc_dohalojump.sqf",[],-1,false]';
 	};
 
 	// Init Weather
@@ -32,11 +40,11 @@
 	};
 
 	if(wcwithteleporttent == 1) then {
-		flagusa setvehicleinit 'this addAction ["Teleport to TENT", "warcontext\actions\WC_fnc_doteleporttotent.sqf",[],-1,false]'; 
+		_flagObj setvehicleinit 'this addAction ["Teleport to TENT", "warcontext\actions\WC_fnc_doteleporttotent.sqf",[],-1,false]'; 
 	};
 
 	if(wcwithmhq == 1) then {
-		flagusa setvehicleinit 'this addAction ["Teleport to MHQ", "warcontext\actions\WC_fnc_doteleporttomhq.sqf",[],-1,false]';
+		_flagObj setvehicleinit 'this addAction ["Teleport to MHQ", "warcontext\actions\WC_fnc_doteleporttomhq.sqf",[],-1,false]';
 	};
 	processinitcommands;
 

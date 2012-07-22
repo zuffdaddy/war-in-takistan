@@ -758,7 +758,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=68;
+		items=69;
 		class Item0
 		{
 			position[]={8312.0557,4.0640292,7498.5122};
@@ -1446,6 +1446,18 @@ class Mission
 			vehicle="Land_Blankets_EP1";
 			leader=1;
 			skill=0.60000002;
+		};
+		class Item68
+		{
+			position[]={4315.8647,23.660297,1764.4342};
+			special="FLY";
+			id=115;
+			side="EMPTY";
+			vehicle="FlagCarrierUSA";
+			leader=1;
+			skill=1;
+			text="LHD_flagusa";
+			init="this allowDamage false; this setFlagTexture ""pics\warcontext.paa"";";
 		};
 	};
 	class Markers

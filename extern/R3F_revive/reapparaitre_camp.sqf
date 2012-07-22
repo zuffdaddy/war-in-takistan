@@ -111,9 +111,11 @@ R3F_REV_fil_exec_reapparaitre_camp = [_camp] spawn
 			["wcrespawntobase", "all"] call WC_fnc_publicvariable;
 			if (wcUseCarrier == 1) then {
 				_temp_lhd_pos = getMarkerPos "respawn_west";
+				player setVelocity [0, 0, 0];
 				player setPosASL [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height + 0.5];
 				//player setDir _lhd_direction + _objDir;
 			} else {
+				player setVelocity [0, 0, 0];
 				player setpos getmarkerpos "respawn_west";
 			};
 			R3F_REV_nb_reanimations = R3F_REV_CFG_nb_reanimations;

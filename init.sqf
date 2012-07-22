@@ -220,9 +220,9 @@ if (isServer) then {
 	alss_service setPosASL _alssPos;
 	alss_pad setPosASL _alssPos;
 
-if (isServer) then {
-	flagusa setPosASL [getMarkerPos "respawn_west" select 0, getMarkerPos "respawn_west" select 1, LHD_deck_height];
-};
+//if (isServer) then {
+//	flagusa setPosASL [getMarkerPos "respawn_west" select 0, getMarkerPos "respawn_west" select 1, LHD_deck_height];
+//};
 
 };
 	// remove the ghost base

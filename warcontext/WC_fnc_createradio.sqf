@@ -17,10 +17,10 @@
 	
 	wcradio = createVehicle [_type, _position, [], 0, "NONE"];
 
-	if (_type == "Land_Com_tower_ep1") then {
-		_position = [_position select 0, _position select 1, -20];
-		wcradio setPosATL _position;
-	};
+	//if (_type == "Land_Com_tower_ep1") then {
+	//	_position = [_position select 0, _position select 1, -20];
+	//	wcradio setPosATL _position;
+	//};
 
 	if(wcwithradiomarkers == 1) then {
 		_marker = ['radiotower', 0.5, position wcradio, 'ColorRED', 'ICON', 'FDIAGONAL', 'mil_triangle', 0, 'Radio site', false] call WC_fnc_createmarker;
@@ -37,6 +37,7 @@
 			if!(isDedicated) then { wcmessageW spawn EXT_fnc_infotext; } else { ["wcmessageW", "client"] call WC_fnc_publicvariable;};
 			diag_log "WARCONTEXT: RADIO TOWER HAS BEEN DESTROYED";
 		};
+		(_this select 2)
 	}];	
 	diag_log format["WARCONTEXT: CREATE A RADIO TOWER: %1", _type];
 
