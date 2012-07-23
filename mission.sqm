@@ -335,6 +335,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Juliet""];";
+					description="Medic";
 				};
 				class Item6
 				{
@@ -396,6 +397,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Charly""];";
+					description="Medic";
 				};
 				class Item11
 				{
@@ -457,6 +459,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Bravo""];";
+					description="Medic";
 				};
 				class Item16
 				{
@@ -518,6 +521,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Echo""];";
+					description="Medic";
 				};
 				class Item21
 				{
@@ -579,6 +583,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Foxtrot""];";
+					description="Medic";
 				};
 				class Item26
 				{
@@ -640,6 +645,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Hotel""];";
+					description="Medic";
 				};
 				class Item31
 				{
@@ -702,6 +708,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Golf""];";
+					description="Medic";
 				};
 				class Item36
 				{
