@@ -318,7 +318,7 @@ class Mission
 					special="CARGO";
 					id=44;
 					side="WEST";
-					vehicle="US_Delta_Force_Medic_EP1";
+					vehicle="US_Delta_Force_Air_Controller_EP1";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Alpha""];";
@@ -331,7 +331,7 @@ class Mission
 					special="CARGO";
 					id=57;
 					side="WEST";
-					vehicle="US_Delta_Force_Medic_EP1";
+					vehicle="US_Delta_Force_Air_Controller_EP1";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Juliet""];";
@@ -392,7 +392,7 @@ class Mission
 					special="CARGO";
 					id=49;
 					side="WEST";
-					vehicle="US_Delta_Force_Medic_EP1";
+					vehicle="US_Delta_Force_Air_Controller_EP1";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Charly""];";
@@ -453,7 +453,7 @@ class Mission
 					special="CARGO";
 					id=39;
 					side="WEST";
-					vehicle="US_Delta_Force_Medic_EP1";
+					vehicle="US_Delta_Force_Air_Controller_EP1";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Bravo""];";
@@ -514,7 +514,7 @@ class Mission
 					special="CARGO";
 					id=24;
 					side="WEST";
-					vehicle="US_Delta_Force_Medic_EP1";
+					vehicle="US_Delta_Force_Air_Controller_EP1";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Echo""];";
@@ -575,7 +575,7 @@ class Mission
 					special="CARGO";
 					id=19;
 					side="WEST";
-					vehicle="US_Delta_Force_Medic_EP1";
+					vehicle="US_Delta_Force_Air_Controller_EP1";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Foxtrot""];";
@@ -636,7 +636,7 @@ class Mission
 					special="CARGO";
 					id=29;
 					side="WEST";
-					vehicle="US_Delta_Force_Medic_EP1";
+					vehicle="US_Delta_Force_Air_Controller_EP1";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Hotel""];";
@@ -698,7 +698,7 @@ class Mission
 					special="CARGO";
 					id=34;
 					side="WEST";
-					vehicle="US_Delta_Force_Medic_EP1";
+					vehicle="US_Delta_Force_Air_Controller_EP1";
 					player="PLAY CDG";
 					skill=0.60000002;
 					init="this setGroupid [""Golf""];";

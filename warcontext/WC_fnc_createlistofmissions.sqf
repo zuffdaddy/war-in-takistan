@@ -93,7 +93,7 @@
 		// blacklist some missions if they are not in town
 		_buildings = nearestObjects [_position, ["house"] , wcdistance];
 		if (count _buildings < 20) then {
-			_thisblacklist = [1,2,6,8,9,10,11,14,16,17,18,19,20,23,28,30,31,35,39,40,41,42,47,50,54,64,66,67,69,70];
+			_thisblacklist = [0,1,2,6,8,9,10,11,14,16,17,18,19,20,23,28,30,31,35,39,40,41,42,47,50,54,64,66,67,69,70];
 		};
 
 		_thisblacklist = [[1,22] call WC_fnc_range, _thisblacklist] call BIS_fnc_arrayPushStack;
