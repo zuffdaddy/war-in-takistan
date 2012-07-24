@@ -690,7 +690,7 @@ class Params
 		title = "ENEMIES FORCE ON ZONE";
 		values[] = {1, 2, 3, 4, 5};
 		texts[] = {"WEAK", "NORMAL", "STRONG", "VERY STRONG", "AWESOME"};
-		default = 5;
+		default = 3;
 	};
 
 	class wclevelmaxoutofcity
@@ -698,7 +698,7 @@ class Params
 		title = "ENEMIES FORCE AROUND ZONE";
 		values[] = {1, 2, 4, 8, 10};
 		texts[] = {"WEAK", "NORMAL", "STRONG", "VERY STRONG", "AWESOME"};
-		default = 10;
+		default = 4;
 	};
 
 	class wcairopposingforce

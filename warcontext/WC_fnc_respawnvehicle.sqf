@@ -16,7 +16,7 @@
 		"_disabled", 
 		"_vehiclename",
 		"_westside",
-		"_move",
+		"_idleTime",
 		"_name",
 		"_objets_charges"
 	];
@@ -33,7 +33,7 @@ if (wcUseCarrier == 1) then {
 	_startdir = getdir _vehicle;
 	_type = typeof _vehicle;
 	_vehiclename = vehicleVarName _vehicle;
-	_move = 0;
+	_idleTime = 0;
 
 	if(wcwithrandomfuel == 1) then {
 		_vehicle setfuel random 0.5; 
@@ -76,10 +76,13 @@ if (wcUseCarrier == 1) then {
 	if(wckindofgame == 2) exitwith {};
 
 	while {true} do {
-		if ((count (crew _vehicle) == 0) and !(locked _vehicle)) then {
-			_move = _move + 1;
+		if (count (crew _vehicle) == 0) then {
+			_idleTime = _idleTime + 1;
 			_disabled = (if (damage _vehicle >= 1.0) then {true} else {false});
-			if (_disabled || !(alive _vehicle) || ((_move > 1800) and (getpos _vehicle distance _startpos > 10))) then {
+			if ((locked _vehicle) and !(_disabled) and (alive _vehicle)) then {
+				_idleTime = 0;
+			};
+			if (_disabled || !(alive _vehicle) || ((_idleTime > 1800) and (getpos _vehicle distance _startpos > 10))) then {
 				//sleep wctimetogarbagedeadbody;
 				sleep 30; // respawn timer
 				_vehicle setpos [0,0,0];
@@ -89,23 +92,23 @@ if (wcUseCarrier == 1) then {
 				deletevehicle _vehicle;
 				sleep 0.5;
 				_vehicle = _type createvehicle _startpos;
-if (wcUseCarrier == 1) then {
-				_vehicle setposasl _startpos;	// at sea level
-} else {
-				_vehicle setposatl _startpos;	// at terrain level
-};
+				if (wcUseCarrier == 1) then {
+					_vehicle setposasl _startpos;	// at sea level
+				} else {
+					_vehicle setposatl _startpos;	// at terrain level
+				};
 				_vehicle setdir _startdir;
 				_vehicle setvehiclevarname _vehiclename;
 				_vehicle setvehicleinit format["this setvehiclevarname '%1';", _vehiclename];
 				processinitcommands;
 				_vehicle setvariable ["R3F_LOG_objets_charges", _objets_charges, true];
-				_move = 0;
+				_idleTime = 0;
 				_name= getText (configFile >> "CfgVehicles" >> _type >> "DisplayName");
 				diag_log format["WARCONTEXT: RESPAWN VEHICLE %1", _name];
 				[_vehicle] call WC_fnc_initializevehicle;
 			};
 		}else{
-			_move = 0;
+			_idleTime = 0;
 		};
 		sleep 1;
 	};

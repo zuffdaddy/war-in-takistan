@@ -530,12 +530,11 @@ switch (_arg) do
 		// ----- Close Air Support Loadout -----
 		ADD_MAG(120Rnd_CMFlare_Chaff_Magazine);
 		ADD_MAG(300Rnd_25mm_GAU12);
-		ADD_MAG(2Rnd_GBU12);
-		ADD_MAG(2Rnd_GBU12);
+		ADD_MAG(4Rnd_GBU12);
 		ADD_MAG(2Rnd_Sidewinder_F35);
 		ADD_WEP(CMFlareLauncher);
 		ADD_WEP(GAU12);
-		ADD_WEP(BombLauncherF35);
+		ADD_WEP(BombLauncherA10);
 		ADD_WEP(SidewinderLaucher_F35);
 		// ----- Exit and Execute ALSS Menu -----
 		if(true)exitWith
