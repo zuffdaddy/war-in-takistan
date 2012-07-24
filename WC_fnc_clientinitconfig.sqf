@@ -5,7 +5,7 @@
 	if (!local player) exitWith{};
 
 	// terrain ground details 0(low) - 50(full)
-	wcterraingrid = 1;
+	wcterraingrid = 50;
 	setTerrainGrid wcterraingrid;
 
 	// view distance is set by lobby parameter

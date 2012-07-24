@@ -17,7 +17,7 @@
 	_missioncomplete = false;
 
 	_unit setdamage floor(0.1 + random 0.7);
-	_unit setVehicleInit "this setfuel 0;";
+	_unit setVehicleInit "this setfuel 0; this lock true;";
 	processInitCommands;
 
 	_group = createGroup east;
