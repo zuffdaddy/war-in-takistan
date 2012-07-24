@@ -10,7 +10,7 @@
 
 	// view distance is set by lobby parameter
 	wcviewDist = 2000;
-	setViewDistance wcviewDist;
+	setViewDistance wcviewdist;
 
 	// turn off ao marker
 	setGroupIconsVisible [false, false];

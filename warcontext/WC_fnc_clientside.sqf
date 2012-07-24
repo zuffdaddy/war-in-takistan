@@ -520,6 +520,7 @@
 				if((name player) in wconelife) then {
 					removeallweapons player;
 					removeallItems player;
+					player enablesimulation false;
 				};
 				sleep 10;
 			};
@@ -544,11 +545,10 @@
 
 	[localize "STR_WC_MENUWELCOMEBASE", localize "STR_WC_MENUTAKEWEAPONS", format[localize "STR_WC_MENUKINDOFGAME", _kindofgame], 10] spawn WC_fnc_playerhint;
 
+	wcclientlogs = wcclientlogs + [localize "STR_WC_MESSAGEMISSIONINITIALIZED"];
 
 	// INITIALIZE PLAYER SCORE ON SERVER
 	sleep 1;
 
 	wcplayeraddscore = [player, -1];
 	["wcplayeraddscore", "server"] call WC_fnc_publicvariable;
-
-	wcclientlogs = wcclientlogs + [localize "STR_WC_MESSAGEMISSIONINITIALIZED"];

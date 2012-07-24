@@ -29,6 +29,7 @@
 				player setpos [0,0,0];
 				removeAllItems player;
 				removeAllWeapons player;
+				player enablesimulation false;
 				while { true } do { hint "Player without ACE:\n check your addons!"; sleep 1;};
 			};
 		};
@@ -40,6 +41,7 @@
 				player setpos [0,0,0];
 				removeAllItems player;
 				removeAllWeapons player;
+				player enablesimulation false;
 				while { true } do { hint "Player with ACE:\n check your addons!"; sleep 1;};
 			};
 		};
