@@ -68,8 +68,8 @@
 		_thisblacklist = [];
 
 		if(wckindofserver != 3) then {
-			_numberofgroup = [wclevelmaxincity*0.5, wclevelmaxincity*1.5] call WC_fnc_randomMinMax;
-			_numberofvehicle = [wclevelmaxincity*0.5, wclevelmaxincity*0.75] call WC_fnc_randomMinMax;
+			_numberofgroup = [wclevelmaxincity*1.0, wclevelmaxincity*1.5] call WC_fnc_randomMinMax;
+			_numberofvehicle = [wclevelmaxincity*1.0, wclevelmaxincity*1.5] call WC_fnc_randomMinMax;
 		} else {
 			_numberofgroup = 20;
 			_numberofvehicle = 10;
@@ -93,10 +93,10 @@
 		// blacklist some missions if they are not in town
 		_buildings = nearestObjects [_position, ["house"] , wcdistance];
 		if (count _buildings < 20) then {
-			_thisblacklist = [0,1,2,6,8,9,10,11,14,16,17,18,19,20,23,28,30,31,35,39,40,41,42,47,50,54,64,66,67,69,70];
+			_thisblacklist = [1,2,6,8,9,10,11,14,16,17,18,19,20,23,28,30,31,35,39,40,41,42,47,50,54,64,66,67,69,70];
 		};
 
-		_thisblacklist = [[1,22] call WC_fnc_range, _thisblacklist] call BIS_fnc_arrayPushStack;
+		_thisblacklist = [[0,22] call WC_fnc_range, _thisblacklist] call BIS_fnc_arrayPushStack;
 		_thisblacklist = [[24,27] call WC_fnc_range, _thisblacklist] call BIS_fnc_arrayPushStack;
 		_thisblacklist = [_thisblacklist,29] call BIS_fnc_arrayPush;
 		_thisblacklist = [[47,48] call WC_fnc_range, _thisblacklist] call BIS_fnc_arrayPushStack;
