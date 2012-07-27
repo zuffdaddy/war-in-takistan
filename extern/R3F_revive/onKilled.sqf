@@ -154,7 +154,7 @@ R3F_REV_fil_exec_attente_reanimation = [] spawn {
 		// On blesse le nouveau corps pour qu'il nécessite des soins d'un medic
 		player setDamage 0.8;
 		
-		sleep 5;
+		//sleep 5;
 		
 		// Ramener le nouveau corps au lieu du décès
 		player setVelocity [0, 0, 0];

@@ -498,7 +498,7 @@
 					if!(isnil "wcmedicmenu") then { player removeAction wcmedicmenu; wcmedicmenu = nil;};
 				};
 			};
-			sleep 5;
+			sleep 1;
 		};
 	};
 
