@@ -17,6 +17,13 @@
 		player addaction ["<t color='#dddd00'>Unflip Vehicle</t>","warcontext\actions\WC_fnc_dounflipvehicle.sqf",[],-1,false];
 	};
 
+	// new medic action
+	if((wceverybodymedic == 1)) then {
+		wcmedicmenu = player addAction ["<t color='#dddd00'>Heal</t>", "warcontext\actions\WC_fnc_doheal2.sqf",[cursorTarget],6,false,false,"",
+			//"nearestObjects[player,["Man"], 5] > 0"];
+			"(cursorTarget isKindOf 'Man') and (damage cursorTarget > 0) and ((player distance cursorTarget) < 4)"];
+	};
+
 	// Admin menu
 	if (wcadmin) then {
 		wcbombingsupport = nil;

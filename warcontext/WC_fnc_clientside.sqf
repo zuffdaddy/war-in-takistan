@@ -148,6 +148,13 @@
 		player addaction ["<t color='#dddd00'>"+localize "STR_WC_MENUUNFLIPVEHICLE"+"</t>","warcontext\actions\WC_fnc_dounflipvehicle.sqf",[],-1,false];
 	};
 
+	// new medic action
+	if((wceverybodymedic == 1)) then {
+		wcmedicmenu = player addAction ["<t color='#dddd00'>Heal</t>", "warcontext\actions\WC_fnc_doheal2.sqf",[cursorTarget],6,false,false,"",
+			//"nearestObjects[player,["Man"], 5] > 0"];
+			"(cursorTarget isKindOf 'Man') and (damage cursorTarget > 0) and ((player distance cursorTarget) < 4)"];
+	};
+
 	[] spawn {
 		private ["_oldlevel", "_ranked"];
 
@@ -479,28 +486,28 @@
 	};
 
 	// EVERYBODY IS MEDIC
-	[] spawn {
-		private ["_injured", "_men"];
-		wcmedicmenu = nil;
-		while { true } do {
-			if((wceverybodymedic == 1) and !(typeOf player in wcmedicclass)) then {
-				_men = nearestObjects[player,["Man"], 5];
-				_injured = objnull;
-				{
-					if((damage _x > 0.2) and !(_x == player)) then {
-						_injured = _x;
-					};
-				}foreach _men;
-
-				if(!(isnull _injured) and (isnil "wcmedicmenu"))  then {
-					wcmedicmenu = player addAction ["<t color='#dddd00'>Heal</t>", "warcontext\actions\WC_fnc_doheal.sqf",[_injured],6,false];
-				} else {
-					if!(isnil "wcmedicmenu") then { player removeAction wcmedicmenu; wcmedicmenu = nil;};
-				};
-			};
-			sleep 1;
-		};
-	};
+	//[] spawn {
+	//	private ["_injured", "_men"];
+	//	wcmedicmenu = nil;
+	//	while { true } do {
+	//		if((wceverybodymedic == 1) and !(typeOf player in wcmedicclass)) then {
+	//			_men = nearestObjects[player,["Man"], 5];
+	//			_injured = objnull;
+	//			{
+	//				if((damage _x > 0.2) and !(_x == player)) then {
+	//					_injured = _x;
+	//				};
+	//			}foreach _men;
+	//
+	//			if(!(isnull _injured) and (isnil "wcmedicmenu"))  then {
+	//				wcmedicmenu = player addAction ["<t color='#dddd00'>Heal</t>", "warcontext\actions\WC_fnc_doheal.sqf",[_injured],6,false];
+	//			} else {
+	//				if!(isnil "wcmedicmenu") then { player removeAction wcmedicmenu; wcmedicmenu = nil;};
+	//			};
+	//		};
+	//		sleep 1;
+	//	};
+	//};
 
 	// if player die, end of game for one life mission
 	if(wcwithonelife == 1) then {
