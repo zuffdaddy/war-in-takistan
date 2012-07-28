@@ -8,7 +8,6 @@
 	];
 
 	_unit = ((_this select 3) select 0);
-	diag_log _unit;
 	player playMove "AinvPknlMstpSlayWrflDnon_medic";
 	sleep 4;
 	_unit setDamage 0;

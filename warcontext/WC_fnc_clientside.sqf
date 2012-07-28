@@ -142,18 +142,24 @@
 	player addAction ["<t color='#dddd00'>"+localize "STR_WC_MENUDEPLOYTENT"+"</t>", "warcontext\actions\WC_fnc_dobuildtent.sqf",[],-1,false];
 	//player addAction ["<t color='#dddd00'>"+localize "STR_WC_MENUBUILDTRENCH"+"</t>", "warcontext\actions\WC_fnc_dodigtrench.sqf",[],-1,false];
 
+	player addaction ["<t color='#dddd00'>"+localize "STR_WC_MENUUNLOCKVEHICLE"+"</t>","warcontext\actions\WC_fnc_dounlockvehicle.sqf",[],-1,false];
+
 	if (typeOf player in wcengineerclass) then {
 		player addaction ["<t color='#dddd00'>"+localize "STR_WC_MENUREPAIRVEHICLE"+"</t>","warcontext\actions\WC_fnc_dorepairvehicle.sqf",[],-1,false];
-		player addaction ["<t color='#dddd00'>"+localize "STR_WC_MENUUNLOCKVEHICLE"+"</t>","warcontext\actions\WC_fnc_dounlockvehicle.sqf",[],-1,false];
 		player addaction ["<t color='#dddd00'>"+localize "STR_WC_MENUUNFLIPVEHICLE"+"</t>","warcontext\actions\WC_fnc_dounflipvehicle.sqf",[],-1,false];
+	};
+
+	if (typeOf player in wcmedicclass) then {
+		player addAction ["<t color='#dddd00'>Heal Self</t>", "warcontext\actions\WC_fnc_doheal.sqf",[player],6,false,false,"",
+			"damage player > 0"];
 	};
 
 	// new medic action
 	if((wceverybodymedic == 1)) then {
 		wcmedicmenu = player addAction ["<t color='#dddd00'>Heal</t>", "warcontext\actions\WC_fnc_doheal2.sqf",[cursorTarget],6,false,false,"",
-			//"nearestObjects[player,["Man"], 5] > 0"];
 			"(cursorTarget isKindOf 'Man') and (damage cursorTarget > 0) and ((player distance cursorTarget) < 4)"];
 	};
+
 
 	[] spawn {
 		private ["_oldlevel", "_ranked"];
