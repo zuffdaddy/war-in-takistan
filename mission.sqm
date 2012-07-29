@@ -22,7 +22,8 @@ class Mission
 		"cawheeled2_m1114_armored",
 		"caair_e_ch_47f",
 		"CAAir",
-		"CATracked2_AAV",
+		"CATracked_E_M2A2_Bradley",
+		"cawheeled_e_stryker",
 		"castructures_e_misc_misc_interier",
 		"ibr_lingor"
 	};
@@ -47,7 +48,8 @@ class Mission
 		"cawheeled2_m1114_armored",
 		"caair_e_ch_47f",
 		"CAAir",
-		"CATracked2_AAV",
+		"CATracked_E_M2A2_Bradley",
+		"cawheeled_e_stryker",
 		"castructures_e_misc_misc_interier",
 		"ibr_lingor"
 	};
@@ -1393,7 +1395,7 @@ class Mission
 			azimut=225;
 			id=108;
 			side="EMPTY";
-			vehicle="LAV25";
+			vehicle="M2A3_EP1";
 			skill=0.60000002;
 		};
 		class Item62
@@ -1402,7 +1404,7 @@ class Mission
 			azimut=225;
 			id=109;
 			side="EMPTY";
-			vehicle="AAV";
+			vehicle="M1126_ICV_M2_EP1";
 			skill=0.60000002;
 		};
 		class Item63
