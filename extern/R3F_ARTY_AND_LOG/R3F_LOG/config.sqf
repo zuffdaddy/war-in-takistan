@@ -67,7 +67,7 @@ R3F_LOG_CFG_heliporteurs =
 [
 	"UH1Y",
 	"MH60S",
-	"UH60M_EP1".
+	"UH60M_EP1",
 	"UH60M_MEV_EP1",
 	"CH_47F_EP1",
 	"CH_47F_BAF",
