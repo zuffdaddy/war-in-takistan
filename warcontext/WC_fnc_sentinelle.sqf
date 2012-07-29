@@ -66,6 +66,7 @@
 				_unit domove _initialposition;
 			};
 		} else {
+if !(wcTestChanges == 1) then {
 			_unit dowatch _cible;
 			_unit dofire _cible;
 			_unit dotarget _cible;
@@ -87,6 +88,7 @@
 			{
 				_x reveal _cible;
 			}foreach units (group _unit);
+};
 		};
 		_count = 0;
 		sleep 5;

@@ -322,6 +322,7 @@
 	};
 
 	// TRANSFERT POINT
+if !(wcTestChanges == 1) then {
 	[] spawn {
 		// if not noteam server
 		if(wckindofserver != 3) then {
@@ -350,6 +351,7 @@
 			};
 		};
 	};
+};
 
 	// ADD ACTION MENU FOR ADMINS
 	[] spawn {

@@ -190,20 +190,21 @@
 	wcchangeclothes = wcchangeclothescivil + wcchangeclotheswest + wcchangeclotheseast;
 
 	// kind of radio tower
-	wcradiotype = ["TK_WarfareBUAVterminal_EP1","Land_Com_tower_ep1"];
+	wcradiotype = ["TK_WarfareBUAVterminal_EP1"];
+	//wcradiotype = ["TK_WarfareBUAVterminal_EP1","Land_Com_tower_ep1"];
 	//wcradiotype = ["Satelit"];
 
 	// Radio appear at distance of goal (min & max)
-	wcradiodistminofgoal = 150;
-	wcradiodistmaxofgoal = 300;
+	wcradiodistminofgoal = 100;
+	wcradiodistmaxofgoal = 200;
 
 	// kind of generator
 	//wcgeneratortype = ["PowerGenerator_EP1"];
 	wcgeneratortype = ["PowGen_Big_EP1"];
 
 	// Generator appear at distance of goal (min & max)
-	wcgeneratordistminofgoal = 150;
-	wcgeneratordistmaxofgoal = 300;
+	wcgeneratordistminofgoal = 100;
+	wcgeneratordistmaxofgoal = 200;
 
 	// Simulation mode has a harder scoring system
 	if(wckindofgame == 1) then {

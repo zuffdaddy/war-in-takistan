@@ -17,27 +17,31 @@
 
 		_vehicle addeventhandler ['HandleDamage', {
 			private ["_name", "_gunner", "_commander"];
-			if(side(_this select 3) in [west, civilian]) then {
-				if ((_this select 2) > wcdammagethreshold) then {
-					(_this select 0) removeAllEventHandlers "HandleDamage";
-					(_this select 0) setHit [(_this select 1), (_this select 2)];
+//if !(wcTestChanges == 1) then {
+			//if(side(_this select 3) in [west, civilian]) then {
+			//	if ((_this select 2) > wcdammagethreshold) then {
+			//		(_this select 0) removeAllEventHandlers "HandleDamage";
+			//		(_this select 0) setHit [(_this select 1), (_this select 2)];
+//};
 					if(damage (_this select 0) > 0.9) then {
 						(_this select 0) setdamage 1;
 						wcnumberofkilledofmissionV = wcnumberofkilledofmissionV + 1;
 					};
-				};
-				_name = currentMagazine (_this select 3);
-				_name = getText (configFile >> "CfgMagazines" >> _name >> "displayNameShort");
-				if!(_name == "SD") then {
-					_gunner = gunner (_this select 0);
-					_commander = commander (_this select 0);
-					{
-						_x reveal (_this select 3);
-						_x dotarget (_this select 3);
-						_x dofire (_this select 3);
-					}foreach [_gunner, _commander];
-				};
-			};
+//if !(wcTestChanges == 1) then {
+			//	};
+			//	_name = currentMagazine (_this select 3);
+			//	_name = getText (configFile >> "CfgMagazines" >> _name >> "displayNameShort");
+			//	if!(_name == "SD") then {
+			//		_gunner = gunner (_this select 0);
+			//		_commander = commander (_this select 0);
+			//		{
+			//			_x reveal (_this select 3);
+			//			_x dotarget (_this select 3);
+			//			_x dofire (_this select 3);
+			//		}foreach [_gunner, _commander];
+			//	};
+			//};
+//};
 		}];
 
 		_vehicle addEventHandler ['Fired', '
@@ -48,7 +52,7 @@
 				wcalert = 100;
 			};
 		'];
-
+if !(wcTestChanges == 1) then {
 		_vehicle addeventhandler ['FiredNear', {
 			private ["_gunner", "_commander"];
 			if(side(_this select 1) in [west, civilian]) then {
@@ -61,5 +65,5 @@
 				}foreach [_gunner, _commander];
 			};
 		}];
-
+};
 		wcvehicles = wcvehicles + [_vehicle];

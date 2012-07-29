@@ -589,6 +589,30 @@ class Params
 		default = 1;
 	};
 
+	class wcEnemiesUseMortars
+	{
+		title = "ENEMIES USE MORTARS";
+		values[] = {0, 1};
+		texts[] = {"No", "Yes"};
+		default = 1;
+	};
+
+	class wcTestChanges
+	{
+		title = "TEST CHANGES";
+		values[] = {0, 1};
+		texts[] = {"No", "Yes"};
+		default = 1;
+	};
+
+	class wcReduceAITurretAccuracy
+	{
+		title = "REDUCE AI TURRET ACCURACY";
+		values[] = {0, 1};
+		texts[] = {"No", "Yes"};
+		default = 1;
+	};
+
 	class wcAISuppressionSystem
 	{
 		title = "TPWC AI SUPPRESSION SYSTEM";

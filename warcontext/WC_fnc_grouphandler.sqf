@@ -55,6 +55,7 @@
 				};
 			'];
 
+if !(wcTestChanges == 1) then {
 			_x addEventHandler ['HandleDamage', {
 				if(side(_this select 3) in [west, civilian]) then {
 					private ["_name"];
@@ -69,7 +70,8 @@
 					(_this select 0) setdamage (0.5 + (random 0.5));
 				};
 			}];
-
+};
+if !(wcTestChanges == 1) then {
 			_x addeventhandler ['FiredNear', {
 				if(side(_this select 1) in [west, civilian]) then {
 					private ["_name"];
@@ -83,6 +85,7 @@
 					};
 				};
 			}];
+};
 			sleep 0.1;
 		} foreach (units _group);
 

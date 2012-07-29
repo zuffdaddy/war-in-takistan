@@ -134,6 +134,7 @@
 				if(_count == 0) then {
 					(driver _vehicle) domove _position;
 				} else {
+if !(wcTestChanges == 1) then {
 					if(count(crew _vehicle) > 3) then {
 						(driver _vehicle) action ["engineOff", _vehicle];
 						_group leaveVehicle _vehicle;
@@ -153,6 +154,7 @@
 						(gunner _vehicle) dofire _cible;
 						(driver _vehicle) domove position _cible;
 					};
+};
 				};
 				sleep 0.5;
 			}foreach units _group;

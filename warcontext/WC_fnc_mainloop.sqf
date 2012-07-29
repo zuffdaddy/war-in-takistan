@@ -194,10 +194,12 @@
 		["wcselectedzone", "client"] call WC_fnc_publicvariable;
 
 		// build bombing mortar
-		for "_x" from 1 to floor (random (5)) step 1 do {
-			if (random 1 > 0.30) then {
-				wcgarbage = [_marker] spawn WC_fnc_mortar;
-				sleep 0.05;
+		if (wcEnemiesUseMortars == 1) then {
+			for "_x" from 1 to floor (random (2)) step 1 do {
+				if (random 1 > 0.30) then {
+					wcgarbage = [_marker] spawn WC_fnc_mortar;
+					sleep 0.05;
+				};
 			};
 		};
 

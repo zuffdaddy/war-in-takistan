@@ -303,26 +303,28 @@
 		};
 	};
 
-	[] spawn {
-		while { true } do {
-			{
-				_vech = _x;
-				if (side _vech == east) then {
-					_crew = crew _vech;
-					{
-						_roleArray = assignedVehicleRole _x;
-						if (isNil "_roleArray") exitWith {};
-						
-						_roleName = _roleArray select 0;
-						if (_roleName == "Turret") then {
-							_x setSkill ["aimingAccuracy", 0.025];
-							_x setSkill ["aimingShake",    0.003];
-							_x setUnitRecoilCoefficient 10;
-						};
-					} foreach _crew;
-				};
-			} foreach vehicles;
-			sleep 1;
+	if (wcReduceAITurretAccuracy == 1) then {
+		[] spawn {
+			while { true } do {
+				{
+					_vech = _x;
+					if (side _vech == east) then {
+						_crew = crew _vech;
+						{
+							_roleArray = assignedVehicleRole _x;
+							if (isNil "_roleArray") exitWith {};
+							
+							_roleName = _roleArray select 0;
+							if (_roleName == "Turret") then {
+								_x setSkill ["aimingAccuracy", 0.025];
+								_x setSkill ["aimingShake",    0.003];
+								_x setUnitRecoilCoefficient 10;
+							};
+						} foreach _crew;
+					};
+				} foreach vehicles;
+				sleep 1;
+			};
 		};
 	};
 	

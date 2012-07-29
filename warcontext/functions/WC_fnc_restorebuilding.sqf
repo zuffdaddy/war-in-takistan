@@ -71,10 +71,12 @@
 					 wcenemykilled =  wcenemykilled + 1;
 					["wcenemykilled", "client"] call WC_fnc_publicvariable;
 				}];
+if !(wcTestChanges == 1) then {
 				_soldier addEventHandler ['Hit', '
 					(_this select 0) doTarget (_this select 1);
 					(_this select 0) doFire (_this select 1);
 				'];
+};
 				wcunits = wcunits + [_soldier];
 				wcblinde = wcblinde + [_soldier];
 			};
@@ -89,12 +91,14 @@
 					 wcenemykilled =  wcenemykilled + 1;
 					["wcenemykilled", "client"] call WC_fnc_publicvariable;
 				}];
+if !(wcTestChanges == 1) then {
 				_soldier addEventHandler ['HandleDamage', {
 					(_this select 0) doTarget (_this select 3);
 					(_this select 0) doFire (_this select 3);
 					(_this select 0) reveal (_this select 3);
 					(_this select 0) setdamage (0.5 + (random 0.5));
 				}];
+};
 				wcunits = wcunits + [_soldier];
 				wcblinde = wcblinde + [_soldier];
 			};
@@ -109,10 +113,12 @@
 					 wcenemykilled =  wcenemykilled + 1;
 					["wcenemykilled", "client"] call WC_fnc_publicvariable;
 				}];
+if !(wcTestChanges == 1) then {
 				_soldier addEventHandler ['Hit', '
 					(_this select 0) doTarget (_this select 1);
 					(_this select 0) doFire (_this select 1);
 				'];
+};
 				wcunits = wcunits + [_soldier];
 				wcblinde = wcblinde + [_soldier];
 			};
