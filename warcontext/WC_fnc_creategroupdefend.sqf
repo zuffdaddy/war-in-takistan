@@ -80,7 +80,8 @@
 		}foreach _unitsofgroup;
 
 		_leader = leader _group;		
-		_position = (position _leader) findEmptyPosition [5, 150];
+		_position = [position _leader, 5, 150] call WC_fnc_createpositionaround;
+		//_position = (position _leader) findEmptyPosition [5, 150];
 
 		_vehicle = "V3S_TK_EP1" createvehicle _position;
 		wcgarbage = [_vehicle] spawn WC_fnc_vehiclehandler;

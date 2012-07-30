@@ -23,7 +23,8 @@
 			//		(_this select 0) removeAllEventHandlers "HandleDamage";
 			//		(_this select 0) setHit [(_this select 1), (_this select 2)];
 //};
-					if(damage (_this select 0) > 0.9) then {
+					if(damage (_this select 0) >= 1.0) then {
+						(_this select 0) removeAllEventHandlers "HandleDamage";
 						(_this select 0) setdamage 1;
 						wcnumberofkilledofmissionV = wcnumberofkilledofmissionV + 1;
 					};
@@ -42,6 +43,7 @@
 			//	};
 			//};
 //};
+			(_this select 2);
 		}];
 
 		_vehicle addEventHandler ['Fired', '

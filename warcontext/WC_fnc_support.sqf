@@ -75,6 +75,7 @@
 			if!(isDedicated) then { wcmessageW spawn EXT_fnc_infotext; } else { ["wcmessageW", "client"] call WC_fnc_publicvariable;};
 			diag_log "WARCONTEXT: HEAVY FACTORY HAS BEEN DESTROYED";
 		};
+		(_this select 2);
 	}];
 
 	wcbarrack removeAllEventHandlers "HandleDamage";
@@ -86,6 +87,7 @@
 			if!(isDedicated) then { wcmessageW spawn EXT_fnc_infotext; } else { ["wcmessageW", "client"] call WC_fnc_publicvariable;};
 			diag_log "WARCONTEXT: BARRACK HAS BEEN DESTROYED";
 		};
+		(_this select 2);
 	}];
 
 	_factory = wcheavyfactory;
