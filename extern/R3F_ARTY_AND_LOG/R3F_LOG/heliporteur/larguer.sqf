@@ -31,7 +31,7 @@ else
 	detach _objet;
 	
 	//_objet setPos [getPos _objet select 0, getPos _objet select 1, 0];
-	_objet setVelocity [0, 0, 0];
+	//_objet setVelocity [0, 0, 0];
 	
 	player globalChat format [STR_R3F_LOG_action_heliport_larguer_fait, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
 	
