@@ -42,8 +42,7 @@ if (wcUseCarrier == 1) then {
 
 	WC_fnc_initializevehicle = {
 		_vehicle = _this select 0;
-
-	
+		
 		if(wcCustomVehicleHandleDamage == 1) then {
 			_vehicle removeAllEventHandlers "HandleDamage";
 			_vehicle addEventHandler ['HandleDamage', {
@@ -68,6 +67,19 @@ if (wcUseCarrier == 1) then {
 			};
 			wcammoused = wcammoused + 1;
 		'];
+
+		if (_vehicle isKindOf "MV22") then {
+			_handle = [_vehicle] execVM "f2f_modules\f2f_alss\f2f_exe\f2f_exe_vecInit_clrWeps.sqf";
+			waitUntil {scriptDone _handle};
+			_text = "";
+			_item = "120Rnd_CMFlare_Chaff_Magazine";
+			_text = _text + format["this addMagazine '%1';", _item];
+			_item = "CMFlareLauncher";
+			_text = _text + format["this addWeapon '%1';", _item];
+			diag_log _text;
+			_vehicle setVehicleInit _text;
+			processInitCommands;
+		};
 	};
 
 	[_vehicle] call WC_fnc_initializevehicle;

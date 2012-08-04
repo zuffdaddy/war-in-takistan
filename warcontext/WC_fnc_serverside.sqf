@@ -338,6 +338,20 @@
 				if (((count (crew _object)) > 0) && (speed _object < 0.1)) then {
 	// ---from WC_fnc_servicing ---------------------------------------------------------------------------
 	if (!alive _object) exitWith {};
+
+	if (_object isKindOf "MV22") then {
+		_handle = [_object] execVM "f2f_modules\f2f_alss\f2f_exe\f2f_exe_vecInit_clrWeps.sqf";
+		waitUntil {scriptDone _handle};
+		_text = "";
+		_item = "120Rnd_CMFlare_Chaff_Magazine";
+		_text = _text + format["this addMagazine '%1';", _item];
+		_item = "CMFlareLauncher";
+		_text = _text + format["this addWeapon '%1';", _item];
+		//diag_log _text;
+		_object setVehicleInit _text;
+		processInitCommands;
+	};
+
 	_type = typeof _object;
 	_object setVehicleInit "this vehicleChat ""Servicing... Please stand by..."";";
 	processInitCommands;

@@ -43,11 +43,11 @@
 
 
 	// Check for an electrical outage		
-	if(random 1 < wcenemyglobalelectrical) then {
+	//if(random 1 < wcenemyglobalelectrical) then {
 		wcradioalive = true;
 		["wcradioalive", "client"] call WC_fnc_publicvariable;
-	} else {
-		wcmessageW = ["Radio tower", "Electrical outage"];
-		if!(isDedicated) then { wcmessageW spawn EXT_fnc_infotext; } else { ["wcmessageW", "client"] call WC_fnc_publicvariable;};
-		wcradio setdamage 1;
-	};
+	//} else {
+	//	wcmessageW = ["Radio tower", "Electrical outage"];
+	//	if!(isDedicated) then { wcmessageW spawn EXT_fnc_infotext; } else { ["wcmessageW", "client"] call WC_fnc_publicvariable;};
+	//	wcradio setdamage 1;
+	//};

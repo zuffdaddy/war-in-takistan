@@ -25,7 +25,8 @@ class Mission
 		"CATracked_E_M2A2_Bradley",
 		"cawheeled_e_stryker",
 		"castructures_e_misc_misc_interier",
-		"ibr_lingor"
+		"ibr_lingor",
+		"CAAir2_MV22"
 	};
 	addOnsAuto[]=
 	{
@@ -48,6 +49,7 @@ class Mission
 		"cawheeled2_m1114_armored",
 		"caair_e_ch_47f",
 		"CAAir",
+		"CAAir2_MV22",
 		"CATracked_E_M2A2_Bradley",
 		"cawheeled_e_stryker",
 		"castructures_e_misc_misc_interier",
@@ -1382,11 +1384,11 @@ class Mission
 		};
 		class Item60
 		{
-			position[]={4317.8999,23.660297,1893.0908};
+			position[]={4319.123,23.660297,1892.3267};
 			azimut=225;
 			id=107;
 			side="EMPTY";
-			vehicle="CH_47F_EP1";
+			vehicle="MV22";
 			skill=0.60000002;
 		};
 		class Item61

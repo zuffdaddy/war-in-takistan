@@ -29,6 +29,20 @@
 
 	sleep 1;
 
+	//diag_log "servicing type: " + str(typeof _object);
+	//if (_object isKindOf "MV22") then {
+	//	_handle = [_object] execVM "f2f_modules\f2f_alss\f2f_exe\f2f_exe_vecInit_clrWeps.sqf";
+	//	waitUntil {scriptDone _handle};
+	//	_text = "";
+	//	_item = "120Rnd_CMFlare_Chaff_Magazine";
+	//	_text = _text + format["this addMagazine '%1';", _item];
+	//	_item = "CMFlareLauncher";
+	//	_text = _text + format["this addWeapon '%1';", _item];
+	//	diag_log _text;
+	//	_object setVehicleInit _text;
+	//	processInitCommands;
+	//};
+
 	if (!alive _object) exitWith {};
 	_type = typeof _object;
 	_object setVehicleInit "this vehicleChat ""Servicing... Please stand by..."";";
