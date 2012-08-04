@@ -76,9 +76,9 @@ if (wcUseCarrier == 1) then {
 	if(wckindofgame == 2) exitwith {};
 
 	while {true} do {
-		if (count (crew _vehicle) == 0) then {
+		_disabled = (if (damage _vehicle >= 1.0) then {true} else {false});
+		if ((count (crew _vehicle) == 0) or _disabled) then {
 			_idleTime = _idleTime + 1;
-			_disabled = (if (damage _vehicle >= 1.0) then {true} else {false});
 			if ((locked _vehicle) and !(_disabled) and (alive _vehicle)) then {
 				_idleTime = 0;
 			};
