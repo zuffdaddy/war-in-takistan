@@ -589,6 +589,38 @@ class Params
 		default = 1;
 	};
 
+	class wcRadioAndGeneratorDistanceMin
+	{
+		title = "ENEMY RADIO AND GENERATOR DISTANCE MINUMUM";
+		values[] = {50, 100};
+		texts[] = {"50", "100"};
+		default = 100;
+	};
+
+	class wcRadioAndGeneratorDistanceMax
+	{
+		title = "ENEMY RADIO AND GENERATOR DISTANCE MAXIMUM";
+		values[] = {150, 200, 250, 300, 350};
+		texts[] = {"150", "200", "250", "300", "350"};
+		default = 300;
+	};
+
+	class wcwithradiomarkers
+	{
+		title = "ENEMY RADIO SITE MARKER ON MAP";
+		values[] = {0, 1};
+		texts[] = {"NO", "YES"};
+		default = 0;
+	};
+
+	class wcwithgeneratormarkers
+	{
+		title = "ENEMY GENERATOR SITE MARKER ON MAP";
+		values[] = {0, 1};
+		texts[] = {"NO", "YES"};
+		default = 0;
+	};
+
 	class wcEnemiesUseMortars
 	{
 		title = "ENEMIES USE MORTARS";
@@ -860,22 +892,6 @@ class Params
 		values[] = {0, 1};
 		texts[] = {"NO", "YES"};
 		default = 1;
-	};
-
-	class wcwithradiomarkers
-	{
-		title = "ENEMY RADIO SITE MARKER ON MAP";
-		values[] = {0, 1};
-		texts[] = {"NO", "YES"};
-		default = 0;
-	};
-
-	class wcwithgeneratormarkers
-	{
-		title = "ENEMY GENERATOR SITE MARKER ON MAP";
-		values[] = {0, 1};
-		texts[] = {"NO", "YES"};
-		default = 0;
 	};
 
 	class wcwithmarkerongoal

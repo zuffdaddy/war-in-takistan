@@ -9,7 +9,7 @@ Version: 3.01
 Last modified: 20120717 
 
 Requires: 		CBA
-				bdetect072.sqf
+				bdetect073.sqf
 				tpwcas_client_debug.sqf
 				tpwcas_debug.sqf
 				tpwcas_decskill.sqf
@@ -177,7 +177,7 @@ call compile preprocessFileLineNumbers "tpwcas\tpwcas_visuals.sqf"; //player sup
 //CALL BDETECT
 ////////////// 
 
-call compile preprocessFileLineNumbers "tpwcas\bdetect072.sqf"; //bullet detection framework
+call compile preprocessFileLineNumbers "tpwcas\bdetect073.sqf"; //bullet detection framework
 bdetect_bullet_skip_mags = tpwcas_mags; 
 bdetect_bullet_min_distance =  tpwcas_ir;
 bdetect_bullet_max_distance = tpwcas_maxdist;
@@ -214,7 +214,7 @@ if (tpwcas_hint == 0) then
 bdetect_callback = "tpwcas_fnc_supstate"; 
 sleep 1;
 call bdetect_fnc_init; 
-waitUntil { bdetect_init_done}; 
+waitUntil { !(isNil "bdetect_init_done") };
 
 ////////
 //RUN IT 
