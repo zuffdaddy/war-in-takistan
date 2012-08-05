@@ -4,9 +4,9 @@ SP / MP / DEDI COMPATIBLE
 
 Authors: TPW && -Coulum- && fabrizio_T && Ollem
 
-Version: 3.01
+Version: 3.02
 
-Last modified: 20120717 
+Last modified: 20120805 
 
 Requires: 		CBA
 				bdetect073.sqf
@@ -142,7 +142,7 @@ if (tpwcas_hint == 1) then
 	{    
 	0 = [] spawn 
 		{   
-		hintsilent "TPWCAS 3.01 Active";    
+		hintsilent "TPWCAS 3.02 Active";    
 		sleep 3;    
 		hintsilent "";
 		};    
@@ -184,6 +184,7 @@ bdetect_bullet_max_distance = tpwcas_maxdist;
 bdetect_bullet_max_lifespan = tpwcas_bulletlife;
 bdetect_debug_levels = [0,1,3,5,6,7,8,9,10];
 tpwcas_multi_player = false;
+bdetect_debug_enable = false;
 
 if (tpwcas_debug > 1) then 
 	{

@@ -1,7 +1,7 @@
 TPWC AI Suppress (TPWCAS)
 Singleplayer, Multiplayer and Dedicated Server Compatible AI Suppression System
 By TPW && -Coulum- && fabrizio_T && Ollem
-v3.01 20120717
+v3.02 20120805
 
 Introduction:
 -------------
@@ -104,7 +104,7 @@ Suppression and skill settings:
 * Player suppression visuals. 0 = no suppression, 1 = suppression. Default 1. 
 * Minimum skill value, none of a units skills will drop below this under suppression. Default 0.05.
 * Reveal value when suppressed. 0 = reveal disabled. 0.1 = suppressed unit knows essentially nothing about shooter. 4 = unit knows the shooter's side, position, shoe size etc. Default 1.25.
-* Allow fleeing. 0 = units will not flee. 1 = units can flee. Set to 0 if you see too many units standing around unable to be suppressed.
+* Allow fleeing. 0 = units will not flee. 1 = units can flee (default). Set to 0 if you see too many units standing around unable to be suppressed.
 
 
 Caveats:
@@ -231,3 +231,7 @@ Changelog:
 
 * 3.01 20120717
 	- Fixed debugging locality issue
+	
+* 3.02 20120805
+	- Fixed bDetect MP desync issue
+	- bDetect 0.73
