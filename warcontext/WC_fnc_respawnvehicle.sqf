@@ -99,12 +99,12 @@ if (wcUseCarrier == 1) then {
 					_damage = _olddamage + ((_this select 2) - _olddamage) * _coeff;
 					_gethit set [_i, _damage];
 
-					if (((_selection == "") and (_damage >= 1)) and ((count crew _unit) > 0)) then {
-						//diag_log "EJECT!!!!!!!!";
-						{
-							_x action ["eject", vehicle _x];
-						} forEach (crew _unit);
-					};
+					//if (((_selection == "") and (_damage >= 1)) and ((count crew _unit) > 0)) then {
+					//	//diag_log "EJECT!!!!!!!!";
+					//	{
+					//		_x action ["eject", vehicle _x];
+					//	} forEach (crew _unit);
+					//};
 
 					_damage;
 				}

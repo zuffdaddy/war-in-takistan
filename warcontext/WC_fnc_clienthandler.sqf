@@ -399,6 +399,9 @@
 				{
 					_unit = _this select 0;
 					if (vehicle _unit != _unit) exitWith {
+						if (damage (vehicle _unit) >= 1) then {
+							_unit action ["eject", vehicle _unit];
+						};
 						0;
 					};
 					_selections = _unit getVariable ["selections", []];
