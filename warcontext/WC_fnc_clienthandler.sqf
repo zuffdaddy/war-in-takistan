@@ -356,7 +356,7 @@
 	'];
 
 	if(wckindofgame == 1) then {
-		if(wcCustomPlayerHandleDamage == 1) then {
+		if(wcPlayerDamageSystem == 1) then {
 			player addEventHandler ['HandleDamage', {
 				private[
 					"_unit",
@@ -386,6 +386,11 @@
 				};
 				_unit setDamage _applyDamage;
 			}];
+		};
+
+		if(wcPlayerDamageSystem == 2) then {
+			#include "system_client_respawn.sqf"
+			player addEventHandler ["HandleDamage", { _this call handleDamage; }];
 		};
 	};
 

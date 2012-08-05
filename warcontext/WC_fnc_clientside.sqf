@@ -53,7 +53,28 @@
 
 	// By default wc uses R3F revive
 	if(true) then {
-		execVM "extern\R3F_revive\revive_init.sqf";
+		if(wcPlayerDamageSystem == 1) then {
+			execVM "extern\R3F_revive\revive_init.sqf";
+		};
+		if(wcPlayerDamageSystem == 2) then {
+			player addEventHandler ["killed", {
+				[_this select 0, _this select 1] spawn {
+					_unit = _this select 0;
+					_killer = _this select 1;
+
+					waitUntil {alive player};
+
+					player setUnconscious false;
+					player setCaptive false;
+					player allowDamage true;
+
+					wcgarbage = [] spawn WC_fnc_restoreactionmenu;
+					if(wcSavedLoadoutManually) then {
+						wcgarbage = [] spawn WC_fnc_restoreloadout;
+					};
+				};
+			}];
+		};
 	} else {
 		R3F_REV_nb_reanimations = 0;
 		player addEventHandler ["killed", { wcgarbage = [] spawn WC_fnc_onkilled}];

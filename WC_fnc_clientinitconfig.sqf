@@ -110,4 +110,6 @@
 	// have we saved a loadout at least once?
 	wcSavedLoadoutManually = false;
 
+	wcHandleUnconsciousLoop = 0 spawn {};
+
 	true;

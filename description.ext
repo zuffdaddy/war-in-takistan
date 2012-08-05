@@ -589,6 +589,14 @@ class Params
 		default = 1;
 	};
 
+	class wcNewPlayerDamageSystem
+	{
+		title = "USE NEW PLAYER DAMAGE SYSTEM";
+		values[] = {0, 1};
+		texts[] = {"No", "Yes"};
+		default = 1;
+	};
+
 	class wcRadioAndGeneratorDistanceMin
 	{
 		title = "ENEMY RADIO AND GENERATOR DISTANCE MINUMUM";
@@ -661,12 +669,12 @@ class Params
 		default = 1;
 	};
 
-	class wcCustomPlayerHandleDamage
+	class wcPlayerDamageSystem
 	{
-		title = "USE CUSTOM PLAYER DAMAGE HANDLER";
-		values[] = {0, 1};
-		texts[] = {"No", "Yes"};
-		default = 1;
+		title = "PLAYER DAMAGE SYSTEM";
+		values[] = {0, 1, 2};
+		texts[] = {"Default ARMA 2", "WarContext", "Test"};
+		default = 2;
 	};
 
 	class wcCustomVehicleHandleDamage
