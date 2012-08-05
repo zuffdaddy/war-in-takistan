@@ -33,8 +33,8 @@ else
 		{
 			if (isNull (_objet getVariable "R3F_LOG_est_transporte_par")) then
 			{
-				if (count crew _objet == 0) then
-				{
+				//if (count crew _objet == 0) then
+				//{
 					// Si l'objet n'est pas en train d'être déplacé par un joueur
 					if (isNull (_objet getVariable "R3F_LOG_est_deplace_par") || (!alive (_objet getVariable "R3F_LOG_est_deplace_par"))) then
 					{
@@ -75,11 +75,11 @@ else
 					{
 						player globalChat format [STR_R3F_LOG_action_heliporter_deplace_par_joueur, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
 					};
-				}
-				else
-				{
-					player globalChat format [STR_R3F_LOG_action_heliporter_joueur_dans_objet, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
-				};
+				//}
+				//else
+				//{
+				//	player globalChat format [STR_R3F_LOG_action_heliporter_joueur_dans_objet, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
+				//};
 			}
 			else
 			{

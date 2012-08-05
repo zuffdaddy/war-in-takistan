@@ -15,7 +15,7 @@ class Header
 ///////////////////////////////////////////////////////////////////////////////////////////
 disabledAI = 1;
 Respawn = "BASE";
-RespawnDelay = 6;
+RespawnDelay = 2;
 RespawnDialog = 0;
 
 #include "warcontext\dialogs\define.hpp"
@@ -1044,7 +1044,7 @@ class Params
 		title = "AUTOLOAD WEAPONS (REQUIRE SAME ADDONS ON CLIENT SIDE)";
 		values[] = {0,1};
 		texts[] = {"NO", "YES"};
-		default = 1;
+		default = 0;
 	};
 
 	class wcautoloadtroops

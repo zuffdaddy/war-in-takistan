@@ -72,7 +72,7 @@ R3F_REV_fil_exec_attente_reanimation = [] spawn {
 		deleteMarker R3F_REV_mark;
 	};
 
-	sleep 2;
+	//sleep 2;
 
 	"dynamicBlur" ppEffectEnable true;
 	"dynamicBlur" ppEffectAdjust [0];
@@ -154,7 +154,7 @@ R3F_REV_fil_exec_attente_reanimation = [] spawn {
 		// On blesse le nouveau corps pour qu'il nécessite des soins d'un medic
 		player setDamage 0.8;
 		
-		//sleep 5;
+		sleep 0.005;
 		
 		// Ramener le nouveau corps au lieu du décès
 		player setVelocity [0, 0, 0];
@@ -190,7 +190,7 @@ R3F_REV_fil_exec_attente_reanimation = [] spawn {
 
 		// Attente d'un soin par medic
 		while {((damage player > 0.7) and !(wcteamscore < wcscorelimitmin) and !(wcteamscore > wcscorelimitmax))} do {
-			sleep 1;
+			sleep 0.005;
 		};
 	
 		if (R3F_REV_CFG_afficher_marqueur) then {
@@ -209,7 +209,7 @@ R3F_REV_fil_exec_attente_reanimation = [] spawn {
 		ppEffectDestroy R3F_REV_effet_video_flou;
 		ppEffectDestroy R3F_REV_effet_video_couleur;
 		
-		sleep 0.2;
+		sleep 0.005;
 		// Stop animation blessé, reprise arme
 		player selectWeapon (primaryWeapon player);
 		player playMoveNow "AmovPpneMstpSrasWrflDnon";
@@ -313,7 +313,7 @@ R3F_REV_fil_exec_attente_reanimation = [] spawn {
 		player setVehicleInit "this allowdammage true;";
 		processInitCommands;
 			
-		sleep 5;
+		sleep 0.005;
 		wcgarbage = [localize "STR_R3F_REV_respawn_camp"] call BIS_fnc_dynamicText;
 			
 		ppEffectDestroy R3F_REV_effet_video_flou;

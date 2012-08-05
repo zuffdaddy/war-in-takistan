@@ -62,6 +62,10 @@ else
 					_offsetY = 0;
 					_offsetZ = 0;
 				};
+				if (_objet isKindOf "MV22") then {
+					_offsetY = 0;
+					_offsetZ = 0;
+				};
 				
 				// Attacher à l'arrière du véhicule au ras du sol
 				_objet attachTo [_remorqueur, [

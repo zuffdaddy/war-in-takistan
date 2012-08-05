@@ -397,13 +397,27 @@
 			[
 				"HandleDamage",
 				{
+					diag_log text format ["PLAYER T=%1 : %2", time, _this];
+
 					_unit = _this select 0;
-					if (vehicle _unit != _unit) exitWith {
-						if (damage (vehicle _unit) >= 1) then {
-							_unit action ["eject", vehicle _unit];
+					
+					_coeff = 1.0;
+
+					_vehicle = vehicle _unit;
+
+					if (_vehicle != _unit) then {
+						_coeff = 0.0;
+
+						if (_vehicle isKindOf "AH6_Base_EP1") then {
+							_coeff = 0.25;
 						};
-						0;
+						
+						if (damage (_vehicle) >= 1) then {
+							_unit action ["eject", _vehicle];
+							_coeff = 0.0;
+						};
 					};
+
 					_selections = _unit getVariable ["selections", []];
 					_gethit = _unit getVariable ["gethit", []];
 					_selection = _this select 1;
@@ -414,7 +428,7 @@
 					};
 					_i = _selections find _selection;
 					_olddamage = _gethit select _i;
-					_damage = _olddamage + ((_this select 2) - _olddamage) * 0.5;
+					_damage = _olddamage + ((_this select 2) - _olddamage) * _coeff;
 					_gethit set [_i, _damage];
 					_damage;
 				}

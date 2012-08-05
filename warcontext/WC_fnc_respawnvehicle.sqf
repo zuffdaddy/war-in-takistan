@@ -64,7 +64,7 @@ if (wcUseCarrier == 1) then {
 			[
 				"HandleDamage",
 				{
-					//diag_log text format ["T=%1 : %2", time, _this];
+					diag_log text format ["T=%1 : %2", time, _this];
 
 					_unit = _this select 0;
 					_selections = _unit getVariable ["selections", []];
@@ -75,7 +75,10 @@ if (wcUseCarrier == 1) then {
 					_coeff = 1.0;	// multipy damage by this amount
 
 					if (_unit isKindOf "Helicopter") then {
-						_coeff = 0.5;
+						_coeff = 1.5;
+						if (_selection != "") then {
+							_coeff = 0.1;
+						};
 					};
 
 					if (_unit isKindOf "MV22") then {
@@ -86,7 +89,7 @@ if (wcUseCarrier == 1) then {
 								_coeff = 0.25;
 							};
 						} forEach _list;
-						//diag_log text format ["%2 damage coeff: %1", _coeff, typeOf _source];
+						diag_log text format ["%2 damage coeff: %1", _coeff, typeOf _source];
 					};
 
 					if !(_selection in _selections) then
