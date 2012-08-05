@@ -397,7 +397,7 @@
 			[
 				"HandleDamage",
 				{
-					diag_log text format ["PLAYER T=%1 : %2", time, _this];
+					//diag_log text format ["PLAYER T=%1 : %2", time, _this];
 
 					_unit = _this select 0;
 					

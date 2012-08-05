@@ -94,6 +94,9 @@ R3F_REV_fil_exec_attente_reanimation = [] spawn {
 	// Attendre que le nouveau corps apparaissent
 	waitUntil {alive player};
 
+	player setVariable ["selections", []];
+	player setVariable ["gethit", []];
+
 	hidebody R3F_REV_corps_avant_mort;
 
 	player setVehicleInit "this allowdammage false;";

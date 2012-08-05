@@ -64,7 +64,7 @@ if (wcUseCarrier == 1) then {
 			[
 				"HandleDamage",
 				{
-					diag_log text format ["T=%1 : %2", time, _this];
+					//diag_log text format ["T=%1 : %2", time, _this];
 
 					_unit = _this select 0;
 					_selections = _unit getVariable ["selections", []];
@@ -89,7 +89,7 @@ if (wcUseCarrier == 1) then {
 								_coeff = 0.25;
 							};
 						} forEach _list;
-						diag_log text format ["%2 damage coeff: %1", _coeff, typeOf _source];
+						//diag_log text format ["%2 damage coeff: %1", _coeff, typeOf _source];
 					};
 
 					if !(_selection in _selections) then
