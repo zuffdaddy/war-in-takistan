@@ -72,7 +72,7 @@ R3F_REV_fil_exec_attente_reanimation = [] spawn {
 		deleteMarker R3F_REV_mark;
 	};
 
-	//sleep 2;
+	sleep 0.005;
 
 	"dynamicBlur" ppEffectEnable true;
 	"dynamicBlur" ppEffectAdjust [0];
@@ -201,7 +201,7 @@ R3F_REV_fil_exec_attente_reanimation = [] spawn {
 		processInitCommands;
 		
 		// On le reblaisse quand même par mesure de réalisme
-		player setDamage 0.4;
+		player setDamage 0.0;
 		
 		// Retour en vue normale du jeu
 		terminate R3F_REV_fil_exec_effet_inconscient;
