@@ -182,7 +182,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3125.02,0.64198214,9902.0127};
+					position[]={10111.055,0.64736974,10120.74};
 					azimut=150;
 					id=55;
 					side="EAST";
@@ -1690,16 +1690,16 @@ class Mission
 		};
 		class Item24
 		{
-			position[]={5994.8462,0.53816372,8496.9619};
+			position[]={-1098.1807,0.5352028,8756.8896};
 			name="LHD_location";
 			text="LHD Location";
 			markerType="RECTANGLE";
 			type="Empty";
-			colorName="ColorBlue";
+			colorName="ColorGreen";
 			fillName="Border";
 			a=20;
 			b=130;
-			angle=275;
+			angle=224.291;
 			drawBorder=1;
 		};
 		class Item25
