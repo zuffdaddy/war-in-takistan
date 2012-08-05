@@ -53,10 +53,10 @@
 
 	// By default wc uses R3F revive
 	if(true) then {
-		if(wcPlayerDamageSystem == 1) then {
+		if(wcNewPlayerDamageSystem == 0) then {
 			execVM "extern\R3F_revive\revive_init.sqf";
 		};
-		if(wcPlayerDamageSystem == 2) then {
+		if(wcNewPlayerDamageSystem == 1) then {
 			player addEventHandler ["killed", {
 				[_this select 0, _this select 1] spawn {
 					_unit = _this select 0;

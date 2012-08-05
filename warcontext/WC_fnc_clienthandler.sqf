@@ -356,7 +356,7 @@
 	'];
 
 	if(wckindofgame == 1) then {
-		if(wcPlayerDamageSystem == 1) then {
+		if(wcCustomPlayerHandleDamage == 1) then {
 			player addEventHandler ['HandleDamage', {
 				private[
 					"_unit",
@@ -388,9 +388,34 @@
 			}];
 		};
 
-		if(wcPlayerDamageSystem == 2) then {
-			#include "system_client_respawn.sqf"
-			player addEventHandler ["HandleDamage", { _this call handleDamage; }];
+		if(wcCustomPlayerHandleDamage == 2) then {
+			//#include "system_client_respawn.sqf"
+			//player addEventHandler ["HandleDamage", { _this call handleDamage; }];
+			player setVariable ["selections", []];
+			player setVariable ["gethit", []];
+			player addEventHandler
+			[
+				"HandleDamage",
+				{
+					_unit = _this select 0;
+					if (vehicle _unit != _unit) exitWith {
+						0;
+					};
+					_selections = _unit getVariable ["selections", []];
+					_gethit = _unit getVariable ["gethit", []];
+					_selection = _this select 1;
+					if !(_selection in _selections) then
+					{
+						_selections set [count _selections, _selection];
+						_gethit set [count _gethit, 0];
+					};
+					_i = _selections find _selection;
+					_olddamage = _gethit select _i;
+					_damage = _olddamage + ((_this select 2) - _olddamage) * 0.5;
+					_gethit set [_i, _damage];
+					_damage;
+				}
+			];
 		};
 	};
 

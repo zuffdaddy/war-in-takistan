@@ -57,6 +57,59 @@ if (wcUseCarrier == 1) then {
 			}];
 		};
 
+		if((wcCustomVehicleHandleDamage == 2)) then {
+			_vehicle setVariable ["selections", []];
+			_vehicle setVariable ["gethit", []];
+			_vehicle addEventHandler
+			[
+				"HandleDamage",
+				{
+					//diag_log text format ["T=%1 : %2", time, _this];
+
+					_unit = _this select 0;
+					_selections = _unit getVariable ["selections", []];
+					_gethit = _unit getVariable ["gethit", []];
+					_selection = _this select 1;
+					_source = _this select 3;
+
+					_coeff = 1.0;	// multipy damage by this amount
+
+					if (_unit isKindOf "Helicopter") then {
+						_coeff = 0.5;
+					};
+
+					if (_unit isKindOf "MV22") then {
+						_coeff = 0.5;
+						_list = ["ZSU_Base","2S6M_Tunguska"];
+						{
+							if (_source isKindOf _x) exitWith {
+								_coeff = 0.25;
+							};
+						} forEach _list;
+						//diag_log text format ["%2 damage coeff: %1", _coeff, typeOf _source];
+					};
+
+					if !(_selection in _selections) then
+					{
+						_selections set [count _selections, _selection];
+						_gethit set [count _gethit, 0];
+					};
+					_i = _selections find _selection;
+					_olddamage = _gethit select _i;
+					_damage = _olddamage + ((_this select 2) - _olddamage) * _coeff;
+					_gethit set [_i, _damage];
+
+					if (((_selection == "") and (_damage >= 1)) and ((count crew _unit) > 0)) then {
+						//diag_log "EJECT!!!!!!!!";
+						{
+							_x action ["eject", vehicle _x];
+						} forEach (crew _unit);
+					};
+
+					_damage;
+				}
+			];
+		};
 		_vehicle addEventHandler ['Fired', '
 			private ["_name"];
 			if!(wcdetected) then {
