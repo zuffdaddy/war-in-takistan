@@ -29,9 +29,10 @@ handleDamage = {
 		_unit setCaptive true;
 		_unit setUnconscious true;
 		_returnDamage = 0.0;
-		if (scriptDone wcHandleUnconsciousLoop) then {
+		//if (scriptDone wcHandleUnconsciousLoop) then {
+			terminate wcHandleUnconsciousLoop;
 			wcHandleUnconsciousLoop = [_unit] spawn unconcsciousLoop;
-		};
+		//};
 		//_unit playAction "GestureSpasm0";
 		//_unit playAction "agonyStart";
 		//diag_log "unconcscious state";
