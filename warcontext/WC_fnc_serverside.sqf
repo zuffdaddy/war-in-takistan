@@ -357,6 +357,9 @@
 	processInitCommands;
 	//sleep ceil(random(5));
 
+	_object setVehicleInit "this setVariable [""selections"", []];this setVariable [""gethit"", []];";
+	processInitCommands;
+
 	_type = typeOf _object;
 	_magazines = getArray(configFile >> "CfgVehicles" >> _type >> "magazines");
 
