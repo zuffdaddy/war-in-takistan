@@ -339,9 +339,6 @@
 	// ---from WC_fnc_servicing ---------------------------------------------------------------------------
 	if (!alive _object) exitWith {};
 
-	_object setVariable ["selections", []];
-	_object setVariable ["gethit", []];
-
 	if (_object isKindOf "MV22") then {
 		_handle = [_object] execVM "f2f_modules\f2f_alss\f2f_exe\f2f_exe_vecInit_clrWeps.sqf";
 		waitUntil {scriptDone _handle};
