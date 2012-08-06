@@ -10,4 +10,6 @@
 	_unit = ((_this select 3) select 0);
 	player playMove "AinvPknlMstpSlayWrflDnon_medic";
 	sleep 4;
+	_unit setVariable ["selections", []];
+	_unit setVariable ["gethit", []];
 	_unit setDamage 0;
