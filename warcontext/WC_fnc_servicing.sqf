@@ -44,6 +44,9 @@
 	//};
 
 	if (!alive _object) exitWith {};
+	_object setVehicleInit "this setVariable [""selections"", []];this setVariable [""gethit"", []];";
+	processInitCommands;
+	
 	_type = typeof _object;
 	_object setVehicleInit "this vehicleChat ""Servicing... Please stand by..."";";
 	processInitCommands;
