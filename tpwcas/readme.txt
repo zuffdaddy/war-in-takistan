@@ -1,7 +1,7 @@
 TPWC AI Suppress (TPWCAS)
 Singleplayer, Multiplayer and Dedicated Server Compatible AI Suppression System
 By TPW && -Coulum- && fabrizio_T && Ollem
-v3.02 20120805
+v3.03 20120807
 
 Introduction:
 -------------
@@ -234,4 +234,11 @@ Changelog:
 	
 * 3.02 20120805
 	- Fixed bDetect MP desync issue
+	- bDetect 0.73
+
+* 3.03 20120807
+	- Correct bDetect call in script version
+	- Correct wait for bDetect initialisation
+	- Cleanup of config variables in addon version
+	- Changes to stance modification code to make it CBA independent
 	- bDetect 0.73

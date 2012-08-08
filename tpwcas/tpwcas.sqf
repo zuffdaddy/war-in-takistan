@@ -4,9 +4,9 @@ SP / MP / DEDI COMPATIBLE
 
 Authors: TPW && -Coulum- && fabrizio_T && Ollem
 
-Version: 3.02
+Version: 3.03
 
-Last modified: 20120805 
+Last modified: 20120807 
 
 Requires: 		CBA
 				bdetect073.sqf
@@ -142,7 +142,7 @@ if (tpwcas_hint == 1) then
 	{    
 	0 = [] spawn 
 		{   
-		hintsilent "TPWCAS 3.02 Active";    
+		hintsilent "TPWCAS 3.03 Active";    
 		sleep 3;    
 		hintsilent "";
 		};    
@@ -177,7 +177,7 @@ call compile preprocessFileLineNumbers "tpwcas\tpwcas_visuals.sqf"; //player sup
 //CALL BDETECT
 ////////////// 
 
-call compile preprocessFileLineNumbers "tpwcas\bdetect073.sqf"; //bullet detection framework
+call compile preprocessFileLineNumbers "tpwcas\bdetect073.sqf"; //bullet detection
 bdetect_bullet_skip_mags = tpwcas_mags; 
 bdetect_bullet_min_distance =  tpwcas_ir;
 bdetect_bullet_max_distance = tpwcas_maxdist;
@@ -185,24 +185,20 @@ bdetect_bullet_max_lifespan = tpwcas_bulletlife;
 bdetect_debug_levels = [0,1,3,5,6,7,8,9,10];
 tpwcas_multi_player = false;
 bdetect_debug_enable = false;
-
 if (tpwcas_debug > 1) then 
 	{
 	bdetect_debug_enable = true;
 	};
-
 if ( isDedicated ) then 
 	{
 	bdetect_mp = true;
 	bdetect_mp_per_frame_emulation = true;
 	bdetect_mp_per_frame_emulation_frame_d = 0.02;
-	tpwcas_playershake = 0; 
-	tpwcas_playervis = 0;
 	tpwcas_textdebug = 0;
 	tpwcas_st = 8;
 	};
 
-if ( ( !(isServer) || isDedicated ) && (tpwcas_debug == 1) ) then  
+if ( ( !(isServer) || isDedicated ) ) then  
 	{ 
 	tpwcas_multi_player = true;
 	};
@@ -224,7 +220,6 @@ waitUntil { !(isNil "bdetect_init_done") };
 // In case of Dedicated Server make sure parameters are synched if adjusted
 if ( isDedicated ) then
 	{
-	publicVariable "tpwcas_debug"; 
 	publicVariable "tpwcas_maxdist";
 	publicVariable "tpwcas_ir"; 
 	publicVariable "tpwcas_st"; 
@@ -234,14 +229,17 @@ if ( isDedicated ) then
 	publicVariable "tpwcas_reveal"; 
 	publicVariable "tpwcas_canflee";
 
+	publicVariable "tpwcas_playershake"; 
+	publicVariable "tpwcas_playervis";
+
+	publicVariable "tpwcas_debug";
+	publicVariable "tpwcas_multi_player";		
 	publicVariable "bdetect_bullet_max_lifespan";
 	publicVariable "bdetect_debug_enable";
-
-	publicVariable "tpwcas_multi_player";
 	};
 
 // Trigger debug color changes on client
-if ( tpwcas_multi_player && !(IsDedicated)) then 
+if ( tpwcas_multi_player && !(IsDedicated) && (tpwcas_debug == 1) ) then 
 	{
 	suppressDebug_compiled = call compile format["%1", tpwcas_fnc_client_debug];
 	["suppressDebug", {[(_this select 0), (_this select 1) , (_this select 2)] call suppressDebug_compiled; }] call CBA_fnc_addEventHandler;
@@ -254,7 +252,7 @@ if ( tpwcas_multi_player && !(IsDedicated)) then
 [] spawn tpwcas_fnc_main_loop;
 
 // Enable visual markers and debug logging
-if (tpwcas_debug == 1) then 
+if (tpwcas_debug > 0) then 
 	{
 	[] spawn tpwcas_fnc_debug; 
 	};

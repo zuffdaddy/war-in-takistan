@@ -26,7 +26,8 @@ tpwcas_fnc_debug =
 						};
 					_color = "ColorWhite";					
 					if( (side _x) getFriend WEST < 0.6 ) then 
-						{ _color = "ColorRed"; 
+						{
+						_color = "ColorRed"; 
 						} 
 					else 
 						{
