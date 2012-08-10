@@ -177,7 +177,7 @@ call compile preprocessFileLineNumbers "tpwcas\tpwcas_visuals.sqf"; //player sup
 //CALL BDETECT
 ////////////// 
 
-call compile preprocessFileLineNumbers "tpwcas\bdetect073.sqf"; //bullet detection
+call compile preprocessFileLineNumbers "tpwcas\bdetect074.sqf"; //bullet detection
 bdetect_bullet_skip_mags = tpwcas_mags; 
 bdetect_bullet_min_distance =  tpwcas_ir;
 bdetect_bullet_max_distance = tpwcas_maxdist;

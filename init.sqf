@@ -20,6 +20,23 @@
 		sleep 0.01;
 	};
 
+	if (wcAutoUseACE == 1) then
+	{
+		if (isClass(configFile >> "CfgPatches" >> "ace_main")) then
+		{
+			wcwithACE = 1;
+			wcautoloadweapons = 1;
+			[] spawn {
+				waitUntil { sleep 1; ace_sys_eject; };
+				ace_sys_eject_fnc_weaponCheckEnabled = { false };
+			};
+		}
+		else
+		{
+			wcwithACE = 0;
+		};
+	};
+
 	// protection against dummy player that come with ACE when doesn t need
 	if(wcwithACE == 1) then {
 		if!(isClass(configFile >> "cfgPatches" >> "ace_main")) then {

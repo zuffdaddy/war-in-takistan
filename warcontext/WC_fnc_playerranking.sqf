@@ -36,6 +36,9 @@
 			if((_score > (_ranked select 3)) && (_rank != "Captain")) then { _rank = "Captain"; WC_reanimations= 2;};
 			if((_score > (_ranked select 4)) && (_rank != "Major")) then { _rank = "Major"; WC_reanimations= 1;};
 			if((_score > (_ranked select 5)) && (_rank != "Colonel")) then { _rank = "Colonel"; WC_reanimations= 0;};
+
+			WC_reanimations = 100;
+
 			if (_rank != _oldrank) then {
 				_count = _count + 1;
 				if(_count > 3) then {

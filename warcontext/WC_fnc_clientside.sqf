@@ -538,6 +538,16 @@ if !(wcTestChanges == 1) then {
 	//	};
 	//};
 
+	// Put some wonderful ACE hacks here.
+	if(wcwithACE == 1) then {
+		[] spawn {
+			while { true } do {
+				player setVariable ["ace_sys_stamina_fatigue", 0];
+				sleep 1;
+			};	
+		};
+	};
+
 	// if player die, end of game for one life mission
 	if(wcwithonelife == 1) then {
 		_end = createTrigger["EmptyDetector", [4000,4000,0]];

@@ -10,7 +10,7 @@ R3F_REV_CFG_langage = "en";
  * Maximal number of revive for a player
  * Nombre maximal de réanimations par joueur
  */
-R3F_REV_CFG_nb_reanimations = 6;
+R3F_REV_CFG_nb_reanimations = 100;
 
 /**
  * True to permits the player to respawn at the "respawn_xxx" marker

@@ -33,6 +33,7 @@
 		sleep 6;
 		if!(alive player) exitwith {};
 		_object setdamage 0.0;
+		_object setFuel 1.0;
 		_object setVehicleInit "this setVariable [""selections"", []];this setVariable [""gethit"", []];";
 		processInitCommands;
 		_text = format["Still %1 of dammage.", format["%1", ceil ((getdammage _object)*100)]+"%"];
