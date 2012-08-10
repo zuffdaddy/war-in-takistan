@@ -129,7 +129,7 @@ tpwcas_fnc_main_loop =
 							[_unit] call tpwcas_fnc_decskill;
 							};     
 						//PLAYER CAMERA SHAKE  
-						if ((isplayer unit) && (tpwcas_playershake == 1)) then    
+						if ((isplayer _unit) && (tpwcas_playershake == 1)) then    
 							{    
 							addCamShake [1.5 - (skill player),(random 4)-((_unit getvariable "tpwcas_general")+(_unit getvariable "tpwcas_originalcourage")) , 2.5]   
 							};     

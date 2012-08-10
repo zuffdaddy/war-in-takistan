@@ -77,7 +77,7 @@
 
 	// init TPWC AI Suppression
 	if (wcAISuppressionSystem == 1) then {
-		[] spawn { execVM "tpwcas\tpwcas.sqf"; };
+		[] spawn { [] execVM "tpwcas\tpwcas.sqf"; };
 	};
 
 	// LHD

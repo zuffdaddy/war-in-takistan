@@ -25,7 +25,7 @@ tpwcas_fnc_supstate =
 
 	if (_shooterside getFriend ( side _unit) < 0.6 ) then  
 		{ 
-		_enemybulletcount = _enemybulletcount + 1; 
+		_enemybulletcount = _enemybulletcount + (random 2); 
 		_unit setvariable ["tpwcas_enemybulletcount", _enemybulletcount]; 
 		if (tpwcas_reveal > 0) then 
 			{
