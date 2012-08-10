@@ -72,13 +72,13 @@
 		player sideChat format["%1 - %2", wcindexmusic, _music];
 	};
 
-	if(_dikCode == DIK_GRAVE) then {
-		if(dialog) then {
-			closedialog 0;
-		} else {
-			wcanim = [] execVM "warcontext\dialogs\WC_fnc_createmenureadlogs.sqf";
-		};
-	};
+	//if(_dikCode == DIK_GRAVE) then {
+	//	if(dialog) then {
+	//		closedialog 0;
+	//	} else {
+	//		wcanim = [] execVM "warcontext\dialogs\WC_fnc_createmenureadlogs.sqf";
+	//	};
+	//};
 
 	// arcade = 1
 	if(wckindofgame == 1) then {
