@@ -210,7 +210,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="A1";
-					init="this allowDamage false; this allowfleeing 0; ";
+					init="this allowDamage false; this allowfleeing 0; this setCaptive true;";
 				};
 			};
 			class Waypoints

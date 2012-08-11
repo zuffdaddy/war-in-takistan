@@ -54,8 +54,9 @@
 
 	if(_dikCode in actionKeys "NightVision") then {
 		if(format["%1", wcanim] != "") then {
-			camUseNVG true;
-			true setCamUseTi 0;
+			if (isNil "camNVG") then { camNVG = true; };	
+			camNVG setCamUseTi 0;
+			camNVG = !camNVG;
 		};
 	};
 
