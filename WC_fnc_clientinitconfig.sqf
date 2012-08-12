@@ -23,7 +23,7 @@
 	wclistofweapons = wclistofweapons + ["m16a4","m16a4_acg","M16A4_GL","M16A4_ACG_GL","M24","M40A3","M240","Mk_48","M249","M4A1_Aim","M4SPR","M4A1_RCO_GL","M4A1_AIM_SD_camo","M4A1_HWS_GL_SD_Camo","M4A1_HWS_GL","MP5SD","MP5A5","Pecheneg","SVD_CAMO","G36C","G36_C_SD_eotech","G36a","G36K","MG36","Kostey_notebook","CDF_dogtags","EvDogTags","AK_107_kobra","AK_107_GL_kobra","AK_107_GL_pso","AK_107_pso","AKS_74_UN_kobra","bizon","bizon_silenced","DMR","M1014","Saiga12K","VSS_vintorez","SMAW","huntingrifle"];
 
 	// dont load weapons that inherit from these classes
-	wclistofexcludedweaponclasses = ["RocketPods","CannonCore","MissileLauncher","MGunCore","ibr_MissileLauncherBase_AA"];
+	wclistofexcludedweaponclasses = ["RocketPods","CannonCore","MissileLauncher","MGunCore","ibr_MissileLauncherBase_AA","Laserdesignator_mounted"];
 
 	// turn off ace marker system
 	ace_sys_tracking_markers_enabled = false;
