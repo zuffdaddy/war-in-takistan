@@ -530,7 +530,7 @@
 		};
 
 		case 28: {
-			_missiontext = [_missionname,"Liberate"," the hostage"];
+			_missiontext = [_missionname,"Liberate","the hostage"];
 			_group = createGroup west;
 			_vehicle = _group createUnit ["Haris_Press_EP1", _position, [], 0, "NONE"];
 			[_vehicle] spawn WC_fnc_liberatehotage;
@@ -547,7 +547,7 @@
 		};
 
 		case 30: {
-			_missiontext = [_missionname,"Liberate"," an officer"];
+			_missiontext = [_missionname,"Liberate","an officer"];
 			_group = createGroup west;
 			_vehicle = _group createUnit ["UN_CDF_Soldier_Officer_EP1", _position, [], 0, "NONE"];
 			[_vehicle] spawn WC_fnc_liberatehotage;
@@ -556,7 +556,7 @@
 		};
 
 		case 31: {
-			_missiontext = [_missionname,"Liberate"," a tourist"];
+			_missiontext = [_missionname,"Liberate","a tourist"];
 			_group = createGroup west;
 			_vehicle = _group createUnit ["CIV_EuroWoman01_EP1", _position, [], 0, "NONE"];
 			[_vehicle] spawn WC_fnc_liberatehotage;
@@ -590,13 +590,18 @@
 
 		case 34: {
 			_missiontext = [_missionname,"Sabotage","a radio tower"];
-			[wcradio] spawn WC_fnc_sabotage;
+			[] spawn {
+				while { !alive wcradio } do {
+					sleep 1;
+				};
+				[wcradio] spawn WC_fnc_sabotage;
+			};
 			_missiontype = "sabotage";
 			wcbonusfame = 0;
 		};
 
 		case 35: {
-			_missiontext = [_missionname,"Steal ","secret document"];
+			_missiontext = [_missionname,"Steal","secret document"];
 			_house = nearestObjects [_position, ["House"], 500];
 			_house = _house call BIS_fnc_selectRandom;
 			_vehicle = createVehicle ["EvMoscow", position _house, [], 0, "NONE"];

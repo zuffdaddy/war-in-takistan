@@ -54,13 +54,13 @@
 	wcbegindefend = false;
 	waituntil {wcbegindefend};
 
-	for "_x" from 1 to ([wclevelmaxincity*0.5, wclevelmaxincity*1.5] call WC_fnc_randomMinMax) step 1 do {
+	for "_x" from 1 to ([wclevelmaxincity*1.0, wclevelmaxincity*1.5] call WC_fnc_randomMinMax) step 1 do {
 		_location = _locations call BIS_fnc_selectRandom;
 		_handle = [position _location, _markerdest, (wcfactions call BIS_fnc_selectRandom), false] spawn WC_fnc_creategroupdefend;
 		sleep 1;
 	};
 
-	for "_x" from 1 to ([wclevelmaxincity*0.5, wclevelmaxincity*0.75] call WC_fnc_randomMinMax) step 1 do {
+	for "_x" from 1 to ([wclevelmaxincity*1.0, wclevelmaxincity*1.5] call WC_fnc_randomMinMax) step 1 do {
 		_location = _locations call BIS_fnc_selectRandom;
 		_handle = [position _location, _markerdest, (wcvehicleslistE call BIS_fnc_selectRandom), true] spawn WC_fnc_creategroupdefend;
 		sleep 1;

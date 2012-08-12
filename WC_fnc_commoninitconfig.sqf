@@ -189,8 +189,16 @@
 
 	wcchangeclothes = wcchangeclothescivil + wcchangeclotheswest + wcchangeclotheseast;
 
-	// kind of radio tower
-	wcradiotype = ["Land_Ind_IlluminantTower"];
+	// kind of radio tower wcRadioTowerType
+	wcradiotype = switch (wcRadioTowerType) do
+		{
+			case 0: { ["TK_WarfareBUAVterminal_EP1","Land_Ind_IlluminantTower","Land_Com_tower_ep1"] };
+			case 1: { ["TK_WarfareBUAVterminal_EP1"] };
+			case 2: { ["Land_Ind_IlluminantTower"] };
+			case 3: { ["Land_Com_tower_ep1"] };
+			default { ["Land_Com_tower_ep1"] };
+		};
+	//wcradiotype = ["Land_Ind_IlluminantTower"];
 	//wcradiotype = ["TK_WarfareBUAVterminal_EP1"];
 	//wcradiotype = ["TK_WarfareBUAVterminal_EP1","Land_Com_tower_ep1"];
 	//wcradiotype = ["Satelit"];

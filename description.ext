@@ -589,9 +589,17 @@ class Params
 		default = 1;
 	};
 	
+	class wcRadioTowerType
+	{
+		title = "RADIO TOWER TYPE";
+		values[] = {0, 1, 2, 3};
+		texts[] = {"Random","TK_WarfareBUAVterminal_EP1","Land_Ind_IlluminantTower","Land_Com_tower_ep1"};
+		default = 3;
+	};
+	
 	class wcAutoUseACE
 	{
-		title = "AUTOMATICALLY USE ACE AND LOAD WEAPONS";
+		title = "AUTOMATICALLY USE ACE AND AUTO LOAD WEAPONS";
 		values[] = {0, 1};
 		texts[] = {"No", "Yes"};
 		default = 1;
@@ -610,7 +618,7 @@ class Params
 		title = "ENEMY RADIO AND GENERATOR DISTANCE MINUMUM";
 		values[] = {50, 100};
 		texts[] = {"50", "100"};
-		default = 100;
+		default = 50;
 	};
 
 	class wcRadioAndGeneratorDistanceMax
@@ -618,7 +626,7 @@ class Params
 		title = "ENEMY RADIO AND GENERATOR DISTANCE MAXIMUM";
 		values[] = {150, 200, 250, 300, 350};
 		texts[] = {"150", "200", "250", "300", "350"};
-		default = 300;
+		default = 150;
 	};
 
 	class wcwithradiomarkers

@@ -177,8 +177,8 @@
 
 	// new medic action
 	if((wceverybodymedic == 1)) then {
-		wcmedicmenu = player addAction ["<t color='#dddd00'>Heal</t>", "warcontext\actions\WC_fnc_doheal2.sqf",[cursorTarget],6,false,false,"",
-			"(cursorTarget isKindOf 'Man') and (damage cursorTarget > 0) and ((player distance cursorTarget) < 4)"];
+		player addAction ["<t color='#dddd00'>Heal</t>", "warcontext\actions\WC_fnc_doheal2.sqf",[cursorTarget],6,false,false,"",
+			"(cursorTarget isKindOf 'Man') and ((damage cursorTarget) > 0) and ((player distance cursorTarget) < 4)"];
 	};
 
 
