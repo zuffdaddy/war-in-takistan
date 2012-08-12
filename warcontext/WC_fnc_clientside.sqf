@@ -540,11 +540,13 @@ if !(wcTestChanges == 1) then {
 
 	// Put some wonderful ACE hacks here.
 	if(wcwithACE == 1) then {
-		[] spawn {
-			while { true } do {
-				player setVariable ["ace_sys_stamina_fatigue", 0];
-				sleep 1;
-			};	
+		if (wcACENoFatigue == 1) then {
+			[] spawn {
+				while { true } do {
+					player setVariable ["ace_sys_stamina_fatigue", 0];
+					sleep 1;
+				};	
+			};
 		};
 	};
 

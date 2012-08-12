@@ -26,7 +26,9 @@ class Mission
 		"cawheeled_e_stryker",
 		"castructures_e_misc_misc_interier",
 		"ibr_lingor",
-		"CAAir2_MV22"
+		"CAAir2_MV22",
+		"CAMisc",
+		"CAWater2"
 	};
 	addOnsAuto[]=
 	{
@@ -53,7 +55,9 @@ class Mission
 		"CATracked_E_M2A2_Bradley",
 		"cawheeled_e_stryker",
 		"castructures_e_misc_misc_interier",
-		"ibr_lingor"
+		"ibr_lingor",
+		"CAMisc",
+		"CAWater2"
 	};
 	randomSeed=13468083;
 	class Intel

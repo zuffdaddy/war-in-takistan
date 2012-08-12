@@ -64,7 +64,7 @@ if (wcUseCarrier == 1) then {
 			[
 				"HandleDamage",
 				{
-					//diag_log text format ["T=%1 : %2", time, _this];
+					//diag_log text format ["VEHICLE T=%1 : %2", time, _this];
 
 					_unit = _this select 0;
 					_selections = _unit getVariable ["selections", []];
@@ -78,6 +78,19 @@ if (wcUseCarrier == 1) then {
 						_coeff = 1.5;
 						if (_selection != "") then {
 							_coeff = 0.1;
+						};
+					};
+
+					if (_unit isKindOf "AH6_Base_EP1") then {
+						_coeff = 0.75;
+						if (_selection != "") then {
+							_coeff = 0.08;
+							_list = ["ZSU_Base","2S6M_Tunguska"];
+							{
+								if (_source isKindOf _x) exitWith {
+									_coeff = 0.04;
+								};
+							} forEach _list;
 						};
 					};
 

@@ -400,7 +400,8 @@
 					//diag_log text format ["PLAYER T=%1 : %2", time, _this];
 
 					_unit = _this select 0;
-					
+					_source = _this select 3;
+
 					_coeff = 1.0;
 
 					_vehicle = vehicle _unit;
@@ -409,7 +410,13 @@
 						_coeff = 0.0;
 
 						if (_vehicle isKindOf "AH6_Base_EP1") then {
-							_coeff = 0.25;
+							_coeff = 0.08;
+							_list = ["ZSU_Base","2S6M_Tunguska"];
+							{
+								if (_source isKindOf _x) exitWith {
+									_coeff = 0.005;
+								};
+							} forEach _list;
 						};
 						
 						if (damage (_vehicle) >= 1) then {
