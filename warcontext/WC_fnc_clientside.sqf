@@ -41,12 +41,15 @@
 	waitUntil {!isNull player};
 	waituntil {format ["%1", typeof player] != 'any'}; 
 
+
 	if (wcUseCarrier == 1) then {
 		_temp_lhd_pos = getMarkerPos "respawn_west";
 		player setPosASL [_temp_lhd_pos select 0, _temp_lhd_pos select 1, LHD_deck_height + 0.5];
 		//player setDir _lhd_direction + _objDir;
+		wcgarbage = preset_1 execVM "scripts\bagHeap.sqf";
 	} else {
 		player setpos getmarkerpos "respawn_west";
+		wcgarbage = preset execVM "scripts\bagHeap.sqf";
 	};
 
 	if (format ["%1", wcselectedzone] == "any") then {wcselectedzone = [0,0,0];};
