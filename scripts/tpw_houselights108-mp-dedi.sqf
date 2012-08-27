@@ -30,14 +30,14 @@ sleep 10; // Allow other scripts time to settle down
 //////////////
 private ["_flickerdistance","_brightdistance","_hint"];
 // How close player must be to a light to see it flickering - use a lower value if flickering lights are too CPU demanding
-_flickerdistance = 50;
+_flickerdistance = 5;
 
 // Houses greater than this distance will be brighter, to compensate for engine.
 _brightdistance =  100;
 
 
 // Initialisation hint. 0 = no hint 
-_hint = 1;
+_hint = 0;
 
 ///////////////////////
 // FLICKER FUNCTION //

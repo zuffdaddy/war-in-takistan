@@ -607,7 +607,7 @@ class Params
 
 	class wcACENoFatigue
 	{
-		title = "DISABLE ACE FATIGUE";
+		title = "REDUCE ACE FATIGUE";
 		values[] = {0, 1};
 		texts[] = {"No", "Yes"};
 		default = 0;

@@ -545,8 +545,21 @@ if !(wcTestChanges == 1) then {
 	if(wcwithACE == 1) then {
 		if (wcACENoFatigue == 1) then {
 			[] spawn {
+					fd_fatigueLast = 0;
 				while { true } do {
-					player setVariable ["ace_sys_stamina_fatigue", 0];
+					fd_fatigueCurrent = player getVariable ["ace_sys_stamina_fatigue", 0];
+					fd_diff = fd_fatigueCurrent - fd_fatigueLast;
+					fd_coeff = switch (true) do
+					{
+						case (fd_diff > 0): { 0.5 };
+						case (fd_diff < 0): { 16.0 };
+						default { 0.0 };
+					};
+					fd_x = (fd_diff * fd_coeff);
+					fd_fatigue = fd_fatigueLast + (fd_diff * fd_coeff);
+					player setVariable ["ace_sys_stamina_fatigue", fd_fatigue];
+					fd_fatigueLast = fd_fatigue;
+
 					sleep 1;
 				};	
 			};

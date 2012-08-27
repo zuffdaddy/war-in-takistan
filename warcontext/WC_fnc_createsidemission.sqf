@@ -591,7 +591,7 @@
 		case 34: {
 			_missiontext = [_missionname,"Sabotage","a radio tower"];
 			[] spawn {
-				while { !alive wcradio } do {
+				while { isNull wcradio } do {
 					sleep 1;
 				};
 				[wcradio] spawn WC_fnc_sabotage;
