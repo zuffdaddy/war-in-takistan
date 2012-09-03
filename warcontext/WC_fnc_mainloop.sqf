@@ -144,7 +144,7 @@
 			wcAllowNightMission = false;
 		};
 
-		if (((count wcmissiondone) - (count wcMissionDoneLast)) >= 3) then {
+		if (((count wcmissiondone) - (count wcMissionDoneLast)) >= 1) then {
 			wcMissionDoneLast =+ wcmissiondone;
 			wcAllowNightMission = true;
 		};
